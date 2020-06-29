@@ -45,4 +45,12 @@ export class Utils {
   static asCurrency(val: number): number {
     return parseFloat((Math.round(val*100)/100).toFixed(2));
   }
+  static initials(username: string): string {
+    let v = username.split(' ');
+    let result = v[0][0];
+    if (v.length > 1) {
+      result += v[1][0];
+    }
+    return result.toUpperCase();
+  }
 }
