@@ -1,0 +1,15 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tsline:recommended"
+    ],
+    "jsRules": {
+
+    },
+    "rules": {
+        "no-console": false
+    },
+    "rulesDirectory": [
+
+    ]
+}

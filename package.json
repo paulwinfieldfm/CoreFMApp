@@ -1,0 +1,21 @@
+{
+  "name": "corefmapp",
+  "version": "1.0.0",
+  "description": "Core components, models and utilities shareable between client and server codebases",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulwinfieldfm/CoreFMApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulwinfieldfm/CoreFMApp/issues"
+  },
+  "homepage": "https://github.com/paulwinfieldfm/CoreFMApp#readme"
+}
