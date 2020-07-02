@@ -21,13 +21,13 @@ export enum UserNotificationMessageClass {
 export interface IUserNotificationMessage {
     userNotificationMessageSeverity: UserNotificationMessageSeverity,
     userNotificationMessageClass: UserNotificationMessageClass,
-    time: number,
     link?: string,
     payload?: any,
 }
 
 export interface IUserNotification {
     userNotificationType: UserNotificationType,
+    time: number,
     clientApplicationUser?: IClientApplicationUser,
     userNotificationMessage?: IUserNotificationMessage,
 }

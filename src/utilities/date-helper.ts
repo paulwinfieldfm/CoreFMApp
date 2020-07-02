@@ -9,6 +9,12 @@ export class DateHelper {
     static epochToDate(secondsSinceEpoch: number): Date {
       return new Date(secondsSinceEpoch*1000);
     }
+    static dateToEpoch(d?: Date): number {
+      if (!d) {
+        d = new Date();
+      }
+      return Math.trunc(d.getTime()/1000);
+    }
     static localeDate(d: Date): string {
       return `${DateHelper.pad2(d.getDate())}/${DateHelper.pad2(d.getMonth()+1)}/${d.getFullYear()}`;
     }
