@@ -27,7 +27,7 @@ export interface IUserNotificationMessage {
 }
 
 export interface IUserNotification {
-    clientApplicationUser: IClientApplicationUser,
     userNotificationType: UserNotificationType,
+    clientApplicationUser?: IClientApplicationUser,
     userNotificationMessage?: IUserNotificationMessage,
 }
