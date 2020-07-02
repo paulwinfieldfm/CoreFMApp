@@ -8,3 +8,4 @@ export * from './keyed-item';
 export * from './select-entry';
 export * from './server-application-user';
 export * from './user-account';
+export * from './user-notification';
