@@ -1,16 +1,9 @@
 import { ICategory } from "./category";
 import { IService } from "./service";
-
-export enum SelectionType {
-    asset,
-    company,
-    category,
-    service,
-    product,
-}
+import { SearchableItemType } from "./searchable-item-type";
 
 export interface IItemSelected {
-    selectionType: SelectionType,
+    searchableItemType: SearchableItemType,
     clearSelection: boolean,
     category?: ICategory,
     service?: IService
