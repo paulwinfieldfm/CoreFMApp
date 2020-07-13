@@ -6,6 +6,7 @@ export interface ICategory extends IKeyedItem {
     parentCategory?: ICategory,
     description: string,
     documentUrl?: string,
+    image?: string,
     path?: Array<IBreadcrumbPathEntry>,
 }
   
