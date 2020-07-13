@@ -4,6 +4,7 @@ import { IService } from "./service";
 export enum SearchStatusType {
     searching,
     searchComplete,
+    selected,
     error,
     reset
 }
