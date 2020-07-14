@@ -1,7 +1,7 @@
 import { IBreadcrumbPathEntry } from './breadcrumb-path-entry';
-import { IKeyedItem } from "./keyed-item";
+import { IKeyedImageItem } from "./keyed-item";
 
-export interface ICategory extends IKeyedItem {
+export interface ICategory extends IKeyedImageItem {
     parentId?: number,
     parentCategory?: ICategory,
     description: string,

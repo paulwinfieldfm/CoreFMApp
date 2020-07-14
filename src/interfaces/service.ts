@@ -1,7 +1,7 @@
-import { IKeyedItem } from "./keyed-item";
+import { IKeyedImageItem, IKeyedItem } from "./keyed-item";
 import { ICategory } from "./category";
 
-export interface IService extends IKeyedItem {
+export interface IService extends IKeyedImageItem {
     description: string,
     image?: string,
     categories?: Array<ICategory>,
