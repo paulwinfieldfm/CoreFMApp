@@ -13,6 +13,9 @@ export class Utils {
     const result = Utils.tryParseInt(val);
     return result !== undefined ? result : def;
   }
+  static hasValue(item?: any): boolean {
+    return (item!=null && item!==undefined);
+  }
   static yieldObjectPath(obj: any, keys: Array<string>): any {
     if (!obj) {
       return undefined;
