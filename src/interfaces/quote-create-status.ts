@@ -5,7 +5,7 @@ export enum QuoteCreateStatusType {
     serviceSelected
 }
 
-export interface QuoteCreateStatus {
+export interface IQuoteCreateStatus {
     status: QuoteCreateStatusType,
     services: IService
 }
