@@ -16,6 +16,13 @@ export class Utils {
   static hasValue(item?: any): boolean {
     return (item!=null && item!==undefined);
   }
+  static resetArray(obj: any): void {
+    if (obj && obj.length > 0) {
+      obj.splice(0, obj.length);
+    } else {
+      obj = [];
+    }
+  }
   static yieldObjectPath(obj: any, keys: Array<string>): any {
     if (!obj) {
       return undefined;
