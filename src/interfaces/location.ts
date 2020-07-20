@@ -8,6 +8,7 @@ export interface ILocation extends ICoreAsset {
     address1?: String,
     address2?: String,
     address3?: String,
-    countty?: String,
+    town: String,
+    county?: String,
     postcode?: String,
 }
