@@ -1,10 +1,12 @@
 import { 
-    IClientApplicationUser,
     IItemAttribute,
-    IItemAttributeMap
+    IItemAttributeMap,
+    IKeyedPersonItem
 } from '../interfaces';
 
-export class Customer implements IClientApplicationUser {
+export class Customer implements IKeyedPersonItem {
+  id!: number;
+
   uid!: string;
   email!: string;
   photoURL?: string;
@@ -25,6 +27,7 @@ export class Customer implements IClientApplicationUser {
   emailVerified?: boolean;
 
   static assign(
+    id: number,
     uid: string, customerId: number, photoURL: string,
     displayName: string, name: string, contactName: string,
     email: string, contactEmail: string, contactPhone1: string,
@@ -32,6 +35,7 @@ export class Customer implements IClientApplicationUser {
     town: string, postcode: string, companyName: string,
     attributes: IItemAttributeMap = {}): Customer {
     return <Customer>({
+      id: id,
       uid: uid,
       customerId: customerId,
       photoURL: photoURL,

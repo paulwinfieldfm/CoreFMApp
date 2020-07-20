@@ -5,6 +5,8 @@ import {
 } from '../interfaces';
 
 export class UserAccount implements IUserAccount {
+  id!: number;
+  name!: string;
   uid!: string;
   email!: string;
   photoURL?: string;
@@ -12,12 +14,16 @@ export class UserAccount implements IUserAccount {
   attributes: IItemAttributeMap = { };
 
   static assign(
-    uid: string, 
+    id: number,
+    uid: string,
+    name: string,
     email: string, 
     photoURL: string,
     displayName: string, 
     attributes: IItemAttributeMap = {}): UserAccount {
     return <UserAccount>({
+      id: id,
+      name: name,
       uid: uid,
       email: email,
       photoURL: photoURL,

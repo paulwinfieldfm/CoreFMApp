@@ -1,16 +1,16 @@
-import { IUserNotification, UserNotificationType, IClientApplicationUser, IUserNotificationMessage } from "../interfaces";
+import { IUserNotification, UserNotificationType, IUserNotificationMessage, IKeyedPersonItem } from "../interfaces";
 import { DateHelper } from "../utilities";
 
 export class UserNotification implements IUserNotification {
     userNotificationType: UserNotificationType;
     time: number;
-    clientApplicationUser?: IClientApplicationUser;
+    user?: IKeyedPersonItem;
     userNotificationMessage?: IUserNotificationMessage;
 
-    constructor(userNotificationType: UserNotificationType, clientApplicationUser?: IClientApplicationUser, userNotificationMessage?: IUserNotificationMessage) {
+    constructor(userNotificationType: UserNotificationType, user?: IKeyedPersonItem, userNotificationMessage?: IUserNotificationMessage) {
         this.userNotificationType = userNotificationType;
         this.time = DateHelper.dateToEpoch();
-        this.clientApplicationUser = clientApplicationUser;
+        this.user = user;
         this.userNotificationMessage = userNotificationMessage;
     }
 }

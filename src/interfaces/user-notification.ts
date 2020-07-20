@@ -1,4 +1,4 @@
-import { IClientApplicationUser } from "./client-application-user";
+import { IKeyedPersonItem } from "./keyed-item";
 
 export enum UserNotificationType {
     login,
@@ -28,6 +28,6 @@ export interface IUserNotificationMessage {
 export interface IUserNotification {
     userNotificationType: UserNotificationType,
     time: number,
-    clientApplicationUser?: IClientApplicationUser,
+    user?: IKeyedPersonItem,
     userNotificationMessage?: IUserNotificationMessage,
 }
