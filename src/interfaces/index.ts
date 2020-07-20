@@ -19,6 +19,7 @@ export * from './searchable-item-type';
 export * from './select-entry';
 export * from './server-application-user';
 export * from './service';
+export * from './supplier';
 export * from './user-account';
 export * from './user-activity';
 export * from './user-notification';
