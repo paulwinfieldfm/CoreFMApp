@@ -1,5 +1,7 @@
 import { ICategory } from "./category";
 import { IService } from "./service";
+import { ICompany } from "./company";
+import { IAsset } from "./asset";
 
 export enum SearchStatusType {
     searching,
@@ -12,6 +14,8 @@ export enum SearchStatusType {
 export interface ISearchStatus {
     status: SearchStatusType,
     message?: string,
+    assets?: Array<IAsset>,
     categories?: Array<ICategory>,
+    companies?: Array<ICompany>,
     services?: Array<IService>
 }
