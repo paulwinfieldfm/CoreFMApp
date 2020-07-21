@@ -1,7 +1,5 @@
-import { ICategory } from "./category";
-import { IService } from "./service";
-import { ICompany } from "./company";
-import { IAsset } from "./asset";
+import { SearchableItemType } from "./searchable-item-type";
+import { IKeyedItem } from "./keyed-item";
 
 export enum SearchStatusType {
     searching,
@@ -11,11 +9,14 @@ export enum SearchStatusType {
     reset
 }
 
+export interface ISearchResults {
+    searchableItemType: SearchableItemType,
+    data: Array<IKeyedItem>
+
+}
+
 export interface ISearchStatus {
     status: SearchStatusType,
     message?: string,
-    assets?: Array<IAsset>,
-    categories?: Array<ICategory>,
-    companies?: Array<ICompany>,
-    services?: Array<IService>
+    searchResultsEntries?: Array<ISearchResults>
 }
