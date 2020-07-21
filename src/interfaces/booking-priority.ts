@@ -1,4 +1,5 @@
 export enum BookingPriority {
+    unspecified,
     p1,
     p2,
     p3,

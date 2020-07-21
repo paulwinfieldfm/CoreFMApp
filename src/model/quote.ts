@@ -1,8 +1,9 @@
-import { IQuoteRequest, IUserActivity, IService, IContact, ICompany, ILocation, IAsset, ISupplier } from "../interfaces";
+import { IQuoteRequest, IUserActivity, IService, IContact, ICompany, ILocation, IAsset, ISupplier, BookingPriority } from "../interfaces";
 
 export class Quote implements IQuoteRequest {
     userActivities: Array<IUserActivity> = [];
     reference!: string;
+    bookingPriority?: BookingPriority;
     service?: IService;
     contact?: IContact;
     company?: ICompany;
@@ -10,11 +11,12 @@ export class Quote implements IQuoteRequest {
     asset?: IAsset;
     invitedSuppliers: Array<ISupplier> = [];
 
-    static createNew(createdActivity: IUserActivity, reference: string, service?: IService): Quote {
+    static createNew(createdActivity: IUserActivity, reference: string, bookingPriority: BookingPriority, service?: IService): Quote {
         return <Quote>({
             userActivities: [ createdActivity ],
             reference: reference,
             service: service,
+            bookingPriority: bookingPriority ?? BookingPriority.p4
         });
     }
 
