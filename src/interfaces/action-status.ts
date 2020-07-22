@@ -3,4 +3,6 @@ export interface IActionStatus {
     description?: string,
     actioned: boolean,
     order?: number,
+    onSelect?: any,
+    isSelected: boolean,
 }
