@@ -6,6 +6,7 @@ import { ICompany } from "./company";
 import { IAsset } from "./asset";
 import { ILocation } from "./location";
 import { ISupplier } from "./supplier";
+import { IActionStatus } from "./action-status";
 
 
 export interface IQuoteRequest extends IAuditedItem {
@@ -16,5 +17,6 @@ export interface IQuoteRequest extends IAuditedItem {
     company?: ICompany,
     location?: ILocation,
     asset?: IAsset,
-    invitedSuppliers: Array<ISupplier>
+    invitedSuppliers: Array<ISupplier>,
+    progress: Array<IActionStatus>,
 }

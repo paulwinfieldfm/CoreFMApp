@@ -1,6 +1,6 @@
 {
   "name": "corefmapp",
-  "version": "1.0.41",
+  "version": "1.0.43",
   "description": "Core components, models and utilities shareable between client and server codebases",
   "main": "lib/index.js",
   "typings": "src/index.ts",
