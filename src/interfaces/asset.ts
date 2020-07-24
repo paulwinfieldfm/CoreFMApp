@@ -4,15 +4,14 @@ export interface ICoreAsset extends IKeyedItem {
     code: String,
     coordinates?: String,
     parentId?: number,
+    locationId?: number,
 }
 
 export interface IAsset extends ICoreAsset {
     assets?: Array<IAsset>,
 }
 
-export interface IAssetNode {
-    id: number,
-    name: string,
+export interface IAssetNode extends ICoreAsset {
     isLocation: boolean,
     children?: IAssetNode[]
 }
