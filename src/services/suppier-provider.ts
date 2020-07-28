@@ -37,8 +37,8 @@ export class SupplierProviderService  {
     }
 
     private _sortByAvgQuoteResponse(supplier1: ISupplier, supplier2: ISupplier): number {
-        const supplier1HasValue: boolean = this._hasMinimumValue(supplier1.avgQuoteResponse, 5);
-        const supplier2HasValue: boolean = this._hasMinimumValue(supplier2.avgQuoteResponse, 5);
+        const supplier1HasValue: boolean = Utils.hasMinimumValue(supplier1.avgQuoteResponse, 5);
+        const supplier2HasValue: boolean = Utils.hasMinimumValue(supplier2.avgQuoteResponse, 5);
         if ((!supplier1HasValue && !supplier2HasValue) || (supplier1.avgQuoteResponse == supplier2.avgQuoteResponse)) {
             return 0;
         } else if (!supplier1HasValue || (supplier1.avgQuoteResponse! < supplier2.avgQuoteResponse!)) {
@@ -50,8 +50,8 @@ export class SupplierProviderService  {
 
     private _sortByQuoteToCostRatio(supplier1: ISupplier, supplier2: ISupplier): number {
         // The lower the quote to cost ratio, the better - so item 1 wins if smaller
-        const supplier1HasValue: boolean = this._hasMinimumValue(supplier1.quoteToCostRatio, 5);
-        const supplier2HasValue: boolean = this._hasMinimumValue(supplier2.quoteToCostRatio, 5);
+        const supplier1HasValue: boolean = Utils.hasMinimumValue(supplier1.quoteToCostRatio, 5);
+        const supplier2HasValue: boolean = Utils.hasMinimumValue(supplier2.quoteToCostRatio, 5);
         if ((!supplier1HasValue && !supplier2HasValue) || (supplier1.quoteToCostRatio == supplier2.quoteToCostRatio)) {
             return 0;
         } else if (!supplier1HasValue || (supplier1.quoteToCostRatio! > supplier2.quoteToCostRatio!)) {
@@ -62,8 +62,8 @@ export class SupplierProviderService  {
     }
 
     private _sortByRating(supplier1: ISupplier, supplier2: ISupplier): number {
-        const supplier1HasValue: boolean = this._hasMinimumValue(supplier1.rating, 1);
-        const supplier2HasValue: boolean = this._hasMinimumValue(supplier2.rating, 1);
+        const supplier1HasValue: boolean = Utils.hasMinimumValue(supplier1.rating, 1);
+        const supplier2HasValue: boolean = Utils.hasMinimumValue(supplier2.rating, 1);
         if ((!supplier1HasValue && !supplier2HasValue) || (supplier1.rating == supplier2.rating)) {
             return 0;
         } else if (!supplier1HasValue || (supplier1.rating! < supplier2.rating!)) {
@@ -71,9 +71,5 @@ export class SupplierProviderService  {
         } else {
             return 1;
         }
-    }
-
-    private _hasMinimumValue(field: any, minValue: number): boolean {
-        return Utils.hasValue(field) && field >= minValue;
     }
 }  

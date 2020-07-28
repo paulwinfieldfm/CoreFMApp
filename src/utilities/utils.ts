@@ -16,6 +16,9 @@ export class Utils {
   static hasValue(item?: any): boolean {
     return (item!=null && item!==undefined);
   }
+  static hasMinimumValue(field: any, minValue: number): boolean {
+    return Utils.hasValue(field) && field >= minValue;
+  }
   static resetArray(obj: any): void {
     if (obj && obj.length > 0) {
       obj.splice(0, obj.length);
