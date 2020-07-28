@@ -1,7 +1,19 @@
 import { ISupplier, ISupplierPreference, SupplierWeighting } from "..";
 import { Utils } from "../utilities";
 
-export class SupplierProviderService  {
+export class SupplierProviderService  {
+    private static instance: SupplierProviderService;
+  
+    private constructor() { }
+  
+    static getInstance(): SupplierProviderService {
+      if (!SupplierProviderService.instance) {
+        SupplierProviderService.instance = new SupplierProviderService();
+      }
+  
+      return SupplierProviderService.instance;
+    }
+  
     public prepare(suppliers: Array<ISupplier>, supplierPreference: ISupplierPreference): void {
         const prefs = supplierPreference ?? this.defaultSupplierPreference();
         this.sortBySupplierPreference(suppliers, prefs.supplierWeighting);
@@ -13,7 +25,7 @@ export class SupplierProviderService  {
             }
         }
     }
-
+  
     public defaultSupplierPreference(): ISupplierPreference {
         return {
             supplierWeighting: SupplierWeighting.quoteToCostRatio,
@@ -22,7 +34,7 @@ export class SupplierProviderService  {
             minInvites: 1,
         }
     }
-
+  
     public sortBySupplierPreference(suppliers: Array<ISupplier>, supplierWeighting: SupplierWeighting): void {
         switch (supplierWeighting) {
             case SupplierWeighting.avgQuoteResponse:
@@ -36,41 +48,50 @@ export class SupplierProviderService  {
                 break;
         }
     }
-
+  
+    public nominalAvgQuoteResponse(value?: any): number {
+      return Utils.hasMinimumValue(value, 2) ? value : 90;
+    }
+  
+    public nominalQuoteToCostRatio(value?: any): number {
+      return Utils.hasMinimumValue(value, 5) ? value : 105;
+    }
+  
+    public nominalRating(value?: any): number {
+      return Utils.hasMinimumValue(value, 2) ? value : 75;
+    }
+  
     private _sortByAvgQuoteResponse(supplier1: ISupplier, supplier2: ISupplier): number {
-        const supplier1HasValue: boolean = Utils.hasMinimumValue(supplier1.avgQuoteResponse, 5);
-        const supplier2HasValue: boolean = Utils.hasMinimumValue(supplier2.avgQuoteResponse, 5);
-        if ((!supplier1HasValue && !supplier2HasValue) || (supplier1.avgQuoteResponse == supplier2.avgQuoteResponse)) {
-            return 0;
-        } else if (!supplier1HasValue || (supplier1.avgQuoteResponse! > supplier2.avgQuoteResponse!)) {
-            return -1;
-        } else {
-            return 1;
-        }
+      const value1: number = SupplierProviderService.getInstance().nominalAvgQuoteResponse(supplier1.avgQuoteResponse);
+      const value2: number = SupplierProviderService.getInstance().nominalAvgQuoteResponse(supplier2.avgQuoteResponse);
+      if (value1 == value2) {
+        return 0;
+      } else if (value1 > value2) {
+        return 1;
+      }
+      return -1;
     }
-
+  
     private _sortByQuoteToCostRatio(supplier1: ISupplier, supplier2: ISupplier): number {
-        // The lower the quote to cost ratio, the better - so item 1 wins if smaller
-        const supplier1HasValue: boolean = Utils.hasMinimumValue(supplier1.quoteToCostRatio, 5);
-        const supplier2HasValue: boolean = Utils.hasMinimumValue(supplier2.quoteToCostRatio, 5);
-        if ((!supplier1HasValue && !supplier2HasValue) || (supplier1.quoteToCostRatio == supplier2.quoteToCostRatio)) {
-            return 0;
-        } else if (!supplier1HasValue || (supplier1.quoteToCostRatio! < supplier2.quoteToCostRatio!)) {
-            return -1;
-        } else {
-            return 1;
-        }
+      const value1: number = SupplierProviderService.getInstance().nominalQuoteToCostRatio(supplier1.quoteToCostRatio);
+      const value2: number = SupplierProviderService.getInstance().nominalQuoteToCostRatio(supplier2.quoteToCostRatio);
+      if (value1 == value2) {
+        return 0;
+      } else if (value1 > value2) {
+        return 1;
+      }
+      return -1;
     }
-
+  
     private _sortByRating(supplier1: ISupplier, supplier2: ISupplier): number {
-        const supplier1HasValue: boolean = Utils.hasMinimumValue(supplier1.rating, 1);
-        const supplier2HasValue: boolean = Utils.hasMinimumValue(supplier2.rating, 1);
-        if ((!supplier1HasValue && !supplier2HasValue) || (supplier1.rating == supplier2.rating)) {
-            return 0;
-        } else if (!supplier1HasValue || (supplier1.rating! > supplier2.rating!)) {
-            return -1;
-        } else {
-            return 1;
-        }
+      const value1: number = SupplierProviderService.getInstance().nominalRating(supplier1.rating);
+      const value2: number = SupplierProviderService.getInstance().nominalRating(supplier2.rating);
+      if (value1 == value2) {
+        return 0;
+      } else if (value1 < value2) {
+        return 1;
+      }
+      return -1;
     }
-}  
+}
+  
