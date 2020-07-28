@@ -42,7 +42,7 @@ export class SupplierProviderService  {
         const supplier2HasValue: boolean = Utils.hasMinimumValue(supplier2.avgQuoteResponse, 5);
         if ((!supplier1HasValue && !supplier2HasValue) || (supplier1.avgQuoteResponse == supplier2.avgQuoteResponse)) {
             return 0;
-        } else if (!supplier1HasValue || (supplier1.avgQuoteResponse! < supplier2.avgQuoteResponse!)) {
+        } else if (!supplier1HasValue || (supplier1.avgQuoteResponse! > supplier2.avgQuoteResponse!)) {
             return -1;
         } else {
             return 1;
@@ -55,7 +55,7 @@ export class SupplierProviderService  {
         const supplier2HasValue: boolean = Utils.hasMinimumValue(supplier2.quoteToCostRatio, 5);
         if ((!supplier1HasValue && !supplier2HasValue) || (supplier1.quoteToCostRatio == supplier2.quoteToCostRatio)) {
             return 0;
-        } else if (!supplier1HasValue || (supplier1.quoteToCostRatio! > supplier2.quoteToCostRatio!)) {
+        } else if (!supplier1HasValue || (supplier1.quoteToCostRatio! < supplier2.quoteToCostRatio!)) {
             return -1;
         } else {
             return 1;
@@ -67,7 +67,7 @@ export class SupplierProviderService  {
         const supplier2HasValue: boolean = Utils.hasMinimumValue(supplier2.rating, 1);
         if ((!supplier1HasValue && !supplier2HasValue) || (supplier1.rating == supplier2.rating)) {
             return 0;
-        } else if (!supplier1HasValue || (supplier1.rating! < supplier2.rating!)) {
+        } else if (!supplier1HasValue || (supplier1.rating! > supplier2.rating!)) {
             return -1;
         } else {
             return 1;
