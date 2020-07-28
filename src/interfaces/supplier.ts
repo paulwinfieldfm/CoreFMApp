@@ -6,4 +6,5 @@ export interface ISupplier extends IKeyedImageItem {
     avgQuoteResponse?: number,
     quoteToCostRatio?: number,
     rating?: number,
+    invite: boolean,
 }

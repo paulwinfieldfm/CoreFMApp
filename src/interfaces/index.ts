@@ -20,6 +20,7 @@ export * from './select-entry';
 export * from './server-application-user';
 export * from './service';
 export * from './supplier';
+export * from './supplier-preference';
 export * from './user-account';
 export * from './user-activity';
 export * from './user-notification';
