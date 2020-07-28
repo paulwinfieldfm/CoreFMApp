@@ -5,6 +5,7 @@ export class SupplierProviderService  {
     public prepare(suppliers: Array<ISupplier>, supplierPreference: ISupplierPreference): void {
         const prefs = supplierPreference ?? this.defaultSupplierPreference();
         this.sortBySupplierPreference(suppliers, prefs.supplierWeighting);
+        console.log(suppliers);
         if (prefs.defaultInvites) {
             const c: number = (suppliers.length > prefs.defaultInvites) ? prefs.defaultInvites : suppliers.length;
             for (let i=0;i<c;i++) {
