@@ -1,10 +1,13 @@
-import { IKeyedItem } from "./keyed-item";
+import { IKeyedImageItem } from "./keyed-item";
+import { IBreadcrumbPathEntry, IItemAttributeMap } from ".";
 
-export interface ICoreAsset extends IKeyedItem {
+export interface ICoreAsset extends IKeyedImageItem {
     code: String,
     coordinates?: String,
     parentId?: number,
     locationId?: number,
+    path?: Array<IBreadcrumbPathEntry>,
+    attributes?: IItemAttributeMap,
 }
 
 export interface IAsset extends ICoreAsset {
