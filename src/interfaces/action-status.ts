@@ -5,4 +5,9 @@ export interface IActionStatus {
     order?: number,
     onSelect?: any,
     isSelected: boolean,
+    service?: string,
+    customer?: string,
+    reference?: string,
+    priority?: string,
+    actionRequiredByTime?: number,
 }
