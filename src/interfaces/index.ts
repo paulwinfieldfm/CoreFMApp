@@ -11,6 +11,7 @@ export * from './item-attribute';
 export * from './item-selected';
 export * from './keyed-item';
 export * from './location';
+export * from './plottable-location';
 export * from './quote-create-status';
 export * from './quote-request';
 export * from './search-request';

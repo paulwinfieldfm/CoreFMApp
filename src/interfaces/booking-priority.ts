@@ -8,7 +8,7 @@ export enum BookingPriority {
 
 export interface IBookingPriorityEntry {
     bookingPriority: BookingPriority,
-    name: String,
+    name: string,
     description: string,
     icon?: string,
 }
