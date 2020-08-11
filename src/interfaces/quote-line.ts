@@ -11,5 +11,6 @@ export interface IQuoteLine {
     price?: number,
     linePrice?: number,
     taxRate: number,
+    currencyUnit: string,
 }
   
