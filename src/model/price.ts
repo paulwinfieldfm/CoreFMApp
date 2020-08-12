@@ -1,17 +1,15 @@
 import { IPrice } from "../interfaces";
 
 export class Price implements IPrice {
-    title!: string;
     currencyUnit: string = 'gbp';
     price?: number;
     taxRate!: number;
     total?: number;
     isFoc: boolean = false;
 
-    static assignPrice(title: string, currencyUnit: string, price: number, taxRate: number): Price {
+    static assignPrice(currencyUnit: string, price: number, taxRate: number): Price {
         const basePrice: number = Price.rounded(price);
         return<Price>({
-            title: title,
             currencyUnit: currencyUnit,
             price: basePrice,
             taxRate: taxRate,
@@ -20,9 +18,8 @@ export class Price implements IPrice {
         });
     }
 
-    static assignFoc(title: string, taxRate: number = 0): Price {
+    static assignFoc(taxRate: number = 0): Price {
         return<Price>({
-            title: title,
             currencyUnit: '',
             taxRate: taxRate,
             isFoc: true
