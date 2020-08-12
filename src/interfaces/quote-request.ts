@@ -20,5 +20,5 @@ export interface IQuoteRequest extends IAuditedItem {
     asset?: IAsset,
     invitedSuppliers: Array<ISupplier>,
     progress: Array<IActionStatus>,
-    responses: Array<IQuoteResponse>,
+    responses?: Array<IQuoteResponse>,
 }
