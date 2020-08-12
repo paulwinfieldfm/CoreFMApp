@@ -26,6 +26,29 @@ export class Price implements IPrice {
         });
     }
 
+    static assignTotal(prices: Array<IPrice>): Price {
+        if (!prices) {
+            return Price.assignFoc(0);
+        }
+
+        const c = prices.find(p => p.currencyUnit !== undefined);
+        const currencyUnit: string = c ? c.currencyUnit : '';
+        const linesWithValues = prices.filter(p => p.price !== undefined || p.total !== undefined);
+        let price: number = 0;
+        let total: number = 0;
+        linesWithValues.forEach(ln => {
+            price += ((ln.price===undefined)?0:ln.price);
+            total += ((ln.total===undefined)?0:ln.total);
+        });
+        return<Price>({
+            currencyUnit: currencyUnit,
+            price: price,
+            taxRate: 0,
+            total: total,
+            isFoc: false
+        });
+    }
+
 
     static taxValue(basicPrice: number, taxRate: number): number {
         return Price.rounded((basicPrice/100) * taxRate);
