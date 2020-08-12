@@ -11,4 +11,5 @@ export interface IQuoteResponse extends IAuditedItem {
     anticipatedVisitCount?: number,
     siteSurveyRequired: boolean,
     soonestServiceDate: number,
+    bestAndFinalOffer: boolean,
 }

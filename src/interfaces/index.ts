@@ -7,6 +7,7 @@ export * from './category';
 export * from './company';
 export * from './contact';
 export * from './history-item';
+export * from './price';
 export * from './item-attribute';
 export * from './item-selected';
 export * from './keyed-item';
