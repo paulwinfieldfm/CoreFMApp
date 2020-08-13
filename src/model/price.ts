@@ -7,6 +7,14 @@ export class Price implements IPrice {
     total?: number;
     isFoc: boolean = false;
 
+    private constructor(priceProperties: IPrice) {
+        this.currencyUnit = priceProperties.currencyUnit;
+        this.subtotal = priceProperties.subtotal;
+        this.taxRate = priceProperties.taxRate;
+        this.total = priceProperties.total;
+        this.isFoc = priceProperties.isFoc;
+    }
+
     static assign(currencyUnit: string, subtotal: number, taxRate: number): Price {
         const baseSubtotal: number = Price.rounded(subtotal);
         return<Price>({
@@ -60,6 +68,14 @@ export class Price implements IPrice {
             subtotal += lineSubtotal;
             total += lineTotal;
         });
+        return new Price({
+            currencyUnit: currencyUnit,
+            subtotal: subtotal,
+            taxRate: 0,
+            total: total,
+            isFoc: false
+        });
+        /*
         return Object.assign(new Price(), <Price>({
             currencyUnit: currencyUnit,
             subtotal: subtotal,
@@ -67,6 +83,7 @@ export class Price implements IPrice {
             total: total,
             isFoc: false
         }));
+        */
     }
 
 
