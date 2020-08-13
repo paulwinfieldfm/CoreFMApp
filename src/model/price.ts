@@ -60,13 +60,13 @@ export class Price implements IPrice {
             subtotal += lineSubtotal;
             total += lineTotal;
         });
-        return<Price>({
+        return Object.assign(new Price(), <Price>({
             currencyUnit: currencyUnit,
             subtotal: subtotal,
             taxRate: 0,
             total: total,
             isFoc: false
-        });
+        }));
     }
 
 
