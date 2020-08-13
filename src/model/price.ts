@@ -37,8 +37,17 @@ export class Price implements IPrice {
         let price: number = 0;
         let total: number = 0;
         linesWithValues.forEach(ln => {
-            price += ((ln.price===undefined)?0:ln.price);
-            total += ((ln.total===undefined)?0:ln.total);
+            const linePrice: number = (ln.price===undefined)?0:ln.price;
+            let lineTotal: number = (ln.total===undefined)?0:ln.total;
+            if (linePrice !== 0 && lineTotal == 0) {
+                lineTotal = (ln.taxRate) 
+                    ? (linePrice + this.taxValue(linePrice, ln.taxRate))
+                    : linePrice;
+
+            }
+
+            price += linePrice;
+            total += lineTotal;
         });
         return<Price>({
             currencyUnit: currencyUnit,
