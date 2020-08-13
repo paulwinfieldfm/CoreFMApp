@@ -1,6 +1,6 @@
 export interface IPrice {
     currencyUnit: string,
-    price?: number,
+    subtotal?: number,
     taxRate: number,
     total?: number,
     isFoc: boolean,

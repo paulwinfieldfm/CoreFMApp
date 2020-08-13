@@ -2,18 +2,18 @@ import { IPrice } from "../interfaces";
 
 export class Price implements IPrice {
     currencyUnit: string = 'gbp';
-    price?: number;
+    subtotal?: number;
     taxRate!: number;
     total?: number;
     isFoc: boolean = false;
 
-    static assignPrice(currencyUnit: string, price: number, taxRate: number): Price {
-        const basePrice: number = Price.rounded(price);
+    static assignPrice(currencyUnit: string, subtotal: number, taxRate: number): Price {
+        const baseSubtotal: number = Price.rounded(subtotal);
         return<Price>({
             currencyUnit: currencyUnit,
-            price: basePrice,
-            taxRate: taxRate,
-            total: (taxRate>0) ? (basePrice+Price.taxValue(basePrice, taxRate)) : basePrice,
+            price: baseSubtotal,
+            taxRate: taxRate??0,
+            total: (taxRate>0) ? (baseSubtotal+Price.taxValue(baseSubtotal, taxRate)) : baseSubtotal,
             isFoc: false
         });
     }
@@ -33,25 +33,24 @@ export class Price implements IPrice {
 
         const c = prices.find(p => p.currencyUnit !== undefined);
         const currencyUnit: string = c ? c.currencyUnit : '';
-        const linesWithValues = prices.filter(p => p.price !== undefined || p.total !== undefined);
-        let price: number = 0;
+        const linesWithValues = prices.filter(p => p.subtotal !== undefined);
+        let subtotal: number = 0;
         let total: number = 0;
         linesWithValues.forEach(ln => {
-            const linePrice: number = (ln.price===undefined)?0:ln.price;
+            const lineSubtotal: number = (ln.subtotal===undefined)?0:ln.subtotal;
             let lineTotal: number = (ln.total===undefined)?0:ln.total;
-            if (linePrice !== 0 && lineTotal == 0) {
+            if (lineSubtotal !== 0 && lineTotal == 0) {
                 lineTotal = (ln.taxRate) 
-                    ? (linePrice + this.taxValue(linePrice, ln.taxRate))
-                    : linePrice;
-
+                    ? (lineSubtotal + this.taxValue(lineSubtotal, ln.taxRate))
+                    : lineSubtotal;
             }
 
-            price += linePrice;
+            subtotal += lineSubtotal;
             total += lineTotal;
         });
         return<Price>({
             currencyUnit: currencyUnit,
-            price: price,
+            subtotal: subtotal,
             taxRate: 0,
             total: total,
             isFoc: false
@@ -59,8 +58,8 @@ export class Price implements IPrice {
     }
 
 
-    static taxValue(basicPrice: number, taxRate: number): number {
-        return Price.rounded((basicPrice/100) * taxRate);
+    static taxValue(subtotal: number, taxRate: number): number {
+        return Price.rounded((subtotal/100) * taxRate);
     }
 
     static rounded(value?: number): number {
@@ -83,13 +82,15 @@ export class Price implements IPrice {
         }
     }
 
-    toString(): string {
+    toString(withTax: boolean = false): string {
         if (this.isFoc) {
             return '(foc)';
         }
-        if (!this.total) {
+        if (!this.total || !this.subtotal) {
             return Price.format(0, this.currencyUnit);
         }
-        return Price.format(this.total, this.currencyUnit);
+        return (withTax) 
+            ? Price.format(this.total, this.currencyUnit)
+            : Price.format(this.subtotal, this.currencyUnit)
     }
 }
