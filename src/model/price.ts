@@ -15,21 +15,10 @@ export class Price implements IPrice {
         this.isFoc = priceProperties.isFoc;
     }
 
-    static assign(currencyUnit: string, subtotal: number, taxRate: number): Price {
-        const baseSubtotal: number = Price.rounded(subtotal);
-        return<Price>({
-            currencyUnit: currencyUnit,
-            subtotal: baseSubtotal,
-            taxRate: taxRate??0,
-            total: (taxRate>0) ? (baseSubtotal+Price.taxValue(baseSubtotal, taxRate)) : baseSubtotal,
-            isFoc: false
-        });
-    }
-
-    static assignPrice(price: IPrice): Price {
+    static assign(price: IPrice): Price {
         const baseSubtotal: number = Price.rounded(price.subtotal);
         const taxRate: number = price.taxRate??0;
-        return<Price>({
+        return new Price({
             currencyUnit: price.currencyUnit,
             subtotal: baseSubtotal,
             taxRate: taxRate??0,
@@ -38,17 +27,30 @@ export class Price implements IPrice {
         });
     }
 
-    static assignFoc(taxRate: number = 0): Price {
-        return<Price>({
+    static create(currencyUnit: string, subtotal: number, taxRate: number): Price {
+        const baseSubtotal: number = Price.rounded(subtotal);
+        return new Price({
+            currencyUnit: currencyUnit,
+            subtotal: baseSubtotal,
+            taxRate: taxRate??0,
+            total: (taxRate>0) ? (baseSubtotal+Price.taxValue(baseSubtotal, taxRate)) : baseSubtotal,
+            isFoc: false
+        });
+    }
+
+    static createFOC(taxRate: number = 0): Price {
+        return new Price({
             currencyUnit: '',
+            subtotal: 0,
             taxRate: taxRate,
+            total: 0,
             isFoc: true
         });
     }
 
-    static assignTotal(prices: Array<IPrice>): Price {
+    static createTotal(prices: Array<IPrice>): Price {
         if (!prices) {
-            return Price.assignFoc(0);
+            return Price.createFOC(0);
         }
 
         const c = prices.find(p => p.currencyUnit !== undefined);
@@ -75,15 +77,6 @@ export class Price implements IPrice {
             total: total,
             isFoc: false
         });
-        /*
-        return Object.assign(new Price(), <Price>({
-            currencyUnit: currencyUnit,
-            subtotal: subtotal,
-            taxRate: 0,
-            total: total,
-            isFoc: false
-        }));
-        */
     }
 
 
