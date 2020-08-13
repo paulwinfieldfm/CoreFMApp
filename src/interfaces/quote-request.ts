@@ -8,8 +8,12 @@ import { ILocation } from "./location";
 import { ISupplier } from "./supplier";
 import { IActionStatus } from "./action-status";
 import { IQuoteResponse } from "./quote-response";
+import { QuoteArea } from "./quote-create-status";
 
-
+export interface IQuoteRequestStatus extends IActionStatus {
+    quoteArea: QuoteArea;
+}
+  
 export interface IQuoteRequest extends IAuditedItem {
     reference: string,
     service?: IService,
@@ -19,6 +23,6 @@ export interface IQuoteRequest extends IAuditedItem {
     location?: ILocation,
     asset?: IAsset,
     invitedSuppliers: Array<ISupplier>,
-    progress: Array<IActionStatus>,
+    progress: Array<IQuoteRequestStatus>,
     responses?: Array<IQuoteResponse>,
 }
