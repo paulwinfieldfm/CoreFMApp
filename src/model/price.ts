@@ -7,7 +7,7 @@ export class Price implements IPrice {
     total?: number;
     isFoc: boolean = false;
 
-    static assignPrice(currencyUnit: string, subtotal: number, taxRate: number): Price {
+    static assign(currencyUnit: string, subtotal: number, taxRate: number): Price {
         const baseSubtotal: number = Price.rounded(subtotal);
         return<Price>({
             currencyUnit: currencyUnit,
@@ -15,6 +15,18 @@ export class Price implements IPrice {
             taxRate: taxRate??0,
             total: (taxRate>0) ? (baseSubtotal+Price.taxValue(baseSubtotal, taxRate)) : baseSubtotal,
             isFoc: false
+        });
+    }
+
+    static assignPrice(price: IPrice): Price {
+        const baseSubtotal: number = Price.rounded(price.subtotal);
+        const taxRate: number = price.taxRate??0;
+        return<Price>({
+            currencyUnit: price.currencyUnit,
+            price: baseSubtotal,
+            taxRate: taxRate??0,
+            total: (taxRate>0) ? (baseSubtotal+Price.taxValue(baseSubtotal, taxRate)) : baseSubtotal,
+            isFoc: price.isFoc
         });
     }
 
