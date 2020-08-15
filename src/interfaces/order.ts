@@ -12,5 +12,6 @@ export interface IServiceOrder extends IServiceRequest {
 }
 
 export interface IOrder extends IAuditedItem {
+    reference: string,
     serviceOrders: Array<IServiceOrder>
 }
