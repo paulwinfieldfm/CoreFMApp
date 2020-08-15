@@ -1,13 +1,13 @@
 import { IAuditedItem } from "./audited-item";
 import { ISupplier } from "./supplier";
 import { IItemAttributeMap } from "./item-attribute";
-import { IQuoteLine } from "./quote-line";
+import { IPriceLine } from "./price-line";
 
 export interface IQuoteResponse extends IAuditedItem {
     quoteReference: string,
     supplier: ISupplier,
     properties: IItemAttributeMap,
-    quoteLines: Array<IQuoteLine>,
+    quoteLines: Array<IPriceLine>,
     anticipatedVisitCount?: number,
     siteSurveyRequired: boolean,
     soonestServiceDate: number,

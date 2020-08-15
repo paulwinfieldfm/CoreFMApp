@@ -1,14 +1,16 @@
 import { IPrice } from "./price";
 
-export enum QuoteLineCategory {
+export enum PriceLineCategory {
     time,
     materials,
+    discount,
+    credit,
 }
 
-export interface IQuoteLine extends IPrice {
+export interface IPriceLine extends IPrice {
     title: string,
     description?: string,
-    quoteLineCategory: QuoteLineCategory,
+    quoteLineCategory: PriceLineCategory,
     quantity?: number,
     itemPrice?: number,
 
