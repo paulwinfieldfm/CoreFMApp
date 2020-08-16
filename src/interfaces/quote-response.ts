@@ -12,6 +12,6 @@ export interface IQuoteResponse extends IAuditedItem {
     siteSurveyRequired: boolean,
     soonestServiceDate: number,
     bestAndFinalOffer: boolean,
-    quoteProvided: boolean,
+    quoteProvided?: boolean,
     declineToQuoteReason?: string,
 }
