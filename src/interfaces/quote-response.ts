@@ -14,4 +14,5 @@ export interface IQuoteResponse extends IAuditedItem {
     bestAndFinalOffer: boolean,
     quoteProvided?: boolean,
     declineToQuoteReason?: string,
+    compareData?: any
 }
