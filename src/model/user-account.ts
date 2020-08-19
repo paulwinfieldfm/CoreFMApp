@@ -1,7 +1,8 @@
 import { 
     IUserAccount,
     IItemAttribute,
-    IItemAttributeMap
+    IItemAttributeMap,
+    UserAccountType
 } from '../interfaces';
 
 export class UserAccount implements IUserAccount {
@@ -12,6 +13,7 @@ export class UserAccount implements IUserAccount {
   photoURL?: string;
   displayName?: string;
   attributes: IItemAttributeMap = { };
+  userAccountType: UserAccountType = UserAccountType.unknown;
 
   static assign(
     id: number,
@@ -20,6 +22,7 @@ export class UserAccount implements IUserAccount {
     email: string, 
     photoURL: string,
     displayName: string, 
+    userAccountType: UserAccountType,
     attributes: IItemAttributeMap = {}): UserAccount {
     return <UserAccount>({
       id: id,
@@ -28,6 +31,7 @@ export class UserAccount implements IUserAccount {
       email: email,
       photoURL: photoURL,
       displayName: displayName,
+      userAccountType: userAccountType,
       attributes: attributes
     });
   }
