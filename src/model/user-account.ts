@@ -13,7 +13,7 @@ export class UserAccount implements IUserAccount {
   photoURL?: string;
   displayName?: string;
   attributes: IItemAttributeMap = { };
-  userAccountType: UserAccountType = UserAccountType.unknown;
+  userAccountTypeId: UserAccountType = UserAccountType.unknown;
 
   static assign(
     id: number,
@@ -31,7 +31,7 @@ export class UserAccount implements IUserAccount {
       email: email,
       photoURL: photoURL,
       displayName: displayName,
-      userAccountType: userAccountType,
+      userAccountTypeId: userAccountType,
       attributes: attributes
     });
   }

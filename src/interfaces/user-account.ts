@@ -10,5 +10,5 @@ export enum UserAccountType {
 
 export interface IUserAccount extends IKeyedPersonItem {
     attributes: IItemAttributeMap,
-    userAccountType: UserAccountType,
+    userAccountTypeId: UserAccountType,
 }
