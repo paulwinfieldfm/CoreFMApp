@@ -1,7 +1,8 @@
-import { IAuditedItem, IService, BookingPriority, IContact, ICompany, ILocation, IAsset } from ".";
+import { IAuditedItem, IService, BookingPriority, IContact, ICompany, ILocation, IAsset, ISupplier } from ".";
 
 export interface IServiceRequest extends IAuditedItem {
     reference: string,
+    orderDate: number,
     service?: IService,
     bookingPriority?: BookingPriority,
     contact?: IContact,

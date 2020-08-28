@@ -6,12 +6,27 @@ import { IPriceLine } from "./price-line";
 
 export interface IServiceOrder extends IServiceRequest {
     quoteId?: number,
+    quoteReference: string,
     supplier: ISupplier,
     properties: IItemAttributeMap,
     priceLines: Array<IPriceLine>,
 }
+/*
+    reference: string,
+    service?: IService,
+    bookingPriority?: BookingPriority,
+    contact?: IContact,
+    company?: ICompany,
+    location?: ILocation,
+    asset?: IAsset,
+    proformaAnswers?: any,
+*/
 
-export interface IOrder extends IAuditedItem {
+export interface IOrder extends IServiceOrder {
+
+}
+
+export interface IMultiOrder extends IAuditedItem {
     reference: string,
     serviceOrders: Array<IServiceOrder>
 }
