@@ -34,4 +34,5 @@ export interface IJob extends IAuditedItem {
     assignedToUser?: IKeyedPersonItem,
     statusHistory: Array<IJobStatusEvent>,
     currentStatus: JobStatus,
+    pod?: any,
 }
