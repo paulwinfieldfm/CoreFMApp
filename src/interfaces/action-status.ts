@@ -1,3 +1,11 @@
+export enum LinkedEntityType {
+    acknowledge,
+    quote,
+    order,
+    job,
+    pod,
+}
+
 export interface IActionStatus {
     action: string,
     description?: string,
@@ -10,4 +18,5 @@ export interface IActionStatus {
     reference?: string,
     priority?: string,
     actionRequiredByTime?: number,
+    linkedEntityType: LinkedEntityType,
 }
