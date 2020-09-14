@@ -66,4 +66,12 @@ export class Utils {
     }
     return result.toUpperCase();
   }
+  static async asyncForEach(array: Array<any>, callback: any) {
+    for (let index = 0; index < array.length; index++) {
+      await callback(array[index], index, array);
+    }
+  }
+  static async wait(ms: number): Promise<void> {
+    return new Promise(r => setTimeout(r, ms));
+  }
 }
