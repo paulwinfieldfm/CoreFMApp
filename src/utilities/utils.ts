@@ -70,6 +70,15 @@ export class Utils {
     if (value === null) { return false;}
     return ( (typeof value === 'function') || (typeof value === 'object') );      
   }
+  static parseAsObject(value: any, defaultIfUndefined: any): any {
+    if (!value) {
+      return defaultIfUndefined;
+    }
+    if (Utils.isObject(value)) {
+      return value;
+    }
+    return (typeof value === 'string') ? JSON.parse(value) : value;
+  }
   static async asyncForEach(array: Array<any>, callback: any) {
     for (let index = 0; index < array.length; index++) {
       await callback(array[index], index, array);
