@@ -19,6 +19,8 @@ export * from './price-line';
 export * from './quote-create-status';
 export * from './quote-request';
 export * from './quote-response';
+export * from './quote-response-status';
+export * from './quote-supplier-response';
 export * from './search-request';
 export * from './search-status';
 export * from './searchable-item-type';
