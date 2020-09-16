@@ -7,7 +7,7 @@ export interface IQuoteResponseStatus extends IActionStatus {
     quoteArea: QuoteResponseArea;
 }
  
-export interface IQuoteSupplierResponse extends IServiceRequest {
+export interface ISupplierQuoteResponse extends IServiceRequest {
     supplier: ISupplier,
     progress: Array<IQuoteResponseStatus>,
     confirmedDateTime?: number,
