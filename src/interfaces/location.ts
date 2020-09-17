@@ -12,7 +12,4 @@ export interface ILocation extends ICoreAsset, IPlottableLocation {
     town: string,
     county?: string,
     displayName: string,
-    postcode?: string,
-    latitude?: number,
-    longitude?: number,
 }

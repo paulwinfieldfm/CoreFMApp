@@ -1,4 +1,4 @@
-import { IAuditedItem, IService, BookingPriority, IContact, ICompany, ILocation, IAsset } from ".";
+import { IAuditedItem, IService, BookingPriority, IContact, ICompany, ILocation, IAsset, IPlottableLocation } from ".";
 import { IOrder } from "./order";
 import { IKeyedPersonItem } from "./keyed-item";
 
@@ -20,12 +20,10 @@ export enum JobStatus {
     unableToComplete,
 }
 
-export interface IJobStatusEvent {
+export interface IJobStatusEvent extends IPlottableLocation {
     user: IKeyedPersonItem,
     date: number,
     jobStatus: JobStatus,
-    lat?: number,
-    lng?: number
 }
 
 export interface IJob extends IAuditedItem {
