@@ -29,5 +29,19 @@ export class DateHelper {
       let result: string = v ? v.toString() : "00";
       return (result.length < 2) ? "0" + result : result;
     }
+    static compareAsc(epochSeconds1: number, epochSeconds2: number, emptyFirst: boolean = false): number {
+      if (emptyFirst) {
+        if (epochSeconds1>epochSeconds2 || epochSeconds2===undefined) return 1; else return (epochSeconds1==epochSeconds2) ? 0 : -1;
+      } else {
+        if (epochSeconds1>epochSeconds2 || epochSeconds1===undefined) return 1; else return (epochSeconds1==epochSeconds2) ? 0 : -1;    
+      }
+    }
+    static compareDesc(epochSeconds1: number, epochSeconds2: number, emptyFirst: boolean = false): number {
+      if (emptyFirst) {
+        if (epochSeconds1<epochSeconds2 || epochSeconds2===undefined) return 1; else return (epochSeconds1==epochSeconds2) ? 0 : -1;
+      } else {
+        if (epochSeconds1<epochSeconds2 || epochSeconds1===undefined) return 1; else return (epochSeconds1==epochSeconds2) ? 0 : -1;    
+      }
+    }
 }
   
