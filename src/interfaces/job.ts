@@ -1,6 +1,6 @@
 import { IAuditedItem, IService, BookingPriority, IContact, ICompany, ILocation, IAsset, IPlottableLocation } from ".";
 import { IOrder } from "./order";
-import { IKeyedPersonItem } from "./keyed-item";
+import { IKeyedPersonItem, IKeyedImageItem } from "./keyed-item";
 
 export enum JobStatus {
     new,
@@ -32,5 +32,6 @@ export interface IJob extends IAuditedItem {
     assignedToUser?: IKeyedPersonItem,
     statusHistory: Array<IJobStatusEvent>,
     currentStatus: JobStatus,
+    media: Array<IKeyedImageItem>,
     pod?: any,
 }
