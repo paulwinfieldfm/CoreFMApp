@@ -6,6 +6,7 @@ export interface ICoreAsset extends IKeyedImageItem {
     coordinates?: string,
     parentId?: number,
     locationId?: number,
+    floorplanImage?: string,
     path?: Array<IBreadcrumbPathEntry>,
     attributes?: IItemAttributeMap,
 }
