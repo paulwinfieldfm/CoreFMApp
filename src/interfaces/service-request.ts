@@ -2,7 +2,7 @@ import { IAuditedItem, IService, BookingPriority, IContact, ICompany, ILocation,
 
 export interface IServiceRequest extends IAuditedItem {
     reference: string,
-    requiredDateTime: number,
+    requiredDateTime?: number,
     service?: IService,
     bookingPriority?: BookingPriority,
     contact?: IContact,
