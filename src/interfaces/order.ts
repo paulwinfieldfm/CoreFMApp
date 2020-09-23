@@ -11,16 +11,6 @@ export interface IServiceOrder extends IServiceRequest {
     properties: IItemAttributeMap,
     priceLines: Array<IPriceLine>,
 }
-/*
-    reference: string,
-    service?: IService,
-    bookingPriority?: BookingPriority,
-    contact?: IContact,
-    company?: ICompany,
-    location?: ILocation,
-    asset?: IAsset,
-    proformaAnswers?: any,
-*/
 
 export interface IOrder extends IServiceOrder {
 

@@ -13,4 +13,5 @@ export interface IQuoteRequest extends IServiceRequest {
     progress: Array<IQuoteRequestStatus>,
     responses?: Array<IQuoteResponse>,
     confirmedDateTime?: number,
+    responseCutoffTime?: number,
 }
