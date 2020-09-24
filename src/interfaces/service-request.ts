@@ -3,7 +3,7 @@ import { DateMap } from "../model";
 
 export interface IServiceRequest extends IAuditedItem {
     reference: string,
-    requiredEpoch?: DateMap,
+    requiredDate?: DateMap,
     service?: IService,
     bookingPriority?: BookingPriority,
     contact?: IContact,
