@@ -4,10 +4,11 @@ import { DateMap } from "../model";
 export interface IServiceRequest extends IAuditedItem {
     reference: string,
     requiredDate?: DateMap,
-    service?: IService,
+    purchaseOrderReference?: string,
     bookingPriority?: BookingPriority,
-    contact?: IContact,
+    service?: IService,
     company?: ICompany,
+    contact?: IContact,
     location?: ILocation,
     asset?: IAsset,
     proformaAnswers?: any,
