@@ -3,6 +3,7 @@ import { IActionStatus } from "./action-status";
 import { IServiceRequest } from "./service-request";
 import { QuoteResponseArea } from "./quote-response-status";
 import { IItemAttributeMap, IPriceLine } from ".";
+import { DateMap } from "../model";
 
 export interface IQuoteResponseStatus extends IActionStatus {
     quoteArea: QuoteResponseArea;
@@ -57,7 +58,7 @@ export interface ISupplierQuoteResponse extends IServiceRequest {
     quoteLines: Array<IPriceLine>,
     anticipatedVisitCount?: number,
     siteSurveyRequired: boolean,
-    soonestServiceDate: number,
+    soonestServiceDate: DateMap,
     bestAndFinalOffer: boolean,
     declineToQuoteReason?: string,
 }
