@@ -99,8 +99,8 @@ export class Price implements IPrice {
         switch (currencyUnit.toLowerCase()) {
             case 'gbp': return '£';
             case 'usd': return '$';
-            case 'eur': return ''
-            default: return '€';
+            case 'eur': return '€';
+            default: return '£';
         }
     }
 
