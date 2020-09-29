@@ -1,26 +1,34 @@
 import { DateHelper, Utils } from "../utilities";
 
 export class DateMap {
-    epoch: number;
-    _date: Date;
+    epoch?: number;
+    _date?: Date;
     _includeSeconds: boolean = false;
     
-    private constructor(epoch: number, date: Date) {
+    private constructor(date?: Date, epoch?: number) {
         this.epoch = epoch;
         this._date = date;
     }
 
     static fromEpoch(epoch: number): DateMap {
-        return new DateMap(epoch, DateHelper.epochToDate(epoch));
+        return new DateMap(DateHelper.epochToDate(epoch), epoch);
     }
 
     static fromDate(date: Date): DateMap {
-        return new DateMap(DateHelper.dateToEpoch(date), date);
+        return new DateMap(date, DateHelper.dateToEpoch(date));
     }
 
-    get date(): Date { return this._date; }
+    static fromEmpty(): DateMap {
+        return new DateMap(undefined, undefined);
+    }
+
+    get empty(): boolean {
+        return !this._date;
+    }
+
+    get date(): Date | undefined { return this._date; }
     
-    set date(value: Date) { this._updateDate(value); }
+    set date(value: Date | undefined) { this._updateDate(value); }
 
     get time(): string {
         if (!this._date) {
@@ -60,9 +68,9 @@ export class DateMap {
         }
     }
 
-    private _updateDate(value: Date): void {
+    private _updateDate(value?: Date): void {
         this._date = value;
-        this.epoch = DateHelper.dateToEpoch(this._date);  
+        this.epoch = value ? DateHelper.dateToEpoch(this._date) : undefined;
     }
 
     private _numberInRange(value: any, min: number, max: number): number | undefined {
