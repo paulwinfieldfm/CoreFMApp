@@ -43,6 +43,7 @@ export enum QuoteResponseArea {
 export interface ISupplierQuoteResponse extends IServiceRequest {
     // Can we/have we quoted?
     quoteResponseProvided: QuoteResponseProvided,
+    responseDateTime?: number,
     supplier: ISupplier,
     // Indicate how far through we've got for the llinear progress tracker
     progress: Array<IQuoteResponseStatus>,
