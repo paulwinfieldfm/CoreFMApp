@@ -34,4 +34,5 @@ export * from './supplier-preference';
 export * from './user-account';
 export * from './user-activity';
 export * from './user-notification';
+export * from './view-models';
 export * from './work-schedule';
