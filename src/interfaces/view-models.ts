@@ -2,7 +2,7 @@ import { IItemAttributeMap } from "./item-attribute";
 import { IKeyedItem } from "./keyed-item";
 import { ILocation } from "./location";
 
-export interface IGrudViewModel extends IKeyedItem {
+export interface IGridViewModel extends IKeyedItem {
     // id
     // name
     // description
