@@ -13,7 +13,12 @@ export interface IServiceOrder extends IServiceRequest {
 }
 
 export interface IOrder extends IServiceOrder {
-
+    responseDateTime?: number,
+    confirmedDateTime?: number,
+    anticipatedVisitCount?: number,
+    siteSurveyRequired: boolean,
+    bookingDate?: number,
+    bestAndFinalOffer: boolean,
 }
 
 export interface IMultiOrder extends IAuditedItem {
