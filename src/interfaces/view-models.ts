@@ -1,8 +1,9 @@
+import { IContact } from ".";
 import { IItemAttributeMap } from "./item-attribute";
-import { IKeyedItem } from "./keyed-item";
+import { IKeyedImageItem } from "./keyed-item";
 import { ILocation } from "./location";
 
-export interface IGridViewModel extends IKeyedItem {
+export interface IGridViewModel extends IKeyedImageItem {
     // id
     // name
     // description
@@ -10,6 +11,8 @@ export interface IGridViewModel extends IKeyedItem {
     bookedDate?: string,
     reference?: string,
     status: string,
+    filter: string,
+    contact?: IContact,
     location?: ILocation,
     properties?: IItemAttributeMap,
 }
