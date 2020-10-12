@@ -22,7 +22,7 @@ export class Customer implements IKeyedPersonItem {
   town?: string;
   postcode?: string;
   companyName?: string;
-  attributes: IItemAttributeMap = { };
+  properties: IItemAttributeMap = { };
 
   emailVerified?: boolean;
 
@@ -33,7 +33,7 @@ export class Customer implements IKeyedPersonItem {
     email: string, contactEmail: string, contactPhone1: string,
     address1: string, address2: string,
     town: string, postcode: string, companyName: string,
-    attributes: IItemAttributeMap = {}): Customer {
+    properties: IItemAttributeMap = {}): Customer {
     return <Customer>({
       id: id,
       uid: uid,
@@ -50,11 +50,11 @@ export class Customer implements IKeyedPersonItem {
       town: town,
       postcode: postcode,
       companyName: companyName,
-      attributes: attributes
+      properties: properties
     });
   }
 
-  public setAttribute(attribute: IItemAttribute) {
-    this.attributes[attribute.name] = attribute;
+  public setAttribute(property: IItemAttribute) {
+    this.properties[property.name] = property;
   }
 }

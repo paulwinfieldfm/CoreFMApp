@@ -13,7 +13,7 @@ export class UserAccount implements IUserAccount {
   email!: string;
   photoURL?: string;
   displayName?: string;
-  attributes: IItemAttributeMap = { };
+  properties: IItemAttributeMap = { };
   userAccountTypeId: UserAccountType = UserAccountType.unknown;
   userConfiguration?: IUserConfiguration = {}; 
 
@@ -25,7 +25,7 @@ export class UserAccount implements IUserAccount {
     photoURL: string,
     displayName: string, 
     userAccountType: UserAccountType,
-    attributes: IItemAttributeMap = {},
+    properties: IItemAttributeMap = {},
     userConfiguration: IUserConfiguration): UserAccount {
     return <UserAccount>({
       id: id,
@@ -35,12 +35,12 @@ export class UserAccount implements IUserAccount {
       photoURL: photoURL,
       displayName: displayName,
       userAccountTypeId: userAccountType,
-      attributes: attributes,
+      properties: properties,
       userConfiguration: userConfiguration
     });
   }
 
-  public setAttribute(attribute: IItemAttribute) {
-    this.attributes[attribute.name] = attribute;
+  public setAttribute(property: IItemAttribute) {
+    this.properties[property.name] = property;
   }
 }

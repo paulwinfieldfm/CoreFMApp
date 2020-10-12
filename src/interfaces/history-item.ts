@@ -15,6 +15,6 @@ export interface IHistoryItem {
     statusDate?: number,
     progressStepCount?: number,
     progressIndex?: number,
-    attributes?: any,
+    properties?: any,
 }
   

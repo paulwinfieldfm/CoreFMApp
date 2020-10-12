@@ -8,7 +8,7 @@ export interface ICoreAsset extends IKeyedImageItem {
     locationId?: number,
     floorplanImage?: string,
     path?: Array<IBreadcrumbPathEntry>,
-    attributes?: IItemAttributeMap,
+    properties?: IItemAttributeMap,
 }
 
 export interface IAsset extends ICoreAsset {
