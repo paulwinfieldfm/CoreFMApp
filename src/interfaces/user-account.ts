@@ -6,12 +6,21 @@ export enum UserAccountType {
     unknown,
     portal,
     supplier,
-    internal
+    pod
+}
+
+export enum UserRoleType {
+    unknown,
+    requisitioner,
+    contractManager,
+    supplierAdministrator,
+    engineer
 }
 
 export interface IUserAccount extends IKeyedPersonItem {
     properties: IItemAttributeMap,
     userAccountTypeId: UserAccountType,
+    userRoleTypeId: UserRoleType,
     userConfiguration?: IUserConfiguration,
 }
 

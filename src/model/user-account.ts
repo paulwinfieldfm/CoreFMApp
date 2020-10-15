@@ -3,7 +3,7 @@ import {
     IItemAttribute,
     IItemAttributeMap,
     UserAccountType,
-    IUserConfiguration
+    IUserConfiguration, UserRoleType
 } from '../interfaces';
 
 export class UserAccount implements IUserAccount {
@@ -15,6 +15,7 @@ export class UserAccount implements IUserAccount {
   displayName?: string;
   properties: IItemAttributeMap = { };
   userAccountTypeId: UserAccountType = UserAccountType.unknown;
+  userRoleTypeId: UserRoleType = UserRoleType.unknown;
   userConfiguration?: IUserConfiguration = {}; 
 
   static assign(
@@ -24,7 +25,8 @@ export class UserAccount implements IUserAccount {
     email: string, 
     photoURL: string,
     displayName: string, 
-    userAccountType: UserAccountType,
+    userAccountTypeId: UserAccountType,
+    userRoleTypeId: UserRoleType,
     properties: IItemAttributeMap = {},
     userConfiguration: IUserConfiguration): UserAccount {
     return <UserAccount>({
@@ -34,7 +36,8 @@ export class UserAccount implements IUserAccount {
       email: email,
       photoURL: photoURL,
       displayName: displayName,
-      userAccountTypeId: userAccountType,
+      userAccountTypeId: userAccountTypeId,
+      userRoleTypeId: userRoleTypeId,
       properties: properties,
       userConfiguration: userConfiguration
     });
