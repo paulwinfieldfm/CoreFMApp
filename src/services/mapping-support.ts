@@ -20,13 +20,13 @@ export class HereMapsSupportService implements IMappingSupportService {
         return this._getPlottableLocationFromLocation(viewResult.Location, displayName || viewResult.Location.Address.Label || 'Unknown');
     }
     public routeResultToSimpleTravelRoute(result: any): ISimpleTravelRoute | undefined {
-        if (!result || !result.response || !result.response.matrixEntry || !result.response.matrixEntry.summary) {
+        if (!result || !result.response || !result.response.matrixEntry || result.response.matrixEntry.length == 0) {
             return undefined;
         }
         return {
-            distanceInMetres: result.response.matrixEntry.summary.distance,
-            timeInSeconds: result.response.matrixEntry.summary.travelTime,
-            costFactor: result.response.matrixEntry.summary.costFactor
+            distanceInMetres: result.response.matrixEntry[0].summary.distance,
+            timeInSeconds: result.response.matrixEntry[0].summary.travelTime,
+            costFactor: result.response.matrixEntry[0].summary.costFactor
         }
     }
 
