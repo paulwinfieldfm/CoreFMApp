@@ -15,7 +15,6 @@ export * from './job';
 export * from './keyed-item';
 export * from './location';
 export * from './order';
-export * from './plottable-location';
 export * from './price-line';
 export * from './quote-create-status';
 export * from './quote-request';
