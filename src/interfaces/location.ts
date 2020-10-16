@@ -17,3 +17,9 @@ export interface ILocation extends ICoreAsset, IPlottableLocation {
     town: string,
     county?: string,
 }
+
+export interface ISimpleTravelRoute {
+    distanceInMetres: number,
+    timeInSeconds: number,
+    costFactor?: number,
+}

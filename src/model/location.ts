@@ -1,13 +1,6 @@
 import { IAsset, IBreadcrumbPathEntry, IItemAttributeMap, ILocation, IPlottableLocation } from "../interfaces";
 
-/*
-export interface IPlottableLocation {
-    displayName: string,
-    postcode?: string,
-    lat?: number,
-    lng?: number,
-}
-*/
+
 export class PlottableLocation implements IPlottableLocation {
     displayName: string;
     postcode?: string;
@@ -113,17 +106,3 @@ export class Location implements ILocation {
         return lines.length > 0 ? lines.join(', ') : '';
     }
 }
-  
-/*
-export interface ILocation extends ICoreAsset, IPlottableLocation {
-    assets?: Array<IAsset>,
-    buildingNameNumber?: string,
-    houseNameNumber?: string,
-    street?: string,
-    address1?: string,
-    address2?: string,
-    address3?: string,
-    town: string,
-    county?: string,
-}
-*/
