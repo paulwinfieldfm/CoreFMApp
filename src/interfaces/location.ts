@@ -6,6 +6,12 @@ export interface IPlottableLocation {
     lat?: number,
     lng?: number,
 }
+
+export interface IEastingNorthing {
+    postcode: string,
+    easting: number,
+    northing: number,
+}
 export interface ILocation extends ICoreAsset, IPlottableLocation {
     assets?: Array<IAsset>,
     buildingNameNumber?: string,
