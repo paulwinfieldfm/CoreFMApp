@@ -14,14 +14,24 @@ class HereMapsSupportService {
         }
         return this._getPlottableLocationFromLocation(viewResult.Location, displayName || viewResult.Location.Address.Label || 'Unknown');
     }
-    routeResultToSimpleTravelRoute(result) {
+    matrixToSimpleTravelRoute(result) {
         if (!result || !result.response || !result.response.matrixEntry || result.response.matrixEntry.length == 0) {
             return undefined;
         }
+        return this._summaryToSimpleTravelRoute(result.response.matrixEntry[0]);
+    }
+    routeToSimpleTravelRoute(result) {
+        if (!result || !result.response || !result.response.route || result.response.route.length == 0) {
+            return undefined;
+        }
+        return this._summaryToSimpleTravelRoute(result.response.route[0]);
+    }
+    _summaryToSimpleTravelRoute(route) {
         return {
-            distanceInMetres: result.response.matrixEntry[0].summary.distance,
-            timeInSeconds: result.response.matrixEntry[0].summary.travelTime,
-            costFactor: result.response.matrixEntry[0].summary.costFactor
+            distanceInMetres: route.summary.distance,
+            timeInSeconds: route.summary.travelTime,
+            costFactor: route.summary.costFactor,
+            co2Emission: route.summary.co2Emission,
         };
     }
     _getPlottableLocationFromLocation(location, displayName) {
