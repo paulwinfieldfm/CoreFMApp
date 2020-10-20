@@ -2,7 +2,8 @@ import { IPlottableLocation, ISimpleTravelRoute } from "../interfaces";
 
 export interface IMappingSupportService {
     geocodeResultToPlottableLocation: (result: any, displayName: string) => IPlottableLocation | undefined,
-    routeResultToSimpleTravelRoute: (result: any) => ISimpleTravelRoute | undefined,
+    matrixToSimpleTravelRoute: (result: any) => ISimpleTravelRoute | undefined,
+    routeToSimpleTravelRoute: (result: any) => ISimpleTravelRoute | undefined,
 }
 
 export class HereMapsSupportService implements IMappingSupportService {
@@ -19,14 +20,26 @@ export class HereMapsSupportService implements IMappingSupportService {
         }
         return this._getPlottableLocationFromLocation(viewResult.Location, displayName || viewResult.Location.Address.Label || 'Unknown');
     }
-    public routeResultToSimpleTravelRoute(result: any): ISimpleTravelRoute | undefined {
+    public matrixToSimpleTravelRoute(result: any): ISimpleTravelRoute | undefined {
         if (!result || !result.response || !result.response.matrixEntry || result.response.matrixEntry.length == 0) {
             return undefined;
         }
+        return this._summaryToSimpleTravelRoute(result.response.matrixEntry[0]);
+    }
+
+    public routeToSimpleTravelRoute(result: any): ISimpleTravelRoute | undefined {
+        if (!result || !result.response || !result.response.route || result.response.route.length == 0) {
+            return undefined;
+        }
+        return this._summaryToSimpleTravelRoute(result.response.route[0]);
+    }
+
+    private _summaryToSimpleTravelRoute(route: any): ISimpleTravelRoute {
         return {
-            distanceInMetres: result.response.matrixEntry[0].summary.distance,
-            timeInSeconds: result.response.matrixEntry[0].summary.travelTime,
-            costFactor: result.response.matrixEntry[0].summary.costFactor
+            distanceInMetres: route.summary.distance,
+            timeInSeconds: route.summary.travelTime,
+            costFactor: route.summary.costFactor,
+            co2Emission: route.summary.co2Emission,
         }
     }
 

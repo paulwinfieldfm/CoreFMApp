@@ -22,4 +22,5 @@ export interface ISimpleTravelRoute {
     distanceInMetres: number,
     timeInSeconds: number,
     costFactor?: number,
+    co2Emission?: number,
 }

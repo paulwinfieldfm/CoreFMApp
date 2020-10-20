@@ -1,13 +1,13 @@
 export interface IHistoryItem {
-    recordId: number;
+    recordId: number,
     sessionId: string,
     reference: string,
     activeFrom: number,
     activeTo?: number;
     serviceTypeId: number,
     serviceType: string;
-    detail?: any;
-    lineDetail?: any;
+    detail?: any,
+    lineDetail?: any,
     isQuote: boolean,
     customerReference: string,
     primaryAmount?: number,
@@ -18,3 +18,7 @@ export interface IHistoryItem {
     properties?: any,
 }
   
+
+export interface IHistoryEvent {
+    id: number,
+}

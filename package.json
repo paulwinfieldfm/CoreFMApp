@@ -1,8 +1,9 @@
 {
   "name": "corefmapp",
-  "version": "1.0.135",
+  "version": "1.0.137",
   "description": "Core components, models and utilities shareable between client and server codebases",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "typings": "src/index.ts",
   "scripts": {
     "build": "tsc",
@@ -11,6 +12,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/paulwinfieldfm/CoreFMApp.git"
+  },
+  "devDependencies": {
+    "typescript": "^3.9.3"
   },
   "keywords": [],
   "author": "",
