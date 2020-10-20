@@ -7,11 +7,15 @@ export interface IPlottableLocation {
     lng?: number,
 }
 
-export interface IEastingNorthing {
-    postcode: string,
+export interface IEastingNorthing extends IPlottableLocation {
     easting: number,
     northing: number,
+    area: string,
+    district: string,
+    outcode: string,
+    incode: string,
 }
+
 export interface ILocation extends ICoreAsset, IPlottableLocation {
     assets?: Array<IAsset>,
     buildingNameNumber?: string,
