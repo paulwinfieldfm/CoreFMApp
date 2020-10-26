@@ -1,5 +1,8 @@
 import { IKeyedImageItem, ILocation, IContact } from ".";
 
+export interface ISupplierService extends IKeyedImageItem {
+    displayIndex?: number,
+}
 export interface ISupplier extends IKeyedImageItem {
     locations?: Array<ILocation>,
     contacts?: Array<IContact>,
@@ -8,4 +11,5 @@ export interface ISupplier extends IKeyedImageItem {
     quoteToCostRatio?: number,
     rating?: number,
     invite: boolean,
+    services?: Array<ISupplierService>,
 }
