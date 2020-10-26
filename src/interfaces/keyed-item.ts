@@ -1,6 +1,7 @@
 export interface IKeyedItem {
     id: number,
     name: string,
+    code?: string,
     description?: string,
 }
 
