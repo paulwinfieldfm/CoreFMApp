@@ -3,6 +3,7 @@ export interface IKeyedItem {
     name: string,
     code?: string,
     description?: string,
+    dirty?: boolean, // Helps us to isolate when persisting complex object structures back to the db
 }
 
 export interface IKeyedImageItem extends IKeyedItem {
