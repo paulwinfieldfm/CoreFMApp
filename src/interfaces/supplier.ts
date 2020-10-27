@@ -9,6 +9,7 @@ export interface ISupplierLocation extends ILocation {
     serviceRadiusMetres?: number,
 }
 export interface ISupplier extends IKeyedImageItem {
+    active: boolean,
     locations?: Array<ISupplierLocation>,
     contacts?: Array<IContact>,
     preferred?: boolean,
