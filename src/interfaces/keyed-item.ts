@@ -4,6 +4,7 @@ export interface IKeyedItem {
     code?: string,
     description?: string,
     dirty?: boolean, // Helps us to isolate when persisting complex object structures back to the db
+    active?: boolean, // Helps us track when we soft delete an item and need to persist
 }
 
 export interface IKeyedImageItem extends IKeyedItem {
