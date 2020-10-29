@@ -10,7 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SeabeckUtils = exports.Utils = void 0;
-const uuid_1 = require("uuid");
 class Utils {
     static tryParseInt(val) {
         if (val === undefined || val == null) {
@@ -128,7 +127,6 @@ var SeabeckUtils;
         class Objects {
         }
         Objects.clone = (obj) => obj ? JSON.parse(JSON.stringify(obj)) : {};
-        Objects.init = () => ({ uid: uuid_1.v4() });
         Objects.isObject = (value) => {
             return value === null
                 ? false

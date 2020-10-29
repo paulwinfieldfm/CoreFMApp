@@ -1,6 +1,6 @@
 {
   "name": "corefmapp",
-  "version": "1.0.190",
+  "version": "1.0.200",
   "description": "Core components, models and utilities shareable between client and server codebases",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,6 @@
     "url": "git+https://github.com/paulwinfieldfm/CoreFMApp.git"
   },
   "devDependencies": {
-    "@types/uuid": "^8.3.0",
     "typescript": "^3.9.3"
   },
   "keywords": [],
@@ -25,6 +24,5 @@
   },
   "homepage": "https://github.com/paulwinfieldfm/CoreFMApp#readme",
   "dependencies": {
-    "uuid": "^8.3.1"
   }
 }

@@ -105,8 +105,6 @@ export namespace SeabeckUtils {
 
   export class Objects {
     static clone = (obj: any): any => obj ? JSON.parse(JSON.stringify(obj)) : { }
-
-    static init = (): any => <any>{ uid: uuidv4() }
   
     static isObject = (value: any): boolean => {
       return value===null
