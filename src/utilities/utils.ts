@@ -88,3 +88,7 @@ export class Utils {
     return new Promise(r => setTimeout(r, ms));
   }
 }
+
+export class ObjectUtils {
+  static clone = (obj: any): any => obj ? JSON.parse(JSON.stringify(obj)) : { }
+}

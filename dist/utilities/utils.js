@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Utils = void 0;
+exports.ObjectUtils = exports.Utils = void 0;
 class Utils {
     static tryParseInt(val) {
         if (val === undefined || val == null) {
@@ -109,4 +109,11 @@ class Utils {
     }
 }
 exports.Utils = Utils;
+let ObjectUtils = /** @class */ (() => {
+    class ObjectUtils {
+    }
+    ObjectUtils.clone = (obj) => obj ? JSON.parse(JSON.stringify(obj)) : {};
+    return ObjectUtils;
+})();
+exports.ObjectUtils = ObjectUtils;
 //# sourceMappingURL=utils.js.map
