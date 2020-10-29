@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ObjectUtils = exports.Utils = void 0;
+exports.SeabeckUtils = exports.Utils = void 0;
 class Utils {
     static tryParseInt(val) {
         if (val === undefined || val == null) {
@@ -80,40 +80,70 @@ class Utils {
         }
         return result.toUpperCase();
     }
-    static isObject(value) {
+    static __isObject(value) {
         if (value === null) {
             return false;
         }
         return ((typeof value === 'function') || (typeof value === 'object'));
     }
-    static parseAsObject(value, defaultIfUndefined) {
+    static __parseAsObject(value, defaultIfUndefined) {
         if (!value) {
             return defaultIfUndefined;
         }
-        if (Utils.isObject(value)) {
+        if (Utils.__isObject(value)) {
             return value;
         }
         return (typeof value === 'string') ? JSON.parse(value) : value;
     }
-    static asyncForEach(array, callback) {
+    static __asyncForEach(array, callback) {
         return __awaiter(this, void 0, void 0, function* () {
             for (let index = 0; index < array.length; index++) {
                 yield callback(array[index], index, array);
             }
         });
     }
-    static wait(ms) {
+    static __wait(ms) {
         return __awaiter(this, void 0, void 0, function* () {
             return new Promise(r => setTimeout(r, ms));
         });
     }
 }
 exports.Utils = Utils;
-let ObjectUtils = /** @class */ (() => {
-    class ObjectUtils {
-    }
-    ObjectUtils.clone = (obj) => obj ? JSON.parse(JSON.stringify(obj)) : {};
-    return ObjectUtils;
-})();
-exports.ObjectUtils = ObjectUtils;
+var SeabeckUtils;
+(function (SeabeckUtils) {
+    let Async = /** @class */ (() => {
+        class Async {
+        }
+        Async.forEach = (array, callback) => __awaiter(this, void 0, void 0, function* () {
+            for (let i = 0; i < array.length; i++) {
+                yield callback(array[i], i, array);
+            }
+        });
+        Async.wait = (ms) => __awaiter(this, void 0, void 0, function* () { return new Promise(r => setTimeout(r, ms)); });
+        return Async;
+    })();
+    SeabeckUtils.Async = Async;
+    let Objects = /** @class */ (() => {
+        class Objects {
+        }
+        Objects.clone = (obj) => obj ? JSON.parse(JSON.stringify(obj)) : {};
+        Objects.isObject = (value) => {
+            if (value === null) {
+                return false;
+            }
+            return ((typeof value === 'function') || (typeof value === 'object'));
+        };
+        Objects.parseAsObject = (value, defaultIfUndefined) => {
+            if (!value) {
+                return defaultIfUndefined;
+            }
+            if (Utils.__isObject(value)) {
+                return value;
+            }
+            return (typeof value === 'string') ? JSON.parse(value) : value;
+        };
+        return Objects;
+    })();
+    SeabeckUtils.Objects = Objects;
+})(SeabeckUtils = exports.SeabeckUtils || (exports.SeabeckUtils = {}));
 //# sourceMappingURL=utils.js.map

@@ -66,29 +66,59 @@ export class Utils {
     }
     return result.toUpperCase();
   }
-  static isObject(value: any): boolean {
+  static __isObject(value: any): boolean {
     if (value === null) { return false;}
     return ( (typeof value === 'function') || (typeof value === 'object') );      
   }
-  static parseAsObject(value: any, defaultIfUndefined: any): any {
+  static __parseAsObject(value: any, defaultIfUndefined: any): any {
     if (!value) {
       return defaultIfUndefined;
     }
-    if (Utils.isObject(value)) {
+    if (Utils.__isObject(value)) {
       return value;
     }
     return (typeof value === 'string') ? JSON.parse(value) : value;
   }
-  static async asyncForEach(array: Array<any>, callback: any) {
+  static async __asyncForEach(array: Array<any>, callback: any) {
     for (let index = 0; index < array.length; index++) {
       await callback(array[index], index, array);
     }
   }
-  static async wait(ms: number): Promise<void> {
+  static async __wait(ms: number): Promise<void> {
     return new Promise(r => setTimeout(r, ms));
   }
 }
 
-export class ObjectUtils {
-  static clone = (obj: any): any => obj ? JSON.parse(JSON.stringify(obj)) : { }
+export namespace SeabeckUtils {
+  export class Async {
+
+    static forEach = async (array: Array<any>, callback: any) => {
+      for (let i=0; i< array.length; i++) {
+        await callback(array[i], i, array);
+      }
+    }
+  
+    static wait = async (ms: number): Promise<any> => new Promise(r => setTimeout(r, ms));
+  }
+
+  export class Objects {
+    static clone = (obj: any): any => obj ? JSON.parse(JSON.stringify(obj)) : { }
+  
+    static isObject = (value: any): boolean => {
+      if (value === null) { return false;}
+      return ( (typeof value === 'function') || (typeof value === 'object') );        
+    }
+  
+    static parseAsObject = (value: any, defaultIfUndefined: any): any => {
+      if (!value) {
+        return defaultIfUndefined;
+      }
+      if (Utils.__isObject(value)) {
+        return value;
+      }
+      return (typeof value === 'string') ? JSON.parse(value) : value;
+    }
+  }
+    
 }
+
