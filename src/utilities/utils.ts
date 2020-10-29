@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export class Utils {
   static tryParseInt(val: any): number | undefined {
     if (val === undefined || val == null) {
@@ -103,20 +105,22 @@ export namespace SeabeckUtils {
 
   export class Objects {
     static clone = (obj: any): any => obj ? JSON.parse(JSON.stringify(obj)) : { }
+
+    static init = (): any => <any>{ uid: uuidv4() }
   
     static isObject = (value: any): boolean => {
-      if (value === null) { return false;}
-      return ( (typeof value === 'function') || (typeof value === 'object') );        
+      return value===null
+        ? false
+        : ( (typeof value === 'function') || (typeof value === 'object') ); 
     }
   
     static parseAsObject = (value: any, defaultIfUndefined: any): any => {
       if (!value) {
         return defaultIfUndefined;
       }
-      if (Utils.__isObject(value)) {
-        return value;
-      }
-      return (typeof value === 'string') ? JSON.parse(value) : value;
+      return Objects.isObject(value)
+        ? value
+        : ((typeof value === 'string') ? JSON.parse(value) : value);
     }
   }
     
