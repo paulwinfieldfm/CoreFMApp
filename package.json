@@ -1,6 +1,6 @@
 {
   "name": "corefmapp",
-  "version": "1.0.201",
+  "version": "1.0.301",
   "description": "Core components, models and utilities shareable between client and server codebases",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,7 +22,5 @@
   "bugs": {
     "url": "https://github.com/paulwinfieldfm/CoreFMApp/issues"
   },
-  "homepage": "https://github.com/paulwinfieldfm/CoreFMApp#readme",
-  "dependencies": {
-  }
+  "homepage": "https://github.com/paulwinfieldfm/CoreFMApp#readme"
 }

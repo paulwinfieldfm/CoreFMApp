@@ -1,6 +1,6 @@
 import { ISupplier } from "./supplier";
 import { IActionStatus } from "./action-status";
-import { IServiceRequest } from "./service-request";
+import { IDeprecatedServiceRequest } from "./service-request";
 import { QuoteResponseArea } from "./quote-response-status";
 import { IItemAttributeMap, IPriceLine } from ".";
 import { DateMap } from "../model";
@@ -40,7 +40,7 @@ export enum QuoteResponseArea {
     refineQuote
 }
 */
-export interface ISupplierQuoteResponse extends IServiceRequest {
+export interface ISupplierQuoteResponse extends IDeprecatedServiceRequest {
     // Can we/have we quoted?
     quoteResponseProvided: QuoteResponseProvided,
     responseDateTime?: number,

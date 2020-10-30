@@ -1,7 +1,7 @@
 import { IAuditedItem, IService, BookingPriority, IContact, ICompany, ILocation, IAsset, ISupplier } from ".";
 import { DateMap } from "../model";
 
-export interface IServiceRequest extends IAuditedItem {
+export interface IDeprecatedServiceRequest extends IAuditedItem {
     reference: string,
     requiredDate?: DateMap,
     purchaseOrderReference?: string,

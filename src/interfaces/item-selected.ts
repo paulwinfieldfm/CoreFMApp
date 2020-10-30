@@ -2,7 +2,7 @@ import { ICategory } from "./category";
 import { IService } from "./service";
 import { SearchableItemType } from "./searchable-item-type";
 
-export interface IItemSelected {
+export interface IDeprecatedItemSelected {
     searchableItemType: SearchableItemType,
     clearSelection: boolean,
     category?: ICategory,
