@@ -4,7 +4,9 @@ export * from './services';
 export * from './utilities';
 
 
-export * from './namespaces/asset.interfaces';
-export * from './namespaces/base.interfaces';
-export * from './namespaces/servicing.interfaces';
+export * from './modules/assets/asset.interfaces';
+export * from './modules/base/base.interfaces';
+
+import * as Servicing from './modules/servicing';
+export { Servicing };
 

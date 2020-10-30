@@ -6,15 +6,29 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
 }));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
 };
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Servicing = void 0;
 __exportStar(require("./interfaces"), exports);
 __exportStar(require("./model"), exports);
 __exportStar(require("./services"), exports);
 __exportStar(require("./utilities"), exports);
-__exportStar(require("./namespaces/asset.interfaces"), exports);
-__exportStar(require("./namespaces/base.interfaces"), exports);
-__exportStar(require("./namespaces/servicing.interfaces"), exports);
+__exportStar(require("./modules/assets/asset.interfaces"), exports);
+__exportStar(require("./modules/base/base.interfaces"), exports);
+const Servicing = __importStar(require("./modules/servicing"));
+exports.Servicing = Servicing;
 //# sourceMappingURL=index.js.map

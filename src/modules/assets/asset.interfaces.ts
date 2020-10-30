@@ -1,4 +1,4 @@
-import { BaseInterfaces } from "./base.interfaces";
+import { BaseInterfaces } from "../base/base.interfaces";
 
 export namespace AssetInterfaces {
     export interface ICoreAsset extends BaseInterfaces.IKeyedItem {
