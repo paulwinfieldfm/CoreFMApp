@@ -1,6 +1,9 @@
 import { IAsset } from "../asset";
-import { ICategory, IKeyedItem } from "../base";
-import { IScheduleDefinition } from "../date-extensions";
+import { IAuditedItem, ICategory, IContact, IKeyedItem } from "../base";
+import { ICompany } from "../company";
+import { DateMap, IScheduleDefinition } from "../date-extensions";
+import { ILocation } from "../location";
+import { BookingPriority } from "../quote";
 import { ServiceType, ServiceEventStatus } from "./enums";
 
 /// Describes a service that can be provisioned
@@ -15,6 +18,18 @@ export interface IServiceRequirement {
     serviceType: ServiceType,
     service: IService,
     asset: IAsset,
+}
+export interface IDeprecatedServiceRequest extends IAuditedItem {
+    reference: string,
+    requiredDate?: DateMap,
+    purchaseOrderReference?: string,
+    bookingPriority?: BookingPriority,
+    service?: IService,
+    company?: ICompany,
+    contact?: IContact,
+    location?: ILocation,
+    asset?: IAsset,
+    proformaAnswers?: any,
 }
 /// Describes an asset within the context of a service requirement
 export interface IServiceAssetRequirement {

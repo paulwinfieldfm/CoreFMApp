@@ -1,5 +1,28 @@
 import { ScheduleFrequency } from "./enums";
 
+export interface IWorkSchedule {
+    sunday: IDayConfiguration,
+    monday: IDayConfiguration,
+    tuesday: IDayConfiguration,
+    wednesday: IDayConfiguration,
+    thursday: IDayConfiguration,
+    friday: IDayConfiguration,
+    saturday: IDayConfiguration,
+}
+export interface IDayConfiguration {
+    index: number,
+    workingDay: boolean,
+    workFromHour?: number,
+    workFromMinute?: number,
+    workToHour?: number,
+    workToMinute?: number,
+}
+export interface IDateInfo {
+    hoursFromNow?: number,
+    secondsFromNow: number,
+    epoch: number,
+    isWorkingDay: boolean
+}
 /// Defines information to allowa schedule frequency to be depicted in UI
 export interface IScheduleFrequencyDescription {
     scheduleFrequency: ScheduleFrequency,
