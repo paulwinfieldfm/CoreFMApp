@@ -1,13 +1,17 @@
-import { IKeyedImageItem, ILocation, IContact } from ".";
+import { IKeyedItem } from '../modules/base';
 
-export interface ISupplierService extends IKeyedImageItem {
+
+
+import { ILocation, IContact } from ".";
+
+export interface ISupplierService extends IKeyedItem {
     preferred: boolean,
     displayIndex?: number,
 }
 export interface ISupplierLocation extends ILocation {
     serviceRadiusMetres?: number,
 }
-export interface ISupplier extends IKeyedImageItem {
+export interface ISupplier extends IKeyedItem {
     locations?: Array<ISupplierLocation>,
     contacts?: Array<IContact>,
     preferred?: boolean,

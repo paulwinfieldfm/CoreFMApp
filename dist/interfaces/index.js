@@ -25,7 +25,7 @@ __exportStar(require("./price"), exports);
 __exportStar(require("./item-attribute"), exports);
 __exportStar(require("./item-selected"), exports);
 __exportStar(require("./job"), exports);
-__exportStar(require("./keyed-item"), exports);
+//export * from './keyed-item';
 __exportStar(require("./location"), exports);
 __exportStar(require("./order"), exports);
 __exportStar(require("./price-line"), exports);

@@ -11,7 +11,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./interfaces"), exports);
-__exportStar(require("./enums"), exports);
+//export * from './enums';
 //export * from './models';
 //export * from './services';
 //# sourceMappingURL=index.js.map

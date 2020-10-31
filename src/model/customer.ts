@@ -1,10 +1,10 @@
 import { 
     IItemAttribute,
     IItemAttributeMap,
-    IKeyedPersonItem
-} from '../interfaces';
+    IKeyedItem
+} from '../modules/base';
 
-export class Customer implements IKeyedPersonItem {
+export class Customer implements IKeyedItem {
   id!: number;
 
   uid!: string;
