@@ -1,1 +1,1 @@
-export * from './mapping-support';
+export * from './here-maps-support-service';
