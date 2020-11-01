@@ -1,6 +1,6 @@
-import { IAuditedItem, IItemAttributeMap, ILinearProgressEntry } from "../base";
-import { DateMap } from "../date-extensions";
-import { IDeprecatedServiceRequest, IService } from "../servicing";
+import { IAuditedItem, IContact, IItemAttributeMap, ILinearProgressEntry } from "../base";
+import { DateMap, IScheduleDefinition } from "../date-extensions";
+import { IDeprecatedServiceRequest, IService, IServiceAssetRequirement, IServiceRequirement } from "../servicing";
 import { ISupplier } from "../supplier";
 import { BookingPriority, IQuoteResponseStatus, PriceLineCategory, QuoteArea, QuoteCreateStatusType, QuoteResponseProvided } from "./enums";
 
@@ -80,3 +80,51 @@ export interface IBookingPriorityDescription {
     description: string,
     icon?: string,
 }
+
+
+export interface IQuotationRequest extends IServiceRequirement {
+    purchaseOrderReference?: string,
+    companyContact?: IContact,
+    proformaAnswers?: any,
+    invitedSuppliers: Array<ISupplier>,
+    progress: Array<IQuoteRequestStatus>,
+    responses?: Array<IQuoteResponse>,
+    confirmedDateTime?: number,
+    responseCutoffTime?: DateMap,
+}
+
+
+
+
+
+
+
+
+/*
+export interface IServiceRequirement {
+}
+export interface IDeprecatedServiceRequest extends IAuditedItem {
+    reference: string,
+    requiredDate?: DateMap,
+    purchaseOrderReference?: string,
+    bookingPriority?: BookingPriority,
+    service?: IService,
+    company?: ICompany,
+    contact?: IContact,
+    location?: ILocation,
+    asset?: IAsset,
+    proformaAnswers?: any,
+}
+/// Describes an asset within the context of a service requirement
+export interface IServiceAssetRequirement {
+    asset: IAsset,
+    scheduleDefinition: IScheduleDefinition,
+}
+/// Describes a service event performned on an asset
+export interface IServiceAssetEvent {
+    asset: IAsset,
+    dateScheduled: number,
+    eventDate?: number,
+    serviceEventStatus: ServiceEventStatus,
+}
+*/
