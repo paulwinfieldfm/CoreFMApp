@@ -14,5 +14,5 @@ __exportStar(require("./interfaces"), exports);
 __exportStar(require("./enums"), exports);
 //export * from './models';
 //export * from './services';
-//export * from './classes';
+__exportStar(require("./classes"), exports);
 //# sourceMappingURL=index.js.map
