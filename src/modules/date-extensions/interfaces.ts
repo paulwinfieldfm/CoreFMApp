@@ -34,7 +34,7 @@ export interface IScheduleFrequencyDescription {
 export interface IScheduleDefinition {
     scheduleFrequency: ScheduleFrequency,
     // Time and date of first instance of this event (or only)
-    epochSeconds: number,
+    initialRequiredDate: number,
     // For annual events
     monthOfYear?: number,
     // For monthly and annual events, the day of month
