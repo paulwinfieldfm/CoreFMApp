@@ -81,13 +81,11 @@ export interface IBookingPriorityDescription {
     icon?: string,
 }
 
-
 export interface IQuotationRequest extends IServiceRequirement {
     purchaseOrderReference?: string,
     companyContact?: IContact,
     proformaAnswers?: any,
     invitedSuppliers: Array<ISupplier>,
-    progress: Array<IQuoteRequestStatus>,
     responses?: Array<IQuoteResponse>,
     submittedDate?: number,
     responseCutoffDate?: DateMap,
