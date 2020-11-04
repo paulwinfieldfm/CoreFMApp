@@ -1,4 +1,5 @@
 import { IBreadcrumbPathEntry, IItemAttributeMap, IKeyedItem } from "../base";
+import { IService } from "../servicing";
 
 export interface ICoreAsset extends IKeyedItem {
     coordinates?: string, // Assets have at least rudimentary location, although optional
@@ -7,6 +8,7 @@ export interface ICoreAsset extends IKeyedItem {
     floorplanImage?: string, // May be different from the image attr available in IKeyedItem
     path?: Array<IBreadcrumbPathEntry>,
     properties?: IItemAttributeMap,
+    defaultService?: IService,
 }
 export interface IAsset extends ICoreAsset {
     assets?: Array<IAsset>,
