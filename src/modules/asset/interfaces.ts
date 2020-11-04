@@ -16,6 +16,7 @@ export interface IAsset extends ICoreAsset {
 /// Interface geared toward helping display an asset in a tree view or other hierarchy view element
 export interface IAssetNode extends ICoreAsset {
     isLocation: boolean,
+    selected: boolean,
     hasChildren?: boolean, // Help support dynamic loading without having children populated in advance
     children?: IAssetNode[]
 }    
