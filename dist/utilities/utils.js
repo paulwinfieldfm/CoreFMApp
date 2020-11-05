@@ -80,33 +80,6 @@ class Utils {
         }
         return result.toUpperCase();
     }
-    static __isObject(value) {
-        if (value === null) {
-            return false;
-        }
-        return ((typeof value === 'function') || (typeof value === 'object'));
-    }
-    static __parseAsObject(value, defaultIfUndefined) {
-        if (!value) {
-            return defaultIfUndefined;
-        }
-        if (Utils.__isObject(value)) {
-            return value;
-        }
-        return (typeof value === 'string') ? JSON.parse(value) : value;
-    }
-    static __asyncForEach(array, callback) {
-        return __awaiter(this, void 0, void 0, function* () {
-            for (let index = 0; index < array.length; index++) {
-                yield callback(array[index], index, array);
-            }
-        });
-    }
-    static __wait(ms) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return new Promise(r => setTimeout(r, ms));
-        });
-    }
 }
 exports.Utils = Utils;
 var SeabeckUtils;

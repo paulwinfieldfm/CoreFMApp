@@ -114,6 +114,11 @@ export interface ISearchStatus {
     searchResultsEntries?: Array<ISearchResults>,
     selection?: ISearchSelection
 }
+
+export interface IScoredElement {
+    score?: number,
+    calculations?: any,
+}
 /*
 export interface ISelectEntry {
     display: string,
