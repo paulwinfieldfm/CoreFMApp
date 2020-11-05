@@ -1,6 +1,6 @@
 import { Utils } from "../../../utilities";
 import { SupplierWeighting } from "../enums";
-import { ISupplier, ISupplierPreference } from "../interfaces";
+import { ICoreSupplier, ISupplier, ISupplierInviteProfile, ISupplierPreference } from "../interfaces";
 
 export class SupplierProviderService  {
     private static instance: SupplierProviderService;
@@ -15,7 +15,7 @@ export class SupplierProviderService  {
       return SupplierProviderService.instance;
     }
   
-    public prepare(suppliers: Array<ISupplier>, supplierPreference: ISupplierPreference): void {
+    public prepare(suppliers: Array<ISupplierInviteProfile>, supplierPreference: ISupplierPreference): void {
         const prefs = supplierPreference ?? this.defaultSupplierPreference();
         this.sortBySupplierPreference(suppliers, prefs.supplierWeighting);
         if (prefs.defaultInvites) {
@@ -35,7 +35,7 @@ export class SupplierProviderService  {
         }
     }
   
-    public sortBySupplierPreference(suppliers: Array<ISupplier>, supplierWeighting: SupplierWeighting): void {
+    public sortBySupplierPreference(suppliers: Array<ICoreSupplier>, supplierWeighting: SupplierWeighting): void {
         switch (supplierWeighting) {
             case SupplierWeighting.avgQuoteResponse:
                 suppliers.sort(this._sortByAvgQuoteResponse);
@@ -61,7 +61,7 @@ export class SupplierProviderService  {
       return Utils.hasMinimumValue(value, 2) ? value : 75;
     }
   
-    private _sortByAvgQuoteResponse(supplier1: ISupplier, supplier2: ISupplier): number {
+    private _sortByAvgQuoteResponse(supplier1: ICoreSupplier, supplier2: ICoreSupplier): number {
       const value1: number = SupplierProviderService.getInstance().nominalAvgQuoteResponse(supplier1.avgQuoteResponse);
       const value2: number = SupplierProviderService.getInstance().nominalAvgQuoteResponse(supplier2.avgQuoteResponse);
       if (value1 == value2) {
@@ -72,7 +72,7 @@ export class SupplierProviderService  {
       return -1;
     }
   
-    private _sortByQuoteToCostRatio(supplier1: ISupplier, supplier2: ISupplier): number {
+    private _sortByQuoteToCostRatio(supplier1: ICoreSupplier, supplier2: ICoreSupplier): number {
       const value1: number = SupplierProviderService.getInstance().nominalQuoteToCostRatio(supplier1.quoteToCostRatio);
       const value2: number = SupplierProviderService.getInstance().nominalQuoteToCostRatio(supplier2.quoteToCostRatio);
       if (value1 == value2) {
@@ -83,7 +83,7 @@ export class SupplierProviderService  {
       return -1;
     }
   
-    private _sortByRating(supplier1: ISupplier, supplier2: ISupplier): number {
+    private _sortByRating(supplier1: ICoreSupplier, supplier2: ICoreSupplier): number {
       const value1: number = SupplierProviderService.getInstance().nominalRating(supplier1.rating);
       const value2: number = SupplierProviderService.getInstance().nominalRating(supplier2.rating);
       if (value1 == value2) {

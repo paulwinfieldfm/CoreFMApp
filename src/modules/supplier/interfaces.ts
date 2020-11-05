@@ -9,9 +9,7 @@ export interface ISupplierService extends IKeyedItem {
 export interface ISupplierLocation extends ILocation {
     serviceRadiusMetres?: number,
 }
-export interface ISupplier extends IKeyedItem {
-    locations?: Array<ISupplierLocation>,
-    contacts?: Array<IContact>,
+export interface ICoreSupplier extends IKeyedItem {
     preferred?: boolean,
     url?: string,
     ecoScore?: number,
@@ -19,8 +17,19 @@ export interface ISupplier extends IKeyedItem {
     avgQuoteResponse?: number,
     quoteToCostRatio?: number,
     rating?: number,
-    invite: boolean,
     services?: Array<ISupplierService>,
+}
+
+export interface ISupplier extends ICoreSupplier {
+    locations?: Array<ISupplierLocation>,
+    contacts?: Array<IContact>,
+}
+export interface ISupplierInviteProfile extends ICoreSupplier {
+    invite: boolean,
+    // Distance from nearest site to job request
+    distance?: number,
+    // Coverage distance of nearest site
+    serviceRadiusMetres?: number,
 }
 export interface ISupplierPreference {
     supplierWeighting: SupplierWeighting,
