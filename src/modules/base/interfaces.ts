@@ -73,6 +73,7 @@ export interface IJournalEntry {
     journalEntryProperties: Array<JournalEntryPropertyType>,
     linkedEntity: ILinkedEntity,
     date: number,
+    dueDate?: number,
     data?: any,
 }
 /// Categorisation of services or other logical or phyical items (assets too?)
