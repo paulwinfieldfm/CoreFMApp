@@ -1,4 +1,4 @@
-import { ActivityType, ContactType, LinkedEntityType, SearchableItemType, SearchStatusType, UserAccountType, UserRoleType } from "./enums";
+import { ActivityType, ContactType, JournalEntryPropertyType, SearchableItemType, SearchStatusType, UserAccountType, UserRoleType } from "./enums";
 
 export interface IKeyedItem {
     id: number,
@@ -23,6 +23,10 @@ export interface IContact extends IPerson {
     parentLocationId?: number,
     contactTypeId: ContactType,
 }
+export interface ILinkedEntity {
+    id: number,
+    type: string,
+}
 /// A named value for a property map
 export interface IItemAttribute {
     name: string,
@@ -43,9 +47,9 @@ export interface ILinearProgressEntry {
     order?: number,
     onSelect?: any,
     isSelected: boolean,
-    linkedEntityType: LinkedEntityType,
+    //linkedEntityType: LinkedEntityType,
 }
-export interface IActionStatus {
+export interface IDeprecatedActionStatus {
     action: string,
     description?: string,
     actioned: boolean,
@@ -57,7 +61,19 @@ export interface IActionStatus {
     reference?: string,
     priority?: string,
     actionRequiredByTime?: number,
-    linkedEntityType: LinkedEntityType,
+    //linkedEntityType: LinkedEntityType,
+}
+export interface IJournalEntry {
+    id: number,
+    title: string,
+    subtitle?: string,
+    description?: string,
+    // Entry should work out the correct icon, but we can override with a specific image or icon
+    imageOverride?: string,
+    journalEntryProperties: Array<JournalEntryPropertyType>,
+    linkedEntity: ILinkedEntity,
+    date: number,
+    data?: any,
 }
 /// Categorisation of services or other logical or phyical items (assets too?)
 export interface ICategory extends IKeyedItem {

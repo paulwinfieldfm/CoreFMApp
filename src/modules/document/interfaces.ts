@@ -1,6 +1,7 @@
+import { ILinkedEntity } from "../base";
+
 export interface IDocumentSaveRequest {
-    parentEntityId: number,
-    parentEntityType: string,
+    parentEntity: ILinkedEntity,
     modifiedUsername: string,
     documentType: string,
     version?: number,

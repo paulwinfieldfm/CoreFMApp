@@ -26,7 +26,12 @@ export enum SearchableItemType {
     service,
     product,
 }
-export enum LinkedEntityType {
+export enum JournalEntryPropertyType {
+    acknowledgeRequired,
+    showTransientNotification,
+    statusMonitoring,
+}
+export enum DeprecatedLinkedEntityType {
     acknowledge,
     quote,
     order,
