@@ -88,7 +88,7 @@ export interface IQuotationRequest extends IServiceRequirement {
     invitedSuppliers: Array<ISupplier>,
     responses?: Array<IQuoteResponse>,
     submittedDate?: number,
-    responseCutoffDate?: DateMap,
+    responseCutoffDate?: number,
 }
 
 

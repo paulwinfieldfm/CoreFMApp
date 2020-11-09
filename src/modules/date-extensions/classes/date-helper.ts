@@ -1,3 +1,5 @@
+import { IDateCalculation } from "../interfaces";
+
 export class DateHelper {
     static inFuture(secondsSinceEpoch: number): boolean {
       if (!secondsSinceEpoch) {
@@ -45,3 +47,46 @@ export class DateHelper {
     }
 }
   
+export class Epoch {
+  static now(): number {
+    return Epoch.from(undefined);
+  }
+  static from(d?: Date): number {
+    if (!d) {
+      d = new Date();
+    }
+    return Math.trunc(d.getTime()/1000);
+  }
+  static toDate(secondsSinceEpoch: number): Date {
+    return new Date(secondsSinceEpoch*1000);
+  }
+  static inc(sourceDate: number, calculations: IDateCalculation): number {
+    let result = sourceDate;
+    if (calculations.addYears) {
+      result += Epoch.addYears(result, calculations.addYears);
+    }
+    if (calculations.addMonths) {
+      result += Epoch.addMonths(result, calculations.addMonths);
+    }
+    if (calculations.addDays) {
+      result+= (calculations.addDays*(3600*24));
+    }
+    if (calculations.addHours) {
+      result+= (calculations.addHours*(3600));
+    }
+    if (calculations.addMinutes) {
+      result+= (calculations.addMinutes*(60));
+    }
+    return result;
+  }
+  static addYears(value: number, add: number): number {
+    const d = Epoch.toDate(value);
+    d.setFullYear(d.getFullYear()+add);
+    return Epoch.from(d);
+  }
+  static addMonths(value: number, add: number): number {
+    const d = Epoch.toDate(value);
+    d.setMonth(d.getMonth()+add);
+    return Epoch.from(d);
+  }
+}

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DateHelper = void 0;
+exports.Epoch = exports.DateHelper = void 0;
 class DateHelper {
     static inFuture(secondsSinceEpoch) {
         if (!secondsSinceEpoch) {
@@ -62,4 +62,48 @@ class DateHelper {
     }
 }
 exports.DateHelper = DateHelper;
+class Epoch {
+    static now() {
+        return Epoch.from(undefined);
+    }
+    static from(d) {
+        if (!d) {
+            d = new Date();
+        }
+        return Math.trunc(d.getTime() / 1000);
+    }
+    static toDate(secondsSinceEpoch) {
+        return new Date(secondsSinceEpoch * 1000);
+    }
+    static inc(sourceDate, calculations) {
+        let result = sourceDate;
+        if (calculations.addYears) {
+            result += Epoch.addYears(result, calculations.addYears);
+        }
+        if (calculations.addMonths) {
+            result += Epoch.addMonths(result, calculations.addMonths);
+        }
+        if (calculations.addDays) {
+            result += (calculations.addDays * (3600 * 24));
+        }
+        if (calculations.addHours) {
+            result += (calculations.addHours * (3600));
+        }
+        if (calculations.addMinutes) {
+            result += (calculations.addMinutes * (60));
+        }
+        return result;
+    }
+    static addYears(value, add) {
+        const d = Epoch.toDate(value);
+        d.setFullYear(d.getFullYear() + add);
+        return Epoch.from(d);
+    }
+    static addMonths(value, add) {
+        const d = Epoch.toDate(value);
+        d.setMonth(d.getMonth() + add);
+        return Epoch.from(d);
+    }
+}
+exports.Epoch = Epoch;
 //# sourceMappingURL=date-helper.js.map

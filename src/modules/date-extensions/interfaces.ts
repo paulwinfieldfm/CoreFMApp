@@ -42,3 +42,11 @@ export interface IScheduleDefinition {
     // For weekly event
     dayOfWeek?: number,
 }
+export interface IDateCalculation {
+    addYears?: number,
+    addMonths?: number,
+    addDays?: number,
+    addHours?: number,
+    addMinutes?: number,
+    addSeconds?: number,
+}
