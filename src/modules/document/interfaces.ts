@@ -9,6 +9,7 @@ export interface IDocumentSaveRequest {
     properties?: any,
     displayFilename: string,
     mimeType: string,
+    public: boolean,
 }
 export interface IDocument extends IDocumentSaveRequest {
     id: number,
