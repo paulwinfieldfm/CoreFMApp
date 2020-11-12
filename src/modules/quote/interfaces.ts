@@ -1,10 +1,10 @@
 import { IAuditedItem, IContact, IItemAttributeMap, ILinearProgressEntry } from "../base";
 import { DateMap, IScheduleDefinition } from "../date-extensions";
 import { IDeprecatedServiceRequest, IService, IServiceAssetRequirement, IServiceRequirement } from "../servicing";
-import { ISupplier } from "../supplier";
+import { ISupplier, ISupplierInviteProfile } from "../supplier";
 import { BookingPriority, IQuoteResponseStatus, PriceLineCategory, QuoteArea, QuoteCreateStatusType, QuoteResponseProvided } from "./enums";
 
-export interface IQuoteCreateStatus {
+export interface IDeprecatedQuoteCreateStatus {
     status: QuoteCreateStatusType,
     service: IService,
 }
@@ -27,7 +27,7 @@ export interface IPriceLine extends IPrice {
     total?: number,
     isFoc: boolean,
 }
-export interface IQuoteResponse extends IAuditedItem {
+export interface IDeprecatedQuoteResponse extends IAuditedItem {
     quoteReference: string,
     supplier: ISupplier,
     properties: IItemAttributeMap,
@@ -44,14 +44,14 @@ export interface IQuoteRequestStatus extends ILinearProgressEntry {
     quoteArea: QuoteArea;
 }
   
-export interface IQuoteRequest extends IDeprecatedServiceRequest {
+export interface IDeprecatedQuoteRequest extends IDeprecatedServiceRequest {
     invitedSuppliers: Array<ISupplier>,
     progress: Array<IQuoteRequestStatus>,
-    responses?: Array<IQuoteResponse>,
+    responses?: Array<IDeprecatedQuoteResponse>,
     confirmedDateTime?: number,
     responseCutoffTime?: DateMap,
 }
-export interface ISupplierQuoteResponse extends IDeprecatedServiceRequest {
+export interface IDeprecatedSupplierQuoteResponse extends IDeprecatedServiceRequest {
     // Can we/have we quoted?
     quoteResponseProvided: QuoteResponseProvided,
     responseDateTime?: number,
@@ -85,44 +85,38 @@ export interface IQuotationRequest extends IServiceRequirement {
     purchaseOrderReference?: string,
     companyContact?: IContact,
     proformaAnswers?: any,
-    invitedSuppliers: Array<ISupplier>,
-    responses?: Array<IQuoteResponse>,
+    invitedSuppliers: Array<ISupplierInviteProfile>,
+    responses?: Array<IQuotationSupplierResponse>,
     submittedDate?: number,
     responseCutoffDate?: number,
 }
 
-
-
-
-
-
-
-
-/*
-export interface IServiceRequirement {
+export interface IQuotationResponseLine {
+    // The asset within the quote that this entry pertains to - will assume 
+    serviceAssetRequirement?: IServiceAssetRequirement,
+    priceLine: IPriceLine,   
 }
-export interface IDeprecatedServiceRequest extends IAuditedItem {
-    reference: string,
-    requiredDate?: DateMap,
-    purchaseOrderReference?: string,
-    bookingPriority?: BookingPriority,
-    service?: IService,
-    company?: ICompany,
-    contact?: IContact,
-    location?: ILocation,
-    asset?: IAsset,
-    proformaAnswers?: any,
+
+export interface IQuotationSupplierResponse extends IServiceRequirement {
+    quoteResponseProvided: QuoteResponseProvided,
+    responseDateTime?: number,
+    supplier: ISupplier,
+    // Confirm providing our initial response to the quote request
+    confirmedDateTime?: number,
+    // Quote will be closed off when there's no further dialog or if it was cancelled etc
+    closedDateTime?: number,
+    // Time the quote was first accessed
+    openedDateTime?: number,
+    haveOpenQuestions: boolean,
+    // Custom properties can be specified by the supplier
+    properties: IItemAttributeMap,
+    // Pricing, support multiple entries per asset
+    responseLines: Array<IQuotationResponseLine>,
+    bestAndFinalOffer: boolean,
+    // Likely only applies to single site reative job
+    anticipatedVisitCount?: number,
+    siteSurveyRequired: boolean,
+    soonestServiceDate: number,
+    declineToQuoteReason?: string,
 }
-/// Describes an asset within the context of a service requirement
-export interface IServiceAssetRequirement {
-    asset: IAsset,
-    scheduleDefinition: IScheduleDefinition,
-}
-/// Describes a service event performned on an asset
-export interface IServiceAssetEvent {
-    asset: IAsset,
-    dateScheduled: number,
-    eventDate?: number,
-    serviceEventStatus: ServiceEventStatus,
-}
-*/
+

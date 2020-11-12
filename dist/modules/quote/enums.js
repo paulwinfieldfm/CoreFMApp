@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PriceLineCategory = exports.BookingPriority = exports.QuoteResponseProvided = exports.QuoteResponseArea = exports.QuoteArea = exports.QuoteCreateStatusType = void 0;
+exports.PriceLineCategory = exports.BookingPriority = exports.QuoteAssetServiceResponse = exports.QuoteResponseProvided = exports.QuoteResponseArea = exports.QuoteArea = exports.QuoteCreateStatusType = void 0;
 var QuoteCreateStatusType;
 (function (QuoteCreateStatusType) {
     QuoteCreateStatusType[QuoteCreateStatusType["reset"] = 0] = "reset";
@@ -32,6 +32,12 @@ var QuoteResponseProvided;
     QuoteResponseProvided[QuoteResponseProvided["declined"] = 1] = "declined";
     QuoteResponseProvided[QuoteResponseProvided["quoteGiven"] = 2] = "quoteGiven";
 })(QuoteResponseProvided = exports.QuoteResponseProvided || (exports.QuoteResponseProvided = {}));
+var QuoteAssetServiceResponse;
+(function (QuoteAssetServiceResponse) {
+    QuoteAssetServiceResponse[QuoteAssetServiceResponse["unconfirmed"] = 0] = "unconfirmed";
+    QuoteAssetServiceResponse[QuoteAssetServiceResponse["excluded"] = 1] = "excluded";
+    QuoteAssetServiceResponse[QuoteAssetServiceResponse["included"] = 2] = "included";
+})(QuoteAssetServiceResponse = exports.QuoteAssetServiceResponse || (exports.QuoteAssetServiceResponse = {}));
 var BookingPriority;
 (function (BookingPriority) {
     BookingPriority[BookingPriority["unspecified"] = 0] = "unspecified";

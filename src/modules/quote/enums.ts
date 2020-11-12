@@ -27,6 +27,11 @@ export enum QuoteResponseProvided {
     declined,
     quoteGiven,
 }
+export enum QuoteAssetServiceResponse {
+    unconfirmed,
+    excluded,
+    included,
+}
 export interface IQuoteResponseStatus extends ILinearProgressEntry {
     quoteArea: QuoteResponseArea;
 }

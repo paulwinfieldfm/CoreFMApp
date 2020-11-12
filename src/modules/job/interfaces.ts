@@ -1,7 +1,7 @@
 import { IAuditedItem, IKeyedItem, IPerson } from "../base";
 import { ILocation, IPlottableLocation } from "../location";
 import { IOrder } from "../order";
-import { IQuoteRequest } from "../quote";
+import { IDeprecatedQuoteRequest } from "../quote";
 import { JobStatus, JobTaskStatus } from "./enums";
 
 
@@ -42,7 +42,7 @@ export interface IJob extends IAuditedItem {
     order?: IOrder,
     // Or have a non-binding placeholder assignment to a quote to give the ability to
     // ringfence a booking in expectation of it dropping in
-    quotePlaceholder?: IQuoteRequest,
+    quotePlaceholder?: IDeprecatedQuoteRequest,
     // Prescribe the things that need to be done within the job
     tasks?: Array<IJobTask>,
     assignedToUser?: IPerson,
