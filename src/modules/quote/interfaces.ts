@@ -2,7 +2,7 @@ import { IAuditedItem, IContact, IItemAttributeMap, ILinearProgressEntry } from 
 import { DateMap, IScheduleDefinition } from "../date-extensions";
 import { IDeprecatedServiceRequest, IService, IServiceAssetRequirement, IServiceRequirement } from "../servicing";
 import { ISupplier, ISupplierInviteProfile } from "../supplier";
-import { BookingPriority, IQuoteResponseStatus, PriceLineCategory, QuoteArea, QuoteCreateStatusType, QuoteResponseProvided } from "./enums";
+import { BookingPriority, IQuoteResponseStatus, PriceLineCategory, QuoteArea, QuoteAssetServiceResponse, QuoteCreateStatusType, QuoteResponseProvided } from "./enums";
 
 export interface IDeprecatedQuoteCreateStatus {
     status: QuoteCreateStatusType,
@@ -92,6 +92,8 @@ export interface IQuotationRequest extends IServiceRequirement {
 }
 
 export interface IQuotationResponseLine {
+    quoteAssetServiceResponse?: QuoteAssetServiceResponse,
+    advisedServiceDate?: number,
     // The asset within the quote that this entry pertains to - will assume 
     serviceAssetRequirement?: IServiceAssetRequirement,
     priceLine: IPriceLine,   
