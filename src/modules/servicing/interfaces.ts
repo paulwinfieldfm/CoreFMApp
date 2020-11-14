@@ -14,6 +14,7 @@ export interface IService extends IKeyedItem {
 }
 /// Describes an asset within the context of a service requirement
 export interface IServiceAssetRequirement {
+    requiredDate: number,
     location: ILocation, // Location where the asset exists
     asset: IAsset, // Asset to be serviced
     scheduleDefinition: IScheduleDefinition, // When and with what frequency
