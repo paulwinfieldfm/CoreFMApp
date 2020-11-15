@@ -27,7 +27,7 @@ export enum QuoteResponseProvided {
     declined,
     quoteGiven,
 }
-export enum QuoteAssetServiceResponse {
+export enum QuotationResponse {
     unconfirmed,
     excluded,
     included,

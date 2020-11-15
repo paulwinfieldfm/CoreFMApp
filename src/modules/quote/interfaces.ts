@@ -2,7 +2,7 @@ import { IAuditedItem, IContact, IItemAttributeMap, ILinearProgressEntry } from 
 import { DateMap, IScheduleDefinition } from "../date-extensions";
 import { IDeprecatedServiceRequest, IService, IServiceAssetRequirement, IServiceRequirement } from "../servicing";
 import { ISupplier, ISupplierInviteProfile } from "../supplier";
-import { BookingPriority, IQuoteResponseStatus, PriceLineCategory, QuoteArea, QuoteAssetServiceResponse, QuoteCreateStatusType, QuoteResponseProvided } from "./enums";
+import { BookingPriority, IQuoteResponseStatus, PriceLineCategory, QuotationResponse, QuoteArea, QuoteCreateStatusType, QuoteResponseProvided } from "./enums";
 
 export interface IDeprecatedQuoteCreateStatus {
     status: QuoteCreateStatusType,
@@ -18,7 +18,7 @@ export interface IPrice {
 export interface IPriceLine extends IPrice {
     title: string,
     description?: string,
-    quoteLineCategory: PriceLineCategory,
+    priceLineCategory: PriceLineCategory,
     quantity?: number,
     itemPrice?: number,
     currencyUnit: string,
@@ -92,7 +92,7 @@ export interface IQuotationRequest extends IServiceRequirement {
 }
 
 export interface IQuotationResponseLine {
-    quoteAssetServiceResponse?: QuoteAssetServiceResponse,
+    quotationResponse?: QuotationResponse,
     advisedServiceDate?: number,
     // The asset within the quote that this entry pertains to - will assume 
     serviceAssetRequirement?: IServiceAssetRequirement,
@@ -100,15 +100,15 @@ export interface IQuotationResponseLine {
 }
 
 export interface IQuotationSupplierResponse extends IServiceRequirement {
-    quoteResponseProvided: QuoteResponseProvided,
+    quotationResponse: QuotationResponse,
     responseDateTime?: number,
     supplier: ISupplier,
     // Confirm providing our initial response to the quote request
-    confirmedDateTime?: number,
+    responseSubmittedDateTime?: number,
     // Quote will be closed off when there's no further dialog or if it was cancelled etc
     closedDateTime?: number,
     // Time the quote was first accessed
-    openedDateTime?: number,
+    supplierOpenedDateTime?: number,
     haveOpenQuestions: boolean,
     // Custom properties can be specified by the supplier
     properties: IItemAttributeMap,
