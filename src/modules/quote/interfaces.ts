@@ -16,7 +16,7 @@ export interface IPrice {
     isFoc: boolean,
 }
 export interface IPriceLine extends IPrice {
-    title: string,
+    name: string,
     description?: string,
     priceLineCategory: PriceLineCategory,
     quantity?: number,
@@ -91,12 +91,24 @@ export interface IQuotationRequest extends IServiceRequirement {
     responseCutoffDate?: number,
 }
 
-export interface IQuotationResponseLine {
+export interface IDeprecatedQuotationResponseLine {
     quotationResponse?: QuotationResponse,
     advisedServiceDate?: number,
     // The asset within the quote that this entry pertains to - will assume 
     serviceAssetRequirement?: IServiceAssetRequirement,
     priceLine: IPriceLine,   
+}
+
+export interface IQuotationResponsePriceLine extends IPriceLine {
+    assetId?: number, // If this price entry pertains to a particular asset
+    quotationAssetResponseId?: number, // To enable maintaining link back to QUotationAssetResponsee record
+}
+
+export interface IQuotationAssetResponse {
+    id: number,
+    assetId: number,
+    quotationResponse: QuotationResponse,
+    advisedServiceDate?: number,
 }
 
 export interface IQuotationSupplierResponse extends IServiceRequirement {
@@ -113,7 +125,9 @@ export interface IQuotationSupplierResponse extends IServiceRequirement {
     // Custom properties can be specified by the supplier
     properties: IItemAttributeMap,
     // Pricing, support multiple entries per asset
-    responseLines: Array<IQuotationResponseLine>,
+    quotationAssetResponses: Array<IQuotationAssetResponse>,
+    quotationResponsePriceLines: Array<IQuotationResponsePriceLine>, 
+
     bestAndFinalOffer: boolean,
     // Likely only applies to single site reative job
     anticipatedVisitCount?: number,
