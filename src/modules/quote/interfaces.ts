@@ -112,6 +112,8 @@ export interface IQuotationAssetResponse {
 }
 
 export interface IQuotationSupplierResponse extends IServiceRequirement {
+    quotationId: number,
+    quotationSupplierInviteId: number,
     quotationResponse: QuotationResponse,
     responseDateTime?: number,
     supplier: ISupplier,
