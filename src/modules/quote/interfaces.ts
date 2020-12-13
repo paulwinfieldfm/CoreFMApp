@@ -131,6 +131,7 @@ export interface IQuotationSupplierResponse extends IServiceRequirement {
     quotationResponsePriceLines: Array<IQuotationResponsePriceLine>, 
 
     bestAndFinalOffer: boolean,
+    bestOfferRequested: boolean,
     // Likely only applies to single site reative job
     anticipatedVisitCount?: number,
     siteSurveyRequired: boolean,
