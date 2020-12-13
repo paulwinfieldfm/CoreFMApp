@@ -61,16 +61,13 @@ class Price {
                     : lineSubtotal;
             }
             const category = Price.priceLineCategory(ln, enums_1.PriceLineCategory.time);
-            console.log(`PRICE ENTRY CATEGORY ${category}`, ln);
-            if (category == enums_1.PriceLineCategory.discount) {
+            if (category == enums_1.PriceLineCategory.discount || category == enums_1.PriceLineCategory.credit) {
                 subtotal -= lineSubtotal;
                 total -= lineTotal;
-                console.log(`-- discounting by ${lineSubtotal} => ${subtotal}`);
             }
             else {
                 subtotal += lineSubtotal;
                 total += lineTotal;
-                console.log(`-- increased by ${lineSubtotal} => ${subtotal}`);
             }
         });
         return new Price({
