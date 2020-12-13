@@ -1,3 +1,4 @@
+import { PriceLineCategory } from "../enums";
 import { IPrice } from "../interfaces";
 
 export class Price implements IPrice {
@@ -66,9 +67,14 @@ export class Price implements IPrice {
                     ? (lineSubtotal + this.taxValue(lineSubtotal, ln.taxRate))
                     : lineSubtotal;
             }
-
-            subtotal += lineSubtotal;
-            total += lineTotal;
+            const category = Price.priceLineCategory(<any>ln, PriceLineCategory.time);
+            if (category===PriceLineCategory.discount) {
+                subtotal -= lineSubtotal;
+                total -= lineTotal;
+            } else {
+                subtotal += lineSubtotal;
+                total += lineTotal;    
+            }
         });
         return new Price({
             currencyUnit: currencyUnit,
@@ -77,6 +83,12 @@ export class Price implements IPrice {
             total: total,
             isFoc: false
         });
+    }
+
+    static priceLineCategory(entry: any, defaultValue: PriceLineCategory): PriceLineCategory {
+        return (entry.priceLineCategory!==undefined)
+            ? entry.priceLineCategory||defaultValue
+            : defaultValue;
     }
 
 

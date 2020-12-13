@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Price = void 0;
+const enums_1 = require("../enums");
 class Price {
     constructor(priceProperties) {
         this.currencyUnit = 'gbp';
@@ -59,8 +60,15 @@ class Price {
                     ? (lineSubtotal + this.taxValue(lineSubtotal, ln.taxRate))
                     : lineSubtotal;
             }
-            subtotal += lineSubtotal;
-            total += lineTotal;
+            const category = Price.priceLineCategory(ln, enums_1.PriceLineCategory.time);
+            if (category === enums_1.PriceLineCategory.discount) {
+                subtotal -= lineSubtotal;
+                total -= lineTotal;
+            }
+            else {
+                subtotal += lineSubtotal;
+                total += lineTotal;
+            }
         });
         return new Price({
             currencyUnit: currencyUnit,
@@ -69,6 +77,11 @@ class Price {
             total: total,
             isFoc: false
         });
+    }
+    static priceLineCategory(entry, defaultValue) {
+        return (entry.priceLineCategory !== undefined)
+            ? entry.priceLineCategory || defaultValue
+            : defaultValue;
     }
     static taxValue(subtotal, taxRate) {
         return Price.rounded((subtotal / 100) * taxRate);
