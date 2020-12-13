@@ -69,7 +69,7 @@ export class Price implements IPrice {
             }
             const category = Price.priceLineCategory(<any>ln, PriceLineCategory.time);
             console.log(`PRICE ENTRY CATEGORY ${category}`,ln);
-            if (category===PriceLineCategory.discount) {
+            if (category==PriceLineCategory.discount) {
                 subtotal -= lineSubtotal;
                 total -= lineTotal;
                 console.log(`-- discounting by ${lineSubtotal} => ${subtotal}`);
