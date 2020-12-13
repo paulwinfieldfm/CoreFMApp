@@ -65,10 +65,12 @@ class Price {
             if (category === enums_1.PriceLineCategory.discount) {
                 subtotal -= lineSubtotal;
                 total -= lineTotal;
+                console.log(`-- discounting by ${lineSubtotal} => ${subtotal}`);
             }
             else {
                 subtotal += lineSubtotal;
                 total += lineTotal;
+                console.log(`-- increased by ${lineSubtotal} => ${subtotal}`);
             }
         });
         return new Price({

@@ -72,9 +72,11 @@ export class Price implements IPrice {
             if (category===PriceLineCategory.discount) {
                 subtotal -= lineSubtotal;
                 total -= lineTotal;
+                console.log(`-- discounting by ${lineSubtotal} => ${subtotal}`);
             } else {
                 subtotal += lineSubtotal;
                 total += lineTotal;    
+                console.log(`-- increased by ${lineSubtotal} => ${subtotal}`);
             }
         });
         return new Price({
