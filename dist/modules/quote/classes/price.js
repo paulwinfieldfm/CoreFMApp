@@ -61,6 +61,7 @@ class Price {
                     : lineSubtotal;
             }
             const category = Price.priceLineCategory(ln, enums_1.PriceLineCategory.time);
+            console.log(`PRICE ENTRY CATEGORY ${category}`, ln);
             if (category === enums_1.PriceLineCategory.discount) {
                 subtotal -= lineSubtotal;
                 total -= lineTotal;
