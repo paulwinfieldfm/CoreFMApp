@@ -85,6 +85,26 @@ export class Price implements IPrice {
         });
     }
 
+    static categoryTotals(prices: Array<any>): any {
+        const timeEntries = (prices||[]).filter(p => p.priceLineCategory==PriceLineCategory.time);
+        const hours = timeEntries.reduce((r, c) => r + c.quantity, 0);
+        return {
+            "Time": Price.categoryTotal(timeEntries, PriceLineCategory.time),
+            "Hours": hours,
+            "Materials": Price.categoryTotal(prices, PriceLineCategory.materials),
+            "Fixed costs": Price.categoryTotal(prices, PriceLineCategory.fixedCost),
+            "Discount": Price.categoryTotal(prices, PriceLineCategory.discount),
+            "Credit": Price.categoryTotal(prices, PriceLineCategory.credit)
+        }
+    }
+
+    static categoryTotal(prices: Array<any>, category: PriceLineCategory): string {
+        const categoryItems = (prices||[]).filter(p => p.priceLineCategory==category);
+        if (categoryItems.length==0) { return "" }
+        const result = Price.createTotal(categoryItems);
+        return result.isFoc ? "" : result.display(false);
+    }
+
     static priceLineCategory(entry: any, defaultValue: PriceLineCategory): PriceLineCategory {
         return (entry.priceLineCategory!==undefined)
             ? entry.priceLineCategory||defaultValue

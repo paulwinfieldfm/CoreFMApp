@@ -78,6 +78,26 @@ class Price {
             isFoc: false
         });
     }
+    static categoryTotals(prices) {
+        const timeEntries = (prices || []).filter(p => p.priceLineCategory == enums_1.PriceLineCategory.time);
+        const hours = timeEntries.reduce((r, c) => r + c.quantity, 0);
+        return {
+            "Time": Price.categoryTotal(timeEntries, enums_1.PriceLineCategory.time),
+            "Hours": hours,
+            "Materials": Price.categoryTotal(prices, enums_1.PriceLineCategory.materials),
+            "Fixed costs": Price.categoryTotal(prices, enums_1.PriceLineCategory.fixedCost),
+            "Discount": Price.categoryTotal(prices, enums_1.PriceLineCategory.discount),
+            "Credit": Price.categoryTotal(prices, enums_1.PriceLineCategory.credit)
+        };
+    }
+    static categoryTotal(prices, category) {
+        const categoryItems = (prices || []).filter(p => p.priceLineCategory == category);
+        if (categoryItems.length == 0) {
+            return "";
+        }
+        const result = Price.createTotal(categoryItems);
+        return result.isFoc ? "" : result.display(false);
+    }
     static priceLineCategory(entry, defaultValue) {
         return (entry.priceLineCategory !== undefined)
             ? entry.priceLineCategory || defaultValue

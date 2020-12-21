@@ -47,4 +47,5 @@ export enum PriceLineCategory {
     materials,
     discount,
     credit,
+    fixedCost,
 }

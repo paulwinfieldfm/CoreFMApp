@@ -52,5 +52,6 @@ var PriceLineCategory;
     PriceLineCategory[PriceLineCategory["materials"] = 1] = "materials";
     PriceLineCategory[PriceLineCategory["discount"] = 2] = "discount";
     PriceLineCategory[PriceLineCategory["credit"] = 3] = "credit";
+    PriceLineCategory[PriceLineCategory["fixedCost"] = 4] = "fixedCost";
 })(PriceLineCategory = exports.PriceLineCategory || (exports.PriceLineCategory = {}));
 //# sourceMappingURL=enums.js.map
