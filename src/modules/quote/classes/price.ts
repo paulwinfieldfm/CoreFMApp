@@ -89,18 +89,20 @@ export class Price implements IPrice {
         const timeEntries = (prices||[]).filter(p => p.priceLineCategory==PriceLineCategory.time);
         const hours = timeEntries.reduce((r, c) => r + c.quantity, 0);
         return {
-            "Time": Price.categoryTotal(timeEntries, PriceLineCategory.time),
-            "Hours": hours,
-            "Materials": Price.categoryTotal(prices, PriceLineCategory.materials),
-            "Fixed costs": Price.categoryTotal(prices, PriceLineCategory.fixedCost),
-            "Discount": Price.categoryTotal(prices, PriceLineCategory.discount),
-            "Credit": Price.categoryTotal(prices, PriceLineCategory.credit)
+            "time": Price.categoryTotal(timeEntries, PriceLineCategory.time),
+            "hours": hours,
+            "materials": Price.categoryTotal(prices, PriceLineCategory.materials),
+            "fixedCosts": Price.categoryTotal(prices, PriceLineCategory.fixedCost),
+            "discount": Price.categoryTotal(prices, PriceLineCategory.discount),
+            "credit": Price.categoryTotal(prices, PriceLineCategory.credit)
         }
     }
 
     static categoryTotal(prices: Array<any>, category: PriceLineCategory): string {
         const categoryItems = (prices||[]).filter(p => p.priceLineCategory==category);
         if (categoryItems.length==0) { return "" }
+        // Make sure it's subtotaled or the createTotal function will ignore (maybe should fix createTotal!)
+        categoryItems.forEach(c => c.subTotal = c.quantity * c.itemPrice);
         const result = Price.createTotal(categoryItems);
         return result.isFoc ? "" : result.display(false);
     }

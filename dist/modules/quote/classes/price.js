@@ -82,12 +82,12 @@ class Price {
         const timeEntries = (prices || []).filter(p => p.priceLineCategory == enums_1.PriceLineCategory.time);
         const hours = timeEntries.reduce((r, c) => r + c.quantity, 0);
         return {
-            "Time": Price.categoryTotal(timeEntries, enums_1.PriceLineCategory.time),
-            "Hours": hours,
-            "Materials": Price.categoryTotal(prices, enums_1.PriceLineCategory.materials),
-            "Fixed costs": Price.categoryTotal(prices, enums_1.PriceLineCategory.fixedCost),
-            "Discount": Price.categoryTotal(prices, enums_1.PriceLineCategory.discount),
-            "Credit": Price.categoryTotal(prices, enums_1.PriceLineCategory.credit)
+            "time": Price.categoryTotal(timeEntries, enums_1.PriceLineCategory.time),
+            "hours": hours,
+            "materials": Price.categoryTotal(prices, enums_1.PriceLineCategory.materials),
+            "fixedCosts": Price.categoryTotal(prices, enums_1.PriceLineCategory.fixedCost),
+            "discount": Price.categoryTotal(prices, enums_1.PriceLineCategory.discount),
+            "credit": Price.categoryTotal(prices, enums_1.PriceLineCategory.credit)
         };
     }
     static categoryTotal(prices, category) {
@@ -95,6 +95,8 @@ class Price {
         if (categoryItems.length == 0) {
             return "";
         }
+        // Make sure it's subtotaled or the createTotal function will ignore (maybe should fix createTotal!)
+        categoryItems.forEach(c => c.subTotal = c.quantity * c.itemPrice);
         const result = Price.createTotal(categoryItems);
         return result.isFoc ? "" : result.display(false);
     }
