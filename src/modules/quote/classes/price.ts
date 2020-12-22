@@ -101,8 +101,9 @@ export class Price implements IPrice {
     static categoryTotal(prices: Array<any>, category: PriceLineCategory): string {
         const categoryItems = (prices||[]).filter(p => p.priceLineCategory==category);
         if (categoryItems.length==0) { return "" }
-        // Make sure it's subtotaled or the createTotal function will ignore (maybe should fix createTotal!)
-        categoryItems.forEach(c => c.subTotal = c.quantity * c.itemPrice);
+        // Make sure it's subtotaled or the createTotal function will ignore
+        // because the createTotal function isn't itemPrice and quantity aware
+        categoryItems.forEach(c => c.subtotal = c.quantity * c.itemPrice);
         const result = Price.createTotal(categoryItems);
         return result.isFoc ? "" : result.display(false);
     }
