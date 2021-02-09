@@ -31,6 +31,7 @@ export interface IServiceAssetEvent {
 export interface IServiceRequirement extends IAuditedItem {
     bookingPriority?: BookingPriority,
     company?: ICompany,
+    contact?: IContact;
     reference: string,
     serviceType: ServiceType,
     service: IService,
