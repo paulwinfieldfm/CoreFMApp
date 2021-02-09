@@ -7,6 +7,7 @@ export enum QuoteCreateStatusType {
 export enum QuoteArea {
     selectService,
     selectCustomer,
+    selectContact,
     selectAsset,
     questionSet,
     inviteSuppliers,

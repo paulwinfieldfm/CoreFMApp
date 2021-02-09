@@ -10,11 +10,12 @@ var QuoteArea;
 (function (QuoteArea) {
     QuoteArea[QuoteArea["selectService"] = 0] = "selectService";
     QuoteArea[QuoteArea["selectCustomer"] = 1] = "selectCustomer";
-    QuoteArea[QuoteArea["selectAsset"] = 2] = "selectAsset";
-    QuoteArea[QuoteArea["questionSet"] = 3] = "questionSet";
-    QuoteArea[QuoteArea["inviteSuppliers"] = 4] = "inviteSuppliers";
-    QuoteArea[QuoteArea["confirmation"] = 5] = "confirmation";
-    QuoteArea[QuoteArea["review"] = 6] = "review";
+    QuoteArea[QuoteArea["selectContact"] = 2] = "selectContact";
+    QuoteArea[QuoteArea["selectAsset"] = 3] = "selectAsset";
+    QuoteArea[QuoteArea["questionSet"] = 4] = "questionSet";
+    QuoteArea[QuoteArea["inviteSuppliers"] = 5] = "inviteSuppliers";
+    QuoteArea[QuoteArea["confirmation"] = 6] = "confirmation";
+    QuoteArea[QuoteArea["review"] = 7] = "review";
 })(QuoteArea = exports.QuoteArea || (exports.QuoteArea = {}));
 var QuoteResponseArea;
 (function (QuoteResponseArea) {
