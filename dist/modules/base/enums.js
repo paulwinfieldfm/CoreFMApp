@@ -27,11 +27,15 @@ var SearchStatusType;
 })(SearchStatusType = exports.SearchStatusType || (exports.SearchStatusType = {}));
 var SearchableItemType;
 (function (SearchableItemType) {
-    SearchableItemType[SearchableItemType["asset"] = 0] = "asset";
-    SearchableItemType[SearchableItemType["company"] = 1] = "company";
-    SearchableItemType[SearchableItemType["category"] = 2] = "category";
-    SearchableItemType[SearchableItemType["service"] = 3] = "service";
-    SearchableItemType[SearchableItemType["product"] = 4] = "product";
+    SearchableItemType[SearchableItemType["currentAreaFilter"] = 0] = "currentAreaFilter";
+    SearchableItemType[SearchableItemType["asset"] = 1] = "asset";
+    SearchableItemType[SearchableItemType["company"] = 2] = "company";
+    SearchableItemType[SearchableItemType["contact"] = 3] = "contact";
+    SearchableItemType[SearchableItemType["category"] = 4] = "category";
+    SearchableItemType[SearchableItemType["service"] = 5] = "service";
+    SearchableItemType[SearchableItemType["supplier"] = 6] = "supplier";
+    SearchableItemType[SearchableItemType["product"] = 7] = "product";
+    SearchableItemType[SearchableItemType["combined"] = 8] = "combined";
 })(SearchableItemType = exports.SearchableItemType || (exports.SearchableItemType = {}));
 var JournalEntryPropertyType;
 (function (JournalEntryPropertyType) {

@@ -20,11 +20,15 @@ export enum SearchStatusType {
     reset,
 }
 export enum SearchableItemType {
+    currentAreaFilter,
     asset,
     company,
+    contact,
     category,
     service,
+    supplier,
     product,
+    combined,
 }
 export enum JournalEntryPropertyType {
     acknowledgeRequired,
