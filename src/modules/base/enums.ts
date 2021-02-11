@@ -15,6 +15,7 @@ export enum ActivityType {
 export enum SearchStatusType {
     searching,
     searchComplete,
+    searchDelegated,
     selected,
     error,
     reset,

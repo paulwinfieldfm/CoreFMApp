@@ -21,9 +21,10 @@ var SearchStatusType;
 (function (SearchStatusType) {
     SearchStatusType[SearchStatusType["searching"] = 0] = "searching";
     SearchStatusType[SearchStatusType["searchComplete"] = 1] = "searchComplete";
-    SearchStatusType[SearchStatusType["selected"] = 2] = "selected";
-    SearchStatusType[SearchStatusType["error"] = 3] = "error";
-    SearchStatusType[SearchStatusType["reset"] = 4] = "reset";
+    SearchStatusType[SearchStatusType["searchDelegated"] = 2] = "searchDelegated";
+    SearchStatusType[SearchStatusType["selected"] = 3] = "selected";
+    SearchStatusType[SearchStatusType["error"] = 4] = "error";
+    SearchStatusType[SearchStatusType["reset"] = 5] = "reset";
 })(SearchStatusType = exports.SearchStatusType || (exports.SearchStatusType = {}));
 var SearchableItemType;
 (function (SearchableItemType) {
