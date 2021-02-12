@@ -1,3 +1,5 @@
+import { BookingPriority } from "../quote/enums";
+import { ServiceType } from "../servicing";
 import { ActivityType, ContactType, JournalEntryPropertyType, SearchableItemType, SearchStatusType, UserAccountType, UserRoleType } from "./enums";
 
 export interface IKeyedItem {
@@ -49,20 +51,6 @@ export interface ILinearProgressEntry {
     isSelected: boolean,
     //linkedEntityType: LinkedEntityType,
 }
-export interface IDeprecatedActionStatus {
-    action: string,
-    description?: string,
-    actioned: boolean,
-    order?: number,
-    onSelect?: any,
-    isSelected: boolean,
-    service?: string,
-    customer?: string,
-    reference?: string,
-    priority?: string,
-    actionRequiredByTime?: number,
-    //linkedEntityType: LinkedEntityType,
-}
 export interface IJournalEntry {
     id: number,
     title: string,
@@ -75,6 +63,19 @@ export interface IJournalEntry {
     date: number,
     dueDate?: number,
     data?: any,
+}
+export interface ITodoEntry {
+    id: number,
+    reference: string,
+    description: string,
+    status: string,    
+    actionDueDate?: number,
+    locationDescription?: string,
+    linkedEntity: ILinkedEntity,
+    bookingPriority: BookingPriority,
+    serviceType: ServiceType,
+    serviceId?: number,
+    owner?: IPerson,
 }
 /// Categorisation of services or other logical or phyical items (assets too?)
 export interface ICategory extends IKeyedItem {
