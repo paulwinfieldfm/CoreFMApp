@@ -69,8 +69,10 @@ export interface ITodoEntry {
     reference: string,
     description: string,
     status: string,    
+    action: string, // In scope action to be performed
     actionDueDate?: number,
     locationDescription?: string,
+    locationCount: number,
     linkedEntity: ILinkedEntity,
     bookingPriority: BookingPriority,
     serviceType: ServiceType,
