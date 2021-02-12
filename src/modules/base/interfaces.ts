@@ -71,6 +71,7 @@ export interface ITodoEntry {
     status: string,    
     action: string, // In scope action to be performed
     actionDueDate?: number,
+    actionStatus?: string,
     locationDescription?: string,
     locationCount: number,
     linkedEntity: ILinkedEntity,
