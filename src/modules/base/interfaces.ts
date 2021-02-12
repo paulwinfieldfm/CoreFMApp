@@ -1,5 +1,5 @@
 import { BookingPriority } from "../quote/enums";
-import { ServiceType } from "../servicing";
+import { IService, ServiceType } from "../servicing";
 import { ActivityType, ContactType, JournalEntryPropertyType, SearchableItemType, SearchStatusType, UserAccountType, UserRoleType } from "./enums";
 
 export interface IKeyedItem {
@@ -74,7 +74,7 @@ export interface ITodoEntry {
     linkedEntity: ILinkedEntity,
     bookingPriority: BookingPriority,
     serviceType: ServiceType,
-    serviceId?: number,
+    service?: IService,
     owner?: IPerson,
 }
 /// Categorisation of services or other logical or phyical items (assets too?)
