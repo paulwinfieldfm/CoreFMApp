@@ -29,6 +29,15 @@ export interface ILinkedEntity {
     id: number,
     type: string,
 }
+
+export interface IEntity {
+    reference: string,
+    description: string,
+    bookingPriority?: BookingPriority,
+    serviceType: number,
+    serviceId: number,
+}
+
 /// A named value for a property map
 export interface IItemAttribute {
     name: string,
@@ -75,8 +84,7 @@ export interface ITodoEntry {
     responsibility?: string,
     locationDescription?: string,
     locationCount: number,
-    linkedEntity: ILinkedEntity,
-    bookingPriority: BookingPriority,
+    linkedEntity: IEntity,
     serviceType: ServiceType,
     service?: IService,
     owner?: IPerson,
