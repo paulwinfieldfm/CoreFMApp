@@ -59,11 +59,15 @@ export class Utils {
     return parseFloat((Math.round(val*100)/100).toFixed(2));
   }
   static initials(username: string): string {
-    let v = username.split(' ');
+    const s = username.replace(/[()/&,.?)]/g, ' ');
+    let v = s.split(' ');
     let result = v[0][0];
     if (v.length > 1) {
       result += v[1][0];
+    } else if (v[0] && v[0].length > 1) {
+      result += v[0][1];
     }
+
     return result.toUpperCase();
   }
 }
