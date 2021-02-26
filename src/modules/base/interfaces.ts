@@ -88,7 +88,6 @@ export interface ITodoEntry {
     serviceType: ServiceType,
     service?: IService,
     owner?: IPerson,
-    suppliers?: string
 }
 /// Categorisation of services or other logical or phyical items (assets too?)
 export interface ICategory extends IKeyedItem {
