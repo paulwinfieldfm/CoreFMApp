@@ -31,6 +31,8 @@ export interface ILinkedEntity {
 }
 
 export interface IEntity {
+    id: number,
+    type: string,
     reference: string,
     description: string,
     bookingPriority?: BookingPriority,
