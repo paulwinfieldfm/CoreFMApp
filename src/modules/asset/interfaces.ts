@@ -10,6 +10,12 @@ export interface ICoreAsset extends IKeyedItem {
     properties?: IItemAttributeMap,
     defaultService?: IService,
     type?: string, // What type of physical thing this represents - room, air con unit, what have you
+    serialNumber?: string,
+    partNumber?: string,
+    brandDesignationId?: number,
+    birthDate?: number,
+    onboardCost?: number,
+    costToDate?: number,
 }
 export interface IAsset extends ICoreAsset {
     assets?: Array<IAsset>,
