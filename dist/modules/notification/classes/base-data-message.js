@@ -4,14 +4,12 @@ exports.BaseDataMessage = void 0;
 const date_extensions_1 = require("../../date-extensions");
 /// Raw data message
 class BaseDataMessage {
-    constructor(supplierId, organisationUnitId, qos, showMessage, title, text) {
+    constructor(supplierId, organisationUnitId, toastMessage, qos = 2) {
         this.time = date_extensions_1.DateHelper.dateToEpoch();
         this.qos = qos;
         this.supplierId = supplierId;
         this.organisationUnitId = organisationUnitId;
-        this.showMessage = showMessage;
-        this.title = title;
-        this.text = text;
+        this.toastMessage = toastMessage;
     }
 }
 exports.BaseDataMessage = BaseDataMessage;

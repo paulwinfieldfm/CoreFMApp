@@ -12,14 +12,15 @@ export class ChatMessage implements IChatMessage {
     supplierId?: number | undefined;
     organisationUnitId?: number | undefined;
     qos: 0 | 1 | 2 = 2;
-    showMessage: boolean = false;
-    title?: string | undefined;
-    text?: string | undefined;
     
-    static create(content: string, supplierId: number | undefined, organisationUnitId: number | undefined, linkedEntity: ILinkedEntity | undefined, showMessage: boolean = false) {
-        let result = <ChatMessage>(new BaseDataMessage(supplierId, organisationUnitId, 2, showMessage, "Message", undefined));
+    static create(content: string, supplierId: number | undefined, organisationUnitId: number | undefined, linkedEntity: ILinkedEntity | undefined) {
+        let result = <ChatMessage>(new BaseDataMessage(supplierId, organisationUnitId, undefined));
         result.content = content;
         result.linkedEntity = linkedEntity;
         return result;
+    }
+
+    private constructor() {
+        this.time = DateHelper.dateToEpoch();
     }
 }

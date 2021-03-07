@@ -15,6 +15,11 @@ export interface IUserNotification {
     userNotificationMessage?: IUserNotificationMessage,
 }
 
+/// A simple notification message that can be shown within a toast or snackbar etc
+export interface IToastMessage {
+    title: string,
+    text: string,
+}
 /// A message structure for message brokering
 export interface IBaseDataMessage {
     // Creation time, epoch seconds
@@ -26,9 +31,7 @@ export interface IBaseDataMessage {
     // QOS (quality of service), basically priority.
     qos: 0 | 1 | 2,
     // Whether to instruct the UI to show a notification message to end user (requires title and text to be set)
-    showMessage: boolean,
-    title?: string,
-    text?: string,
+    toastMessage?: IToastMessage,
 }
 
 export interface IEntityDataMessage extends IBaseDataMessage {
