@@ -19,6 +19,7 @@ export enum SearchStatusType {
     selected,
     error,
     reset,
+    searchableItemTypeChanged,
 }
 export enum SearchableItemType {
     currentAreaFilter,

@@ -25,6 +25,7 @@ var SearchStatusType;
     SearchStatusType[SearchStatusType["selected"] = 3] = "selected";
     SearchStatusType[SearchStatusType["error"] = 4] = "error";
     SearchStatusType[SearchStatusType["reset"] = 5] = "reset";
+    SearchStatusType[SearchStatusType["searchableItemTypeChanged"] = 6] = "searchableItemTypeChanged";
 })(SearchStatusType = exports.SearchStatusType || (exports.SearchStatusType = {}));
 var SearchableItemType;
 (function (SearchableItemType) {
