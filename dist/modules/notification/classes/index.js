@@ -10,7 +10,8 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./user-notification"), exports);
-__exportStar(require("./data-message"), exports);
+__exportStar(require("./base-data-message"), exports);
 __exportStar(require("./chat-message"), exports);
+__exportStar(require("./entity-data-message"), exports);
+__exportStar(require("./user-notification"), exports);
 //# sourceMappingURL=index.js.map
