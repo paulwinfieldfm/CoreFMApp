@@ -11,4 +11,6 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./user-notification"), exports);
+__exportStar(require("./data-message"), exports);
+__exportStar(require("./chat-message"), exports);
 //# sourceMappingURL=index.js.map
