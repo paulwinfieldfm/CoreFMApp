@@ -24,6 +24,7 @@ export interface IPerson extends IKeyedItem {
 export interface IContact extends IPerson {
     parentLocationId?: number,
     contactTypeId: ContactType,
+    userAccountType: UserAccountType,
 }
 export interface ILinkedEntity {
     id: number,

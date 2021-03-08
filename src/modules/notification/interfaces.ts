@@ -1,4 +1,4 @@
-import { ILinkedEntity, IPerson } from "../base";
+import { ILinkedEntity, IPerson, IContact } from "../base";
 import { UserNotificationMessageClass, UserNotificationMessageSeverity, UserNotificationType } from "./enums";
 
 export interface IUserNotificationMessage {
@@ -41,7 +41,7 @@ export interface IEntityDataMessage extends IBaseDataMessage {
 }
 
 export interface IChatMessage extends IBaseDataMessage {
-    sender: IPerson,
+    sender: IContact,
     // Time delivered
     delivered?: number,    
     // Time read
