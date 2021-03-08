@@ -41,6 +41,7 @@ export interface IEntityDataMessage extends IBaseDataMessage {
 }
 
 export interface IChatMessage extends IBaseDataMessage {
+    sender: IPerson,
     // Time delivered
     delivered?: number,    
     // Time read
