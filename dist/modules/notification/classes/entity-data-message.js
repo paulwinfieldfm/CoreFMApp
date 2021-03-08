@@ -4,12 +4,13 @@ exports.EntityDataMessage = void 0;
 const date_extensions_1 = require("../../date-extensions");
 const base_data_message_1 = require("./base-data-message");
 class EntityDataMessage {
-    constructor() {
+    constructor(id) {
         this.qos = 1;
+        this.id = id;
         this.time = date_extensions_1.DateHelper.dateToEpoch();
     }
-    static create(linkedEntity, supplierId, organisationUnitId, toastMessage) {
-        let result = (new base_data_message_1.BaseDataMessage(supplierId, organisationUnitId, toastMessage));
+    static create(id, linkedEntity, supplierId, organisationUnitId, toastMessage) {
+        let result = (new base_data_message_1.BaseDataMessage(id, supplierId, organisationUnitId, toastMessage));
         result.linkedEntity = linkedEntity;
         return result;
     }

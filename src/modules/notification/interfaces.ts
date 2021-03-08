@@ -22,6 +22,7 @@ export interface IToastMessage {
 }
 /// A message structure for message brokering
 export interface IBaseDataMessage {
+    id: string,
     // Creation time, epoch seconds
     time: number,
     // Id of a supplier who is a valid consumer of the message
