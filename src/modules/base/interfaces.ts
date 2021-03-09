@@ -39,6 +39,7 @@ export interface IEntity {
     bookingPriority?: BookingPriority,
     serviceType: number,
     serviceId: number,
+    organisationUnitId: number
 }
 
 /// A named value for a property map
