@@ -101,6 +101,16 @@ class Price {
         const result = Price.createTotal(categoryItems);
         return result.isFoc ? "" : result.display(false);
     }
+    static generateSubtotals(priceLines) {
+        return priceLines && priceLines.length > 0
+            ? priceLines.map((p) => {
+                return Object.assign(Object.assign({}, p), { subtotal: Price.lineSubtotal(p) });
+            })
+            : [];
+    }
+    static lineSubtotal(priceLine) {
+        return priceLine.isFoc || !priceLine.itemPrice ? 0 : (priceLine.quantity || 1 * priceLine.itemPrice);
+    }
     static priceLineCategory(entry, defaultValue) {
         return (entry.priceLineCategory !== undefined)
             ? entry.priceLineCategory || defaultValue

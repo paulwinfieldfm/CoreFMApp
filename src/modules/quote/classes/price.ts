@@ -1,5 +1,5 @@
 import { PriceLineCategory } from "../enums";
-import { IPrice } from "../interfaces";
+import { IPrice, IPriceLine } from "../interfaces";
 
 export class Price implements IPrice {
     currencyUnit: string = 'gbp';
@@ -106,6 +106,21 @@ export class Price implements IPrice {
         categoryItems.forEach(c => c.subtotal = c.quantity * c.itemPrice);
         const result = Price.createTotal(categoryItems);
         return result.isFoc ? "" : result.display(false);
+    }
+
+    static generateSubtotals(priceLines: Array<IPriceLine>): Array<IPriceLine> {
+        return priceLines && priceLines.length > 0
+            ? priceLines.map((p: IPriceLine) => {
+                return {
+                    ...p,
+                    subtotal: Price.lineSubtotal(p)
+                }
+            })
+            : [];
+    }
+
+    static lineSubtotal(priceLine: IPriceLine): number {
+        return priceLine.isFoc || !priceLine.itemPrice ? 0 : (priceLine.quantity||1 * priceLine.itemPrice);
     }
 
     static priceLineCategory(entry: any, defaultValue: PriceLineCategory): PriceLineCategory {
