@@ -146,7 +146,7 @@ export class Price implements IPrice {
     }
 
     static currencySymbol(currencyUnit: string): string {
-        switch (currencyUnit.toLowerCase()) {
+        switch ((currencyUnit||'gbp').toLowerCase()) {
             case 'gbp': return '£';
             case 'usd': return '$';
             case 'eur': return '€';

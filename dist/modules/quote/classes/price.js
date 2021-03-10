@@ -129,7 +129,7 @@ class Price {
         return `${Price.currencySymbol(currencyUnit)}${value.toFixed(2)}`;
     }
     static currencySymbol(currencyUnit) {
-        switch (currencyUnit.toLowerCase()) {
+        switch ((currencyUnit || 'gbp').toLowerCase()) {
             case 'gbp': return '£';
             case 'usd': return '$';
             case 'eur': return '€';
