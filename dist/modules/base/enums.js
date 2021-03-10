@@ -1,6 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserRoleType = exports.UserAccountType = exports.DeprecatedLinkedEntityType = exports.JournalEntryPropertyType = exports.SearchableItemType = exports.SearchStatusType = exports.ActivityType = exports.ContactType = void 0;
+exports.UserRoleType = exports.UserAccountType = exports.DeprecatedLinkedEntityType = exports.JournalEntryPropertyType = exports.SearchableItemType = exports.SearchStatusType = exports.ActivityType = exports.ContactType = exports.ApprovalRequiredType = void 0;
+var ApprovalRequiredType;
+(function (ApprovalRequiredType) {
+    ApprovalRequiredType[ApprovalRequiredType["unknown"] = 0] = "unknown";
+    ApprovalRequiredType[ApprovalRequiredType["approvalNotRequired"] = 1] = "approvalNotRequired";
+    ApprovalRequiredType[ApprovalRequiredType["approvalRequired"] = 2] = "approvalRequired";
+    ApprovalRequiredType[ApprovalRequiredType["approved"] = 3] = "approved";
+    ApprovalRequiredType[ApprovalRequiredType["declined"] = 4] = "declined";
+    ApprovalRequiredType[ApprovalRequiredType["canceled"] = 5] = "canceled";
+})(ApprovalRequiredType = exports.ApprovalRequiredType || (exports.ApprovalRequiredType = {}));
 var ContactType;
 (function (ContactType) {
     ContactType[ContactType["contact"] = 0] = "contact";

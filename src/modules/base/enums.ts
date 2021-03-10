@@ -1,3 +1,11 @@
+export enum ApprovalRequiredType {
+    unknown,
+    approvalNotRequired,
+    approvalRequired,
+    approved,
+    declined,
+    canceled,
+}
 export enum ContactType {
     contact,
     accountManager,
