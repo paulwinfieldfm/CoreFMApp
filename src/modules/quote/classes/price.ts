@@ -120,7 +120,7 @@ export class Price implements IPrice {
     }
 
     static lineSubtotal(priceLine: IPriceLine): number {
-        return priceLine.isFoc || !priceLine.itemPrice ? 0 : (priceLine.quantity||1 * priceLine.itemPrice);
+        return priceLine.isFoc || !priceLine.itemPrice ? 0 : ((priceLine.quantity||1) * priceLine.itemPrice);
     }
 
     static priceLineCategory(entry: any, defaultValue: PriceLineCategory): PriceLineCategory {
