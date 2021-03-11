@@ -16,6 +16,11 @@ export interface IPrice {
     isFoc: boolean,
 }
 export interface IPriceLine extends IPrice {
+    id?: number,
+    // Does this price entry pertain to a particular asset?
+    assetId?: number,
+    // Was this price entry generated from a predefined rate?
+    rateId?: number,
     name: string,
     description?: string,
     priceLineCategory: PriceLineCategory,
