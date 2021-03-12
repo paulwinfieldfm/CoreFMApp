@@ -144,3 +144,20 @@ export interface IQuotationSupplierResponse extends IServiceRequirement {
     declineToQuoteReason?: string,
 }
 
+export interface IQuotationResponse {
+    quotationId: number,
+    quotationSupplierInviteId: number,
+    quotationResponse: QuotationResponse,
+    responseSubmittedDateTime: number,
+    anticipatedVisitCount?: number,
+    bestAndFinalOffer: boolean,
+    siteSurveyRequired?: boolean,
+    soonestServiceDate?: number,
+    declineToQuoteReason?: string,
+    supplierId: number,
+    price: number, 
+    properties?: IItemAttributeMap,
+    assetDetails: Array<IQuotationAssetResponse>,
+    priceLines: Array<IPriceLine>, 
+}
+
