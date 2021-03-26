@@ -151,6 +151,7 @@ export interface IQuotationResponse {
     responseSubmittedDateTime: number,
     anticipatedVisitCount?: number,
     bestAndFinalOffer: boolean,
+    bestOfferResponseDate?: number,
     siteSurveyRequired?: boolean,
     soonestServiceDate?: number,
     declineToQuoteReason?: string,
