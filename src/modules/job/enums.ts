@@ -24,7 +24,7 @@ export enum JobTaskStatus {
 export enum JobStatusType {
     new = 1,
     accepted,
-    onRounte,
+    onRoute,
     atSite,
     onSite,
     inProgress,
