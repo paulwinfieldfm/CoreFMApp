@@ -67,3 +67,17 @@ export enum UserRoleType {
     supplierAdministrator,
     engineer
 }
+
+export enum EntityState {
+    newQuoteAdded = 1,
+    quoteResponseSubmitted,
+    BAFORequested,
+    BAFOResponseSubmitted,
+    quoteAccepted,
+    orderAccepted,
+    quotationChatMessageSent,
+    orderChatMessageSent,
+    visitChatMessageSent,
+    JobOnHold,
+    JobCompleted
+}

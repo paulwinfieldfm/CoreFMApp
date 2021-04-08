@@ -153,3 +153,8 @@ export interface IScoredElement {
     score?: number,
     calculations?: any,
 }
+
+export interface IEmailContact {
+    emailAddress: string,
+    displayName: string,
+}

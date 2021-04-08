@@ -20,3 +20,16 @@ export enum JobTaskStatus {
     complete,
     incomplete
 }
+
+export enum JobStatusType {
+    new = 1,
+    accepted,
+    onRounte,
+    atSite,
+    onSite,
+    inProgress,
+    completed,
+    rejected,
+    aborted,
+    onHold
+}
