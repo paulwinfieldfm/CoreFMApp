@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserRoleType = exports.UserAccountType = exports.DeprecatedLinkedEntityType = exports.JournalEntryPropertyType = exports.SearchableItemType = exports.SearchStatusType = exports.ActivityType = exports.ContactType = exports.ApprovalRequiredType = void 0;
+exports.EntityState = exports.UserRoleType = exports.UserAccountType = exports.DeprecatedLinkedEntityType = exports.JournalEntryPropertyType = exports.SearchableItemType = exports.SearchStatusType = exports.ActivityType = exports.ContactType = exports.ApprovalRequiredType = void 0;
 var ApprovalRequiredType;
 (function (ApprovalRequiredType) {
     ApprovalRequiredType[ApprovalRequiredType["unknown"] = 0] = "unknown";
@@ -79,4 +79,18 @@ var UserRoleType;
     UserRoleType[UserRoleType["supplierAdministrator"] = 3] = "supplierAdministrator";
     UserRoleType[UserRoleType["engineer"] = 4] = "engineer";
 })(UserRoleType = exports.UserRoleType || (exports.UserRoleType = {}));
+var EntityState;
+(function (EntityState) {
+    EntityState[EntityState["newQuoteAdded"] = 1] = "newQuoteAdded";
+    EntityState[EntityState["quoteResponseSubmitted"] = 2] = "quoteResponseSubmitted";
+    EntityState[EntityState["BAFORequested"] = 3] = "BAFORequested";
+    EntityState[EntityState["BAFOResponseSubmitted"] = 4] = "BAFOResponseSubmitted";
+    EntityState[EntityState["quoteAccepted"] = 5] = "quoteAccepted";
+    EntityState[EntityState["orderAccepted"] = 6] = "orderAccepted";
+    EntityState[EntityState["quotationChatMessageSent"] = 7] = "quotationChatMessageSent";
+    EntityState[EntityState["orderChatMessageSent"] = 8] = "orderChatMessageSent";
+    EntityState[EntityState["visitChatMessageSent"] = 9] = "visitChatMessageSent";
+    EntityState[EntityState["JobOnHold"] = 10] = "JobOnHold";
+    EntityState[EntityState["JobCompleted"] = 11] = "JobCompleted";
+})(EntityState = exports.EntityState || (exports.EntityState = {}));
 //# sourceMappingURL=enums.js.map

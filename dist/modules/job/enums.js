@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JobTaskStatus = exports.JobStatus = void 0;
+exports.JobStatusType = exports.JobTaskStatus = exports.JobStatus = void 0;
 var JobStatus;
 (function (JobStatus) {
     JobStatus[JobStatus["new"] = 0] = "new";
@@ -25,4 +25,17 @@ var JobTaskStatus;
     JobTaskStatus[JobTaskStatus["complete"] = 1] = "complete";
     JobTaskStatus[JobTaskStatus["incomplete"] = 2] = "incomplete";
 })(JobTaskStatus = exports.JobTaskStatus || (exports.JobTaskStatus = {}));
+var JobStatusType;
+(function (JobStatusType) {
+    JobStatusType[JobStatusType["new"] = 1] = "new";
+    JobStatusType[JobStatusType["accepted"] = 2] = "accepted";
+    JobStatusType[JobStatusType["onRounte"] = 3] = "onRounte";
+    JobStatusType[JobStatusType["atSite"] = 4] = "atSite";
+    JobStatusType[JobStatusType["onSite"] = 5] = "onSite";
+    JobStatusType[JobStatusType["inProgress"] = 6] = "inProgress";
+    JobStatusType[JobStatusType["completed"] = 7] = "completed";
+    JobStatusType[JobStatusType["rejected"] = 8] = "rejected";
+    JobStatusType[JobStatusType["aborted"] = 9] = "aborted";
+    JobStatusType[JobStatusType["onHold"] = 10] = "onHold";
+})(JobStatusType = exports.JobStatusType || (exports.JobStatusType = {}));
 //# sourceMappingURL=enums.js.map
