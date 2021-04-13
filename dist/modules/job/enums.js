@@ -29,7 +29,7 @@ var JobStatusType;
 (function (JobStatusType) {
     JobStatusType[JobStatusType["new"] = 1] = "new";
     JobStatusType[JobStatusType["accepted"] = 2] = "accepted";
-    JobStatusType[JobStatusType["onRounte"] = 3] = "onRounte";
+    JobStatusType[JobStatusType["onRoute"] = 3] = "onRoute";
     JobStatusType[JobStatusType["atSite"] = 4] = "atSite";
     JobStatusType[JobStatusType["onSite"] = 5] = "onSite";
     JobStatusType[JobStatusType["inProgress"] = 6] = "inProgress";
