@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EntityState = exports.UserRoleType = exports.UserAccountType = exports.DeprecatedLinkedEntityType = exports.JournalEntryPropertyType = exports.SearchableItemType = exports.SearchStatusType = exports.ActivityType = exports.ContactType = exports.ApprovalRequiredType = void 0;
+exports.RegistrationStatus = exports.EntityState = exports.UserRoleType = exports.UserAccountType = exports.DeprecatedLinkedEntityType = exports.JournalEntryPropertyType = exports.SearchableItemType = exports.SearchStatusType = exports.ActivityType = exports.ContactType = exports.ApprovalRequiredType = void 0;
 var ApprovalRequiredType;
 (function (ApprovalRequiredType) {
     ApprovalRequiredType[ApprovalRequiredType["unknown"] = 0] = "unknown";
@@ -93,4 +93,9 @@ var EntityState;
     EntityState[EntityState["JobOnHold"] = 10] = "JobOnHold";
     EntityState[EntityState["JobCompleted"] = 11] = "JobCompleted";
 })(EntityState = exports.EntityState || (exports.EntityState = {}));
+var RegistrationStatus;
+(function (RegistrationStatus) {
+    RegistrationStatus[RegistrationStatus["referred"] = 1] = "referred";
+    RegistrationStatus[RegistrationStatus["standard"] = 2] = "standard";
+})(RegistrationStatus = exports.RegistrationStatus || (exports.RegistrationStatus = {}));
 //# sourceMappingURL=enums.js.map

@@ -81,3 +81,8 @@ export enum EntityState {
     JobOnHold,
     JobCompleted
 }
+
+export enum RegistrationStatus {
+    referred=1,
+    standard
+}
