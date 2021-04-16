@@ -10,6 +10,7 @@ export interface IDocumentSaveRequest {
     displayFilename: string,
     mimeType: string,
     public: boolean,
+    supplierId?: number
 }
 export interface IDocument extends IDocumentSaveRequest {
     id: number,
