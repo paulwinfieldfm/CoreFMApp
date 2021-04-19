@@ -158,3 +158,13 @@ export interface IEmailContact {
     emailAddress: string,
     displayName: string,
 }
+
+export interface IHeaderRequirement {
+    entityId: number,
+    entityType: string,
+    reference: string,
+    description?: string,
+    bookingPriority: BookingPriority,
+    serviceType: number,
+    service: IService,
+  }
