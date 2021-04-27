@@ -51,3 +51,8 @@ export interface IChatMessage extends IBaseDataMessage {
     // An optional entity which is the subject/target of the message
     linkedEntity?: ILinkedEntity,
 }
+
+export interface IPersonChatInfo {
+    personId: number,
+    unreadMessageCount: number
+}
