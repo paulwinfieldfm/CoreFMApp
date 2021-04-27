@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PriceLineCategory = exports.BookingPriority = exports.QuotationResponse = exports.QuoteResponseProvided = exports.QuoteResponseArea = exports.QuoteArea = exports.QuoteCreateStatusType = void 0;
+exports.QuoteWonStatus = exports.PriceLineCategory = exports.BookingPriority = exports.QuotationResponse = exports.QuoteResponseProvided = exports.QuoteResponseArea = exports.QuoteArea = exports.QuoteCreateStatusType = void 0;
 var QuoteCreateStatusType;
 (function (QuoteCreateStatusType) {
     QuoteCreateStatusType[QuoteCreateStatusType["reset"] = 0] = "reset";
@@ -55,4 +55,10 @@ var PriceLineCategory;
     PriceLineCategory[PriceLineCategory["credit"] = 3] = "credit";
     PriceLineCategory[PriceLineCategory["fixedCost"] = 4] = "fixedCost";
 })(PriceLineCategory = exports.PriceLineCategory || (exports.PriceLineCategory = {}));
+var QuoteWonStatus;
+(function (QuoteWonStatus) {
+    QuoteWonStatus[QuoteWonStatus["pending"] = 0] = "pending";
+    QuoteWonStatus[QuoteWonStatus["won"] = 1] = "won";
+    QuoteWonStatus[QuoteWonStatus["notWon"] = 2] = "notWon";
+})(QuoteWonStatus = exports.QuoteWonStatus || (exports.QuoteWonStatus = {}));
 //# sourceMappingURL=enums.js.map
