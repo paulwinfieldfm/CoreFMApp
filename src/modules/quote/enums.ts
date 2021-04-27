@@ -50,3 +50,8 @@ export enum PriceLineCategory {
     credit,
     fixedCost,
 }
+export enum QuoteWonStatus {
+    pending,
+    won,
+    notWon,
+}
