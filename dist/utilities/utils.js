@@ -74,10 +74,12 @@ class Utils {
     }
     static initials(username) {
         const s = username.replace(/[()/&,.?)]/g, ' ');
-        let v = s.split(' ');
+        let v = s.split(' ').filter(e => e);
         let result = v[0][0];
         if (v.length > 1) {
-            result += v[1][0];
+            if (v[1][0]) {
+                result += v[1][0];
+            }
         }
         else if (v[0] && v[0].length > 1) {
             result += v[0][1];

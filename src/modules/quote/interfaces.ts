@@ -162,3 +162,9 @@ export interface IQuotationResponse {
     priceLines: Array<IPriceLine>, 
 }
 
+export interface IBafoOptout {
+    quotationId: number,
+    supplierId: number,
+    quotationSupplierInviteId: number,
+    notes: string,
+}
