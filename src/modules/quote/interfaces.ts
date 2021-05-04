@@ -142,6 +142,7 @@ export interface IQuotationSupplierResponse extends IServiceRequirement {
     siteSurveyRequired: boolean,
     soonestServiceDate: number,
     declineToQuoteReason?: string,
+    responseCutoffDate?: number,
 }
 
 export interface IQuotationResponse {
