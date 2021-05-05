@@ -167,4 +167,5 @@ export interface IHeaderRequirement {
     bookingPriority: BookingPriority,
     serviceType: number,
     service: IService,
+    actionDate?: number,
   }
