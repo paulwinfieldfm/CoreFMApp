@@ -54,4 +54,5 @@ export enum QuoteWonStatus {
     pending,
     won,
     notWon,
+    cancelled
 }
