@@ -60,5 +60,6 @@ var QuoteWonStatus;
     QuoteWonStatus[QuoteWonStatus["pending"] = 0] = "pending";
     QuoteWonStatus[QuoteWonStatus["won"] = 1] = "won";
     QuoteWonStatus[QuoteWonStatus["notWon"] = 2] = "notWon";
+    QuoteWonStatus[QuoteWonStatus["cancelled"] = 3] = "cancelled";
 })(QuoteWonStatus = exports.QuoteWonStatus || (exports.QuoteWonStatus = {}));
 //# sourceMappingURL=enums.js.map

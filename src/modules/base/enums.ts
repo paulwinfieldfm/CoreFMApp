@@ -79,7 +79,8 @@ export enum EntityState {
     orderChatMessageSent,
     visitChatMessageSent,
     JobOnHold,
-    JobCompleted
+    JobCompleted,
+    quoteCancelled
 }
 
 export enum RegistrationStatus {

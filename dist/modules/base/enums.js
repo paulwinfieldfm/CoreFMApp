@@ -92,6 +92,7 @@ var EntityState;
     EntityState[EntityState["visitChatMessageSent"] = 9] = "visitChatMessageSent";
     EntityState[EntityState["JobOnHold"] = 10] = "JobOnHold";
     EntityState[EntityState["JobCompleted"] = 11] = "JobCompleted";
+    EntityState[EntityState["quoteCancelled"] = 12] = "quoteCancelled";
 })(EntityState = exports.EntityState || (exports.EntityState = {}));
 var RegistrationStatus;
 (function (RegistrationStatus) {
