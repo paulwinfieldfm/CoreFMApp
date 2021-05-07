@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RegistrationStatus = exports.EntityState = exports.UserRoleType = exports.UserAccountType = exports.DeprecatedLinkedEntityType = exports.JournalEntryPropertyType = exports.SearchableItemType = exports.SearchStatusType = exports.ActivityType = exports.ContactType = exports.ApprovalRequiredType = void 0;
+exports.EntityStatus = exports.RegistrationStatus = exports.EntityState = exports.UserRoleType = exports.UserAccountType = exports.DeprecatedLinkedEntityType = exports.JournalEntryPropertyType = exports.SearchableItemType = exports.SearchStatusType = exports.ActivityType = exports.ContactType = exports.ApprovalRequiredType = void 0;
 var ApprovalRequiredType;
 (function (ApprovalRequiredType) {
     ApprovalRequiredType[ApprovalRequiredType["unknown"] = 0] = "unknown";
@@ -99,4 +99,15 @@ var RegistrationStatus;
     RegistrationStatus[RegistrationStatus["referred"] = 1] = "referred";
     RegistrationStatus[RegistrationStatus["standard"] = 2] = "standard";
 })(RegistrationStatus = exports.RegistrationStatus || (exports.RegistrationStatus = {}));
+var EntityStatus;
+(function (EntityStatus) {
+    EntityStatus[EntityStatus["unknown"] = 0] = "unknown";
+    EntityStatus[EntityStatus["rfq"] = 1] = "rfq";
+    EntityStatus[EntityStatus["compare"] = 2] = "compare";
+    EntityStatus[EntityStatus["raised"] = 3] = "raised";
+    EntityStatus[EntityStatus["accepted"] = 4] = "accepted";
+    EntityStatus[EntityStatus["booked"] = 5] = "booked";
+    EntityStatus[EntityStatus["inProgress"] = 6] = "inProgress";
+    EntityStatus[EntityStatus["completed"] = 7] = "completed";
+})(EntityStatus = exports.EntityStatus || (exports.EntityStatus = {}));
 //# sourceMappingURL=enums.js.map
