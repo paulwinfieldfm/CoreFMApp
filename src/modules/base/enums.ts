@@ -87,3 +87,14 @@ export enum RegistrationStatus {
     referred=1,
     standard
 }
+
+export enum EntityStatus {
+    unknown,
+    rfq,
+    compare,
+    raised,
+    accepted,
+    booked,
+    inProgress,
+    completed
+}
