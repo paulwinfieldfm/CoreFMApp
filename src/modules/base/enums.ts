@@ -90,11 +90,16 @@ export enum RegistrationStatus {
 
 export enum EntityStatus {
     unknown,
-    rfq,
+    newQuote,
     compare,
     raised,
     accepted,
     booked,
+    onRoute,
+    atSite,
+    onSite,
     inProgress,
-    completed
+    onHold,
+    completed,
+    signOff
 }

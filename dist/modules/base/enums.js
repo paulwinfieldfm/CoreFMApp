@@ -102,12 +102,17 @@ var RegistrationStatus;
 var EntityStatus;
 (function (EntityStatus) {
     EntityStatus[EntityStatus["unknown"] = 0] = "unknown";
-    EntityStatus[EntityStatus["rfq"] = 1] = "rfq";
+    EntityStatus[EntityStatus["newQuote"] = 1] = "newQuote";
     EntityStatus[EntityStatus["compare"] = 2] = "compare";
     EntityStatus[EntityStatus["raised"] = 3] = "raised";
     EntityStatus[EntityStatus["accepted"] = 4] = "accepted";
     EntityStatus[EntityStatus["booked"] = 5] = "booked";
-    EntityStatus[EntityStatus["inProgress"] = 6] = "inProgress";
-    EntityStatus[EntityStatus["completed"] = 7] = "completed";
+    EntityStatus[EntityStatus["onRoute"] = 6] = "onRoute";
+    EntityStatus[EntityStatus["atSite"] = 7] = "atSite";
+    EntityStatus[EntityStatus["onSite"] = 8] = "onSite";
+    EntityStatus[EntityStatus["inProgress"] = 9] = "inProgress";
+    EntityStatus[EntityStatus["onHold"] = 10] = "onHold";
+    EntityStatus[EntityStatus["completed"] = 11] = "completed";
+    EntityStatus[EntityStatus["signOff"] = 12] = "signOff";
 })(EntityStatus = exports.EntityStatus || (exports.EntityStatus = {}));
 //# sourceMappingURL=enums.js.map
