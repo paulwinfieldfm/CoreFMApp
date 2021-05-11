@@ -47,6 +47,7 @@ var SearchableItemType;
     SearchableItemType[SearchableItemType["supplier"] = 6] = "supplier";
     SearchableItemType[SearchableItemType["product"] = 7] = "product";
     SearchableItemType[SearchableItemType["combined"] = 8] = "combined";
+    SearchableItemType[SearchableItemType["dashboardFilter"] = 9] = "dashboardFilter";
 })(SearchableItemType = exports.SearchableItemType || (exports.SearchableItemType = {}));
 var JournalEntryPropertyType;
 (function (JournalEntryPropertyType) {

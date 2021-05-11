@@ -39,6 +39,7 @@ export enum SearchableItemType {
     supplier,
     product,
     combined,
+    dashboardFilter,
 }
 export enum JournalEntryPropertyType {
     acknowledgeRequired,
