@@ -143,9 +143,17 @@ export interface ISearchSelection {
     data: IKeyedItem
 }
 
+export interface IDashboardFilter {
+    statusList: Array<EntityStatus>,
+    showMyItems: boolean,
+    showUnassignedItems: boolean,
+    showAllItems: boolean,
+    showUserIdItems?: number,
+}
 export interface ISearchStatus {
     status: SearchStatusType,
     message?: string,
+    dashboardFilter?: IDashboardFilter,
     searchResultsEntries?: Array<ISearchResults>,
     selection?: ISearchSelection
 }
