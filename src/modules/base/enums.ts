@@ -81,7 +81,8 @@ export enum EntityState {
     visitChatMessageSent,
     JobOnHold,
     JobCompleted,
-    quoteCancelled
+    quoteCancelled,
+    orderCancelled,
 }
 
 export enum RegistrationStatus {
@@ -102,5 +103,6 @@ export enum EntityStatus {
     inProgress,
     onHold,
     completed,
-    signOff
+    signOff,
+    cancelled
 }
