@@ -94,6 +94,7 @@ var EntityState;
     EntityState[EntityState["JobOnHold"] = 10] = "JobOnHold";
     EntityState[EntityState["JobCompleted"] = 11] = "JobCompleted";
     EntityState[EntityState["quoteCancelled"] = 12] = "quoteCancelled";
+    EntityState[EntityState["orderCancelled"] = 13] = "orderCancelled";
 })(EntityState = exports.EntityState || (exports.EntityState = {}));
 var RegistrationStatus;
 (function (RegistrationStatus) {
@@ -115,5 +116,6 @@ var EntityStatus;
     EntityStatus[EntityStatus["onHold"] = 10] = "onHold";
     EntityStatus[EntityStatus["completed"] = 11] = "completed";
     EntityStatus[EntityStatus["signOff"] = 12] = "signOff";
+    EntityStatus[EntityStatus["cancelled"] = 13] = "cancelled";
 })(EntityStatus = exports.EntityStatus || (exports.EntityStatus = {}));
 //# sourceMappingURL=enums.js.map
