@@ -51,6 +51,13 @@ export class Epoch {
   static now(): number {
     return Epoch.from(undefined);
   }
+  static today(): number {
+    return new Date().setHours(11, 59, 59);  //Today EOD
+  }
+  static tomorrow(): number {
+    const today = new Date().setHours(11, 59, 59);
+    return Epoch.addDays(today, 1); //Tomorrow EOD
+  }
   static from(d?: Date): number {
     if (!d) {
       d = new Date();
@@ -87,6 +94,11 @@ export class Epoch {
   static addMonths(value: number, add: number): number {
     const d = Epoch.toDate(value);
     d.setMonth(d.getMonth()+add);
+    return Epoch.from(d);
+  }
+  static addDays(value: number, add: number): number {
+    const d = Epoch.toDate(value);
+    d.setDate(d.getDate() + add);
     return Epoch.from(d);
   }
 }
