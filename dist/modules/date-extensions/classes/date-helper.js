@@ -67,11 +67,12 @@ class Epoch {
         return Epoch.from(undefined);
     }
     static today() {
-        return new Date().setHours(11, 59, 59); //Today EOD
+        const today = new Date();
+        today.setHours(23, 59, 59); //Today EOD
+        return Epoch.from(today);
     }
     static tomorrow() {
-        const today = new Date().setHours(11, 59, 59);
-        return Epoch.addDays(today, 1); //Tomorrow EOD
+        return Epoch.addDays(Epoch.today(), 1); //Tomorrow EOD
     }
     static from(d) {
         if (!d) {
