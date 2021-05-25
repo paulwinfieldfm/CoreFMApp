@@ -92,7 +92,8 @@ export interface ITodoEntry {
     serviceType: ServiceType,
     service?: IService,
     owner?: IPerson,
-    entityStaus?: EntityStatus
+    entityStaus?: EntityStatus,
+    entityPage?: string
 }
 /// Categorisation of services or other logical or phyical items (assets too?)
 export interface ICategory extends IKeyedItem {
