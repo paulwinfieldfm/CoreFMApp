@@ -117,5 +117,6 @@ var EntityStatus;
     EntityStatus[EntityStatus["completed"] = 11] = "completed";
     EntityStatus[EntityStatus["signOff"] = 12] = "signOff";
     EntityStatus[EntityStatus["cancelled"] = 13] = "cancelled";
+    EntityStatus[EntityStatus["clonedQuote"] = 14] = "clonedQuote";
 })(EntityStatus = exports.EntityStatus || (exports.EntityStatus = {}));
 //# sourceMappingURL=enums.js.map

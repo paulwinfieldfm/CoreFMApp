@@ -104,5 +104,6 @@ export enum EntityStatus {
     onHold,
     completed,
     signOff,
-    cancelled
+    cancelled,
+    clonedQuote,
 }
