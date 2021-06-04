@@ -107,3 +107,9 @@ export enum EntityStatus {
     cancelled,
     clonedQuote,
 }
+
+export enum ReadReceiptStatus {
+    unknown,
+    notRead,
+    read,
+  }
