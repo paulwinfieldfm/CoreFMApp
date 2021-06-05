@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EntityStatus = exports.RegistrationStatus = exports.EntityState = exports.UserRoleType = exports.UserAccountType = exports.DeprecatedLinkedEntityType = exports.JournalEntryPropertyType = exports.SearchableItemType = exports.SearchStatusType = exports.ActivityType = exports.ContactType = exports.ApprovalRequiredType = void 0;
+exports.ReadReceiptStatus = exports.EntityStatus = exports.RegistrationStatus = exports.EntityState = exports.UserRoleType = exports.UserAccountType = exports.DeprecatedLinkedEntityType = exports.JournalEntryPropertyType = exports.SearchableItemType = exports.SearchStatusType = exports.ActivityType = exports.ContactType = exports.ApprovalRequiredType = void 0;
 var ApprovalRequiredType;
 (function (ApprovalRequiredType) {
     ApprovalRequiredType[ApprovalRequiredType["unknown"] = 0] = "unknown";
@@ -119,4 +119,10 @@ var EntityStatus;
     EntityStatus[EntityStatus["cancelled"] = 13] = "cancelled";
     EntityStatus[EntityStatus["clonedQuote"] = 14] = "clonedQuote";
 })(EntityStatus = exports.EntityStatus || (exports.EntityStatus = {}));
+var ReadReceiptStatus;
+(function (ReadReceiptStatus) {
+    ReadReceiptStatus[ReadReceiptStatus["unknown"] = 0] = "unknown";
+    ReadReceiptStatus[ReadReceiptStatus["notRead"] = 1] = "notRead";
+    ReadReceiptStatus[ReadReceiptStatus["read"] = 2] = "read";
+})(ReadReceiptStatus = exports.ReadReceiptStatus || (exports.ReadReceiptStatus = {}));
 //# sourceMappingURL=enums.js.map
