@@ -12,7 +12,7 @@ export class EntityDataMessage implements IEntityDataMessage {
     qos: 0 | 1 | 2 = 1;
     toastMessage?: IToastMessage | undefined;
 
-    static create(id: string, linkedEntity: ILinkedEntity, supplierId: number | undefined, organisationUnitId: number | undefined, toastMessage: IToastMessage) {
+    static create(id: string, linkedEntity: ILinkedEntity, supplierId: number | undefined, organisationUnitId: number | undefined, toastMessage: IToastMessage | undefined) {
         let result = <EntityDataMessage>(new BaseDataMessage(id, supplierId, organisationUnitId, toastMessage));
         result.linkedEntity = linkedEntity;        
         return result;
