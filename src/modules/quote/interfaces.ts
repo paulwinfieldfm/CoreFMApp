@@ -1,4 +1,4 @@
-import { IAuditedItem, IContact, IItemAttributeMap, ILinearProgressEntry } from "../base";
+import { IAuditedItem, IContact, IItemAttributeMap, IKeyedItem, ILinearProgressEntry } from "../base";
 import { DateMap, IScheduleDefinition } from "../date-extensions";
 import { IDeprecatedServiceRequest, IService, IServiceAssetRequirement, IServiceRequirement } from "../servicing";
 import { ISupplier, ISupplierInviteProfile } from "../supplier";
@@ -31,6 +31,8 @@ export interface IPriceLine extends IPrice {
     taxRate: number,
     total?: number,
     isFoc: boolean,
+    lineTotal?: number,
+    taxTotal?: number,
 }
 export interface IDeprecatedQuoteResponse extends IAuditedItem {
     quoteReference: string,
@@ -168,4 +170,38 @@ export interface IBafoOptout {
     supplierId: number,
     quotationSupplierInviteId: number,
     notes: string,
+}
+
+export interface IQuotationDocument extends IKeyedItem {
+    reference: string,
+    dateRequired?: string,
+    organisationUnitName: string,
+    organisationUnitImage: string,
+    customer: string,
+    service: string,
+    createdByUserName: string,
+    responseDate: string,
+    siteLocation: string,
+    validUntil: string,
+    time: Array<IPriceLine>,
+    material: Array<IPriceLine>,
+    fixedCost: Array<IPriceLine>,
+    discount: Array<IPriceLine>,
+    responses: Array<IQuotationDocumentSupplierResponse>,
+    subTotal: number,
+    taxTotal: number,
+    total: number,
+}
+
+export interface IQuotationDocumentSupplierResponse {
+    supplierId: number,
+    supplierName: string,
+    supplierImage: string,
+    price?: number,
+    originalPrice?: number,
+    optout: boolean,
+    responded: boolean,
+    declineToQuoteReason?: string,
+    quoteWonStatusId: number,
+    score: number
 }
