@@ -75,14 +75,16 @@ export enum EntityState {
     BAFORequested,
     BAFOResponseSubmitted,
     quoteAccepted,
+    quoteAcceptedWithoutOrder,
     orderAccepted,
     quotationChatMessageSent,
     orderChatMessageSent,
     visitChatMessageSent,
-    JobOnHold,
-    JobCompleted,
+    jobOnHold,
+    jobCompleted,
     quoteCancelled,
     orderCancelled,
+
 }
 
 export enum RegistrationStatus {
