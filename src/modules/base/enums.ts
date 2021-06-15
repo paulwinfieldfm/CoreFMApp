@@ -75,7 +75,6 @@ export enum EntityState {
     BAFORequested,
     BAFOResponseSubmitted,
     quoteAccepted,
-    quoteAcceptedWithoutOrder,
     orderAccepted,
     quotationChatMessageSent,
     orderChatMessageSent,
@@ -84,7 +83,7 @@ export enum EntityState {
     jobCompleted,
     quoteCancelled,
     orderCancelled,
-
+    quoteAcceptedWithoutOrder,
 }
 
 export enum RegistrationStatus {
@@ -96,7 +95,6 @@ export enum EntityStatus {
     unknown,
     newQuote,
     compare,
-    quoteAccepted,
     raised,
     orderAccepted,
     booked,
@@ -109,6 +107,7 @@ export enum EntityStatus {
     signOff,
     cancelled,
     clonedQuote,
+    quoteAccepted,
 }
 
 export enum ReadReceiptStatus {
