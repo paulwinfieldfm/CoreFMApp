@@ -198,6 +198,7 @@ export interface IQuotationDocument extends IKeyedItem {
 }
 
 export interface IQuotationDocumentSupplierResponse {
+    quotationSupplierInviteId: number,
     supplierId: number,
     supplierName: string,
     supplierImage: string,
