@@ -9,8 +9,8 @@ class EntityDataMessage {
         this.id = id;
         this.time = date_extensions_1.DateHelper.dateToEpoch();
     }
-    static create(id, linkedEntity, supplierId, organisationUnitId, toastMessage) {
-        let result = (new base_data_message_1.BaseDataMessage(id, supplierId, organisationUnitId, toastMessage));
+    static create(id, linkedEntity, supplierId, organisationUnitId, toastMessage, messageType) {
+        let result = (new base_data_message_1.BaseDataMessage(id, supplierId, organisationUnitId, toastMessage, messageType));
         result.linkedEntity = linkedEntity;
         return result;
     }

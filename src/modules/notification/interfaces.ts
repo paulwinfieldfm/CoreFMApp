@@ -1,5 +1,5 @@
 import { ILinkedEntity, IPerson, IContact } from "../base";
-import { UserNotificationMessageClass, UserNotificationMessageSeverity, UserNotificationType } from "./enums";
+import { EntityDataMessageType, UserNotificationMessageClass, UserNotificationMessageSeverity, UserNotificationType } from "./enums";
 
 export interface IUserNotificationMessage {
     userNotificationMessageSeverity: UserNotificationMessageSeverity,
@@ -33,6 +33,8 @@ export interface IBaseDataMessage {
     qos: 0 | 1 | 2,
     // Whether to instruct the UI to show a notification message to end user (requires title and text to be set)
     toastMessage?: IToastMessage,
+    // identify message with type and action if required
+    messageType?: EntityDataMessageType,
 }
 
 export interface IEntityDataMessage extends IBaseDataMessage {
