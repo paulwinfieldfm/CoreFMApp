@@ -1,5 +1,6 @@
 import { ILinkedEntity } from "../../base";
 import { DateHelper } from "../../date-extensions";
+import { EntityDataMessageType } from "../enums";
 import { IEntityDataMessage, IToastMessage } from "../interfaces";
 import { BaseDataMessage } from "./base-data-message";
 
@@ -11,9 +12,10 @@ export class EntityDataMessage implements IEntityDataMessage {
     organisationUnitId?: number | undefined;
     qos: 0 | 1 | 2 = 1;
     toastMessage?: IToastMessage | undefined;
+    messageType? : EntityDataMessageType;
 
-    static create(id: string, linkedEntity: ILinkedEntity, supplierId: number | undefined, organisationUnitId: number | undefined, toastMessage: IToastMessage | undefined) {
-        let result = <EntityDataMessage>(new BaseDataMessage(id, supplierId, organisationUnitId, toastMessage));
+    static create(id: string, linkedEntity: ILinkedEntity, supplierId: number | undefined, organisationUnitId: number | undefined, toastMessage: IToastMessage | undefined, messageType?: EntityDataMessageType) {
+        let result = <EntityDataMessage>(new BaseDataMessage(id, supplierId, organisationUnitId, toastMessage, messageType));
         result.linkedEntity = linkedEntity;        
         return result;
     }

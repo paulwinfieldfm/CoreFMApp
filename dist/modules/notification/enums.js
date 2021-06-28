@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserNotificationMessageClass = exports.UserNotificationMessageSeverity = exports.UserNotificationType = void 0;
+exports.EntityDataMessageType = exports.UserNotificationMessageClass = exports.UserNotificationMessageSeverity = exports.UserNotificationType = void 0;
 var UserNotificationType;
 (function (UserNotificationType) {
     UserNotificationType[UserNotificationType["login"] = 0] = "login";
@@ -20,4 +20,11 @@ var UserNotificationMessageClass;
     UserNotificationMessageClass[UserNotificationMessageClass["interactive"] = 1] = "interactive";
     UserNotificationMessageClass[UserNotificationMessageClass["question"] = 2] = "question";
 })(UserNotificationMessageClass = exports.UserNotificationMessageClass || (exports.UserNotificationMessageClass = {}));
+var EntityDataMessageType;
+(function (EntityDataMessageType) {
+    EntityDataMessageType[EntityDataMessageType["unknown"] = 0] = "unknown";
+    EntityDataMessageType[EntityDataMessageType["rfq"] = 1] = "rfq";
+    EntityDataMessageType[EntityDataMessageType["bafo"] = 2] = "bafo";
+    EntityDataMessageType[EntityDataMessageType["quoteAccepted"] = 3] = "quoteAccepted";
+})(EntityDataMessageType = exports.EntityDataMessageType || (exports.EntityDataMessageType = {}));
 //# sourceMappingURL=enums.js.map

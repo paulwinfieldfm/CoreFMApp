@@ -17,7 +17,7 @@ export class ChatMessage implements IChatMessage {
     toastMessage?: IToastMessage | undefined;
     
     static create(id: string, sender: IContact, content: string, supplierId: number | undefined, organisationUnitId: number | undefined, linkedEntity: ILinkedEntity | undefined) {
-        let result = <ChatMessage>(new BaseDataMessage(id, supplierId, organisationUnitId, undefined));
+        let result = <ChatMessage>(new BaseDataMessage(id, supplierId, organisationUnitId, undefined, undefined));
         result.sender = sender;
         result.content = content;
         result.linkedEntity = linkedEntity;
