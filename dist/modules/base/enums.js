@@ -12,10 +12,12 @@ var ApprovalRequiredType;
 })(ApprovalRequiredType = exports.ApprovalRequiredType || (exports.ApprovalRequiredType = {}));
 var ContactType;
 (function (ContactType) {
-    ContactType[ContactType["contact"] = 0] = "contact";
-    ContactType[ContactType["accountManager"] = 1] = "accountManager";
-    ContactType[ContactType["bookingAgent"] = 2] = "bookingAgent";
-    ContactType[ContactType["helpdesk"] = 3] = "helpdesk";
+    ContactType[ContactType["unknown"] = 0] = "unknown";
+    ContactType[ContactType["contact"] = 1] = "contact";
+    ContactType[ContactType["accountManager"] = 2] = "accountManager";
+    ContactType[ContactType["bookingAgent"] = 3] = "bookingAgent";
+    ContactType[ContactType["helpdesk"] = 4] = "helpdesk";
+    ContactType[ContactType["admin"] = 5] = "admin";
 })(ContactType = exports.ContactType || (exports.ContactType = {}));
 var ActivityType;
 (function (ActivityType) {

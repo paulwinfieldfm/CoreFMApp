@@ -14,3 +14,10 @@ export enum UserNotificationMessageClass {
     interactive, // clickable > link
     question,
 }
+
+export enum EntityDataMessageType {
+    unknown,
+    rfq,
+    bafo,
+    quoteAccepted
+}

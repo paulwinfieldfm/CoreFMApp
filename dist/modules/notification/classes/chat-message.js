@@ -10,7 +10,7 @@ class ChatMessage {
         this.time = date_extensions_1.DateHelper.dateToEpoch();
     }
     static create(id, sender, content, supplierId, organisationUnitId, linkedEntity) {
-        let result = (new base_data_message_1.BaseDataMessage(id, supplierId, organisationUnitId, undefined));
+        let result = (new base_data_message_1.BaseDataMessage(id, supplierId, organisationUnitId, undefined, undefined));
         result.sender = sender;
         result.content = content;
         result.linkedEntity = linkedEntity;

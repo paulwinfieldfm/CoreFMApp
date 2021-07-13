@@ -7,10 +7,12 @@ export enum ApprovalRequiredType {
     canceled,
 }
 export enum ContactType {
+    unknown,
     contact,
     accountManager,
     bookingAgent,
     helpdesk,
+    admin,
 }
 export enum ActivityType {
     unknown,
