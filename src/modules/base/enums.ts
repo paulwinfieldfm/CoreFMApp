@@ -88,7 +88,8 @@ export enum EntityState {
 
 export enum RegistrationStatus {
     referred=1,
-    standard
+    standard,
+    trial,
 }
 
 export enum EntityStatus {

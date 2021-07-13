@@ -101,6 +101,7 @@ var RegistrationStatus;
 (function (RegistrationStatus) {
     RegistrationStatus[RegistrationStatus["referred"] = 1] = "referred";
     RegistrationStatus[RegistrationStatus["standard"] = 2] = "standard";
+    RegistrationStatus[RegistrationStatus["trial"] = 3] = "trial";
 })(RegistrationStatus = exports.RegistrationStatus || (exports.RegistrationStatus = {}));
 var EntityStatus;
 (function (EntityStatus) {
