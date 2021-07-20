@@ -117,6 +117,7 @@ export interface IUserAccount extends IPerson {
     userAccountTypeId: UserAccountType,
     userRoleTypeId: UserRoleType,
     userConfiguration?: IUserConfiguration,
+    licenseData?: any,
 }
 export interface IUserConfiguration {
     supplier?: any,

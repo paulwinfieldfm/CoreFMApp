@@ -12,6 +12,7 @@ export class UserAccount implements IUserAccount {
     userAccountTypeId: UserAccountType = UserAccountType.unknown;
     userRoleTypeId: UserRoleType = UserRoleType.unknown;
     userConfiguration?: IUserConfiguration = {}; 
+    licenseData?: any;
   
     static assign(
       id: number,
@@ -23,7 +24,8 @@ export class UserAccount implements IUserAccount {
       userAccountTypeId: UserAccountType,
       userRoleTypeId: UserRoleType,
       properties: IItemAttributeMap = {},
-      userConfiguration: IUserConfiguration): UserAccount {
+      userConfiguration: IUserConfiguration,
+      licenseData?: any): UserAccount {
       return <UserAccount>({
         id: id,
         name: name,
@@ -34,7 +36,8 @@ export class UserAccount implements IUserAccount {
         userAccountTypeId: userAccountTypeId,
         userRoleTypeId: userRoleTypeId,
         properties: properties,
-        userConfiguration: userConfiguration
+        userConfiguration: userConfiguration,
+        licenseData: licenseData
       });
     }
   
