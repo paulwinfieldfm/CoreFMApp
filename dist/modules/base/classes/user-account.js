@@ -9,7 +9,7 @@ class UserAccount {
         this.userRoleTypeId = enums_1.UserRoleType.unknown;
         this.userConfiguration = {};
     }
-    static assign(id, uid, name, email, photoURL, displayName, userAccountTypeId, userRoleTypeId, properties = {}, userConfiguration) {
+    static assign(id, uid, name, email, photoURL, displayName, userAccountTypeId, userRoleTypeId, properties = {}, userConfiguration, licenseData) {
         return ({
             id: id,
             name: name,
@@ -20,7 +20,8 @@ class UserAccount {
             userAccountTypeId: userAccountTypeId,
             userRoleTypeId: userRoleTypeId,
             properties: properties,
-            userConfiguration: userConfiguration
+            userConfiguration: userConfiguration,
+            licenseData: licenseData
         });
     }
     setAttribute(property) {
