@@ -35,6 +35,7 @@ export interface ILinkedEntityInfo extends ILinkedEntity {
     name: string,
     reference: string,
     ownerId?: number,
+    organisationUnitId: number,
     supplierId?: number,
     serviceId: number,
 }
