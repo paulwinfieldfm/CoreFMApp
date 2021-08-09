@@ -1,4 +1,4 @@
-import { IPerson, IContact, ILinkedEntityInfo } from "../base";
+import { IPerson, IContact, ILinkedEntity, ILinkedEntityInfo } from "../base";
 import { EntityDataMessageType, UserNotificationMessageClass, UserNotificationMessageSeverity, UserNotificationType } from "./enums";
 
 export interface IUserNotificationMessage {
@@ -51,7 +51,7 @@ export interface IChatMessage extends IBaseDataMessage {
     // Message content text
     content: string,
     // An optional entity which is the subject/target of the message
-    linkedEntity?: ILinkedEntityInfo,
+    linkedEntity?: ILinkedEntity,
 }
 
 export interface IPersonChatInfo {
