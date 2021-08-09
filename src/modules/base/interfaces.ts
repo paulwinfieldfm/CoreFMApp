@@ -31,6 +31,12 @@ export interface ILinkedEntity {
     type: string,
 }
 
+export interface ILinkedEntityInfo extends ILinkedEntity {
+    name: string,
+    reference: string,
+    ownerId?: number,
+}
+
 export interface IEntity {
     id: number,
     type: string,
