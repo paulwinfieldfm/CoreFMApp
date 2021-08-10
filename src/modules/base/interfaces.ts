@@ -160,6 +160,7 @@ export interface IDashboardFilter {
     showUnassignedItems: boolean,
     showAllItems: boolean,
     showUserIdItems?: number,
+    term?: string,
 }
 export interface ISearchStatus {
     status: SearchStatusType,
