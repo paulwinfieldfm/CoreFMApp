@@ -87,6 +87,7 @@ export enum EntityState {
     orderCancelled,
     quoteAcceptedWithoutOrder,
     quoteResponseReceived,
+    BAFOResponseReceived,
 }
 
 export enum RegistrationStatus {

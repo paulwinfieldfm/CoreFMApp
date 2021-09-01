@@ -99,6 +99,7 @@ var EntityState;
     EntityState[EntityState["orderCancelled"] = 13] = "orderCancelled";
     EntityState[EntityState["quoteAcceptedWithoutOrder"] = 14] = "quoteAcceptedWithoutOrder";
     EntityState[EntityState["quoteResponseReceived"] = 15] = "quoteResponseReceived";
+    EntityState[EntityState["BAFOResponseReceived"] = 16] = "BAFOResponseReceived";
 })(EntityState = exports.EntityState || (exports.EntityState = {}));
 var RegistrationStatus;
 (function (RegistrationStatus) {
