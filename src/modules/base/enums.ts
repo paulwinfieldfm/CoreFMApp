@@ -56,6 +56,7 @@ export enum DeprecatedLinkedEntityType {
     pod,
     supplier,
     company,
+    supplierQuote,
 }
 export enum UserAccountType {
     unknown,
