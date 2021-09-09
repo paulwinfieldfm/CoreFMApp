@@ -210,3 +210,24 @@ export interface IQuotationDocumentSupplierResponse {
     quoteWonStatusId: number,
     score: number
 }
+
+export interface ISupplierQuoteRequest extends IServiceRequirement {
+    subject: string,
+    submittedDate: number,
+    soonestServiceDate?: number,
+    originalQuoteId: number,
+    supplierId: number,
+    organisationUnitId: number,
+    price: number, 
+    assetDetails: Array<ISupplierQuotationAsset>,
+    priceLines: Array<IPriceLine>, 
+    quoteTerms: string,
+    validUntilDate?: number,
+}
+
+export interface ISupplierQuotationAsset {
+    id: number,
+    assetId: number,
+    companyLocationId: number,
+    advisedServiceDate?: number,
+}
