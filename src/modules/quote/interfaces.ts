@@ -213,9 +213,6 @@ export interface IQuotationDocumentSupplierResponse {
 
 export interface ISupplierQuoteRequest extends IServiceRequirement {
     subject: string,
-    submittedDate: number,
-    soonestServiceDate?: number,
-    originalQuoteId: number,
     supplierId: number,
     organisationUnitId: number,
     price: number, 
@@ -223,6 +220,9 @@ export interface ISupplierQuoteRequest extends IServiceRequirement {
     priceLines: Array<IPriceLine>, 
     quoteTerms: string,
     validUntilDate?: number,
+    submittedDate?: number,
+    soonestServiceDate?: number,
+    originalQuoteId?: number,
 }
 
 export interface ISupplierQuotationAsset {
