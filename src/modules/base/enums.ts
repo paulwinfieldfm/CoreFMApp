@@ -114,6 +114,8 @@ export enum EntityStatus {
     cancelled,
     clonedQuote,
     quoteAccepted,
+    clientApprovalPending,
+    newSupplierRequestAdded,
 }
 
 export enum ReadReceiptStatus {

@@ -126,6 +126,8 @@ var EntityStatus;
     EntityStatus[EntityStatus["cancelled"] = 13] = "cancelled";
     EntityStatus[EntityStatus["clonedQuote"] = 14] = "clonedQuote";
     EntityStatus[EntityStatus["quoteAccepted"] = 15] = "quoteAccepted";
+    EntityStatus[EntityStatus["clientApprovalPending"] = 16] = "clientApprovalPending";
+    EntityStatus[EntityStatus["newSupplierRequestAdded"] = 17] = "newSupplierRequestAdded";
 })(EntityStatus = exports.EntityStatus || (exports.EntityStatus = {}));
 var ReadReceiptStatus;
 (function (ReadReceiptStatus) {
