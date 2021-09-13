@@ -223,6 +223,8 @@ export interface ISupplierQuoteRequest extends IServiceRequirement {
     submittedDate?: number,
     soonestServiceDate?: number,
     originalQuoteId?: number,
+    relatedReference?: string,
+    answers?: string,
 }
 
 export interface ISupplierQuotationAsset {
