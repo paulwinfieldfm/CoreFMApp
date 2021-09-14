@@ -227,6 +227,22 @@ export interface ISupplierQuoteRequest extends IServiceRequirement {
     answers?: string,
 }
 
+export interface ISupplierQuoteReview extends IServiceRequirement {
+    id: number,
+    subject: string,
+    supplierId: number,
+    organisationUnitId: number,
+    price: number, 
+    priceLines: Array<IPriceLine>, 
+    quoteTerms: string,
+    validUntilDate?: number,
+    submittedDate?: number,
+    soonestServiceDate?: number,
+    originalQuoteId?: number,
+    relatedReference?: string,
+    answers?: string,
+}
+
 export interface ISupplierQuotationAsset {
     id: number,
     assetId: number,
