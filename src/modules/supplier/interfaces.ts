@@ -30,6 +30,7 @@ export interface ISupplierInviteProfile extends ICoreSupplier, IScoredElement {
     distance?: number,
     // Coverage distance of nearest site
     serviceRadiusMetres?: number,
+    serviceSupported?: number,
 }
 export interface ISupplierPreference {
     supplierWeighting: SupplierWeighting,
