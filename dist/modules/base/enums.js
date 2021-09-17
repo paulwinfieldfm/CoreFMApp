@@ -101,6 +101,7 @@ var EntityState;
     EntityState[EntityState["quoteAcceptedWithoutOrder"] = 14] = "quoteAcceptedWithoutOrder";
     EntityState[EntityState["quoteResponseReceived"] = 15] = "quoteResponseReceived";
     EntityState[EntityState["BAFOResponseReceived"] = 16] = "BAFOResponseReceived";
+    EntityState[EntityState["supplierQuoteChatMessageSent"] = 17] = "supplierQuoteChatMessageSent";
 })(EntityState = exports.EntityState || (exports.EntityState = {}));
 var RegistrationStatus;
 (function (RegistrationStatus) {
