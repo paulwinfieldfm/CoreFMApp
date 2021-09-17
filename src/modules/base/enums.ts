@@ -89,6 +89,7 @@ export enum EntityState {
     quoteAcceptedWithoutOrder,
     quoteResponseReceived,
     BAFOResponseReceived,
+    supplierQuoteChatMessageSent,
 }
 
 export enum RegistrationStatus {
