@@ -241,6 +241,7 @@ export interface ISupplierQuoteReview extends IServiceRequirement {
     originalQuoteId?: number,
     relatedReference?: string,
     answers?: string,
+    supplier: IKeyedItem,
 }
 
 export interface ISupplierQuotationAsset {
