@@ -147,6 +147,7 @@ export interface IQuotationSupplierResponse extends IServiceRequirement {
     responseCutoffDate?: number,
     quoteTerms: string,
     validUntilDate?: number,
+    siteSurveyProperties?: string,
 }
 
 export interface IQuotationResponse {
@@ -167,6 +168,7 @@ export interface IQuotationResponse {
     priceLines: Array<IPriceLine>, 
     quoteTerms: string,
     validUntilDate?: number,
+    siteSurveyProperties?: string,
 }
 
 export interface IBafoOptout {
