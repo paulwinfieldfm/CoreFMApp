@@ -102,6 +102,8 @@ var EntityState;
     EntityState[EntityState["quoteResponseReceived"] = 15] = "quoteResponseReceived";
     EntityState[EntityState["BAFOResponseReceived"] = 16] = "BAFOResponseReceived";
     EntityState[EntityState["supplierQuoteChatMessageSent"] = 17] = "supplierQuoteChatMessageSent";
+    EntityState[EntityState["siteSurveyRequested"] = 18] = "siteSurveyRequested";
+    EntityState[EntityState["siteSurveyBooked"] = 19] = "siteSurveyBooked";
 })(EntityState = exports.EntityState || (exports.EntityState = {}));
 var RegistrationStatus;
 (function (RegistrationStatus) {
