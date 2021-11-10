@@ -90,6 +90,8 @@ export enum EntityState {
     quoteResponseReceived,
     BAFOResponseReceived,
     supplierQuoteChatMessageSent,
+    siteSurveyRequested,
+    siteSurveyBooked,
 }
 
 export enum RegistrationStatus {
