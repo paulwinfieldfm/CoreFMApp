@@ -42,6 +42,7 @@ export enum SearchableItemType {
     product,
     combined,
     dashboardFilter,
+    requestDashboardFilter,
 }
 export enum JournalEntryPropertyType {
     acknowledgeRequired,
@@ -126,3 +127,10 @@ export enum ReadReceiptStatus {
     notRead,
     read,
   }
+
+export enum RequestStates {
+    New = 1,
+    Open = 2,
+    Resolved = 3,
+    Cancelled = 4,
+}

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReadReceiptStatus = exports.EntityStatus = exports.RegistrationStatus = exports.EntityState = exports.UserRoleType = exports.UserAccountType = exports.DeprecatedLinkedEntityType = exports.JournalEntryPropertyType = exports.SearchableItemType = exports.SearchStatusType = exports.ActivityType = exports.ContactType = exports.ApprovalRequiredType = void 0;
+exports.RequestStates = exports.ReadReceiptStatus = exports.EntityStatus = exports.RegistrationStatus = exports.EntityState = exports.UserRoleType = exports.UserAccountType = exports.DeprecatedLinkedEntityType = exports.JournalEntryPropertyType = exports.SearchableItemType = exports.SearchStatusType = exports.ActivityType = exports.ContactType = exports.ApprovalRequiredType = void 0;
 var ApprovalRequiredType;
 (function (ApprovalRequiredType) {
     ApprovalRequiredType[ApprovalRequiredType["unknown"] = 0] = "unknown";
@@ -50,6 +50,7 @@ var SearchableItemType;
     SearchableItemType[SearchableItemType["product"] = 7] = "product";
     SearchableItemType[SearchableItemType["combined"] = 8] = "combined";
     SearchableItemType[SearchableItemType["dashboardFilter"] = 9] = "dashboardFilter";
+    SearchableItemType[SearchableItemType["requestDashboardFilter"] = 10] = "requestDashboardFilter";
 })(SearchableItemType = exports.SearchableItemType || (exports.SearchableItemType = {}));
 var JournalEntryPropertyType;
 (function (JournalEntryPropertyType) {
@@ -138,4 +139,11 @@ var ReadReceiptStatus;
     ReadReceiptStatus[ReadReceiptStatus["notRead"] = 1] = "notRead";
     ReadReceiptStatus[ReadReceiptStatus["read"] = 2] = "read";
 })(ReadReceiptStatus = exports.ReadReceiptStatus || (exports.ReadReceiptStatus = {}));
+var RequestStates;
+(function (RequestStates) {
+    RequestStates[RequestStates["New"] = 1] = "New";
+    RequestStates[RequestStates["Open"] = 2] = "Open";
+    RequestStates[RequestStates["Resolved"] = 3] = "Resolved";
+    RequestStates[RequestStates["Cancelled"] = 4] = "Cancelled";
+})(RequestStates = exports.RequestStates || (exports.RequestStates = {}));
 //# sourceMappingURL=enums.js.map
