@@ -105,6 +105,10 @@ var EntityState;
     EntityState[EntityState["supplierQuoteChatMessageSent"] = 17] = "supplierQuoteChatMessageSent";
     EntityState[EntityState["siteSurveyRequested"] = 18] = "siteSurveyRequested";
     EntityState[EntityState["siteSurveyBooked"] = 19] = "siteSurveyBooked";
+    EntityState[EntityState["newInboundRequest"] = 20] = "newInboundRequest";
+    EntityState[EntityState["newCommentOnRequest"] = 21] = "newCommentOnRequest";
+    EntityState[EntityState["requstStatusChangedToOpen"] = 22] = "requstStatusChangedToOpen";
+    EntityState[EntityState["requstStatusChangedToResolve"] = 23] = "requstStatusChangedToResolve";
 })(EntityState = exports.EntityState || (exports.EntityState = {}));
 var RegistrationStatus;
 (function (RegistrationStatus) {
