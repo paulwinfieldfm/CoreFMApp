@@ -93,6 +93,10 @@ export enum EntityState {
     supplierQuoteChatMessageSent,
     siteSurveyRequested,
     siteSurveyBooked,
+    newInboundRequest,
+    newCommentOnRequest,
+    requstStatusChangedToOpen, //Need a separate state for each status, as we dont allow duplicate entry in workflow table.
+    requstStatusChangedToResolve,
 }
 
 export enum RegistrationStatus {
