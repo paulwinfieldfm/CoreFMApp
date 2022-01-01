@@ -56,3 +56,10 @@ export enum QuoteWonStatus {
     notWon,
     cancelled
 }
+
+export enum ProductQuoteArea {
+    selectCustomer,
+    selectProduct,
+    inviteSuppliers,
+    confirmation,
+  }

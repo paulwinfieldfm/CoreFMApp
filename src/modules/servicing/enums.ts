@@ -1,6 +1,7 @@
 export enum ServiceType {
     reactive,
     planned,
+    productQuote,
 }
 
 export enum ServiceEventStatus {

@@ -28,6 +28,10 @@ export interface ILocation extends ICoreAsset, IPlottableLocation {
     county?: string,
 }
 
+export interface ISelectableLocation extends ILocation {
+    selected? : boolean
+}
+
 export interface ISimpleTravelRoute {
     distanceInMetres: number,
     timeInSeconds: number,
