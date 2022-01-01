@@ -5,6 +5,7 @@ var ServiceType;
 (function (ServiceType) {
     ServiceType[ServiceType["reactive"] = 0] = "reactive";
     ServiceType[ServiceType["planned"] = 1] = "planned";
+    ServiceType[ServiceType["productQuote"] = 2] = "productQuote";
 })(ServiceType = exports.ServiceType || (exports.ServiceType = {}));
 var ServiceEventStatus;
 (function (ServiceEventStatus) {

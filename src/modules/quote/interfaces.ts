@@ -1,8 +1,11 @@
-import { IAuditedItem, IContact, IItemAttributeMap, IKeyedItem, ILinearProgressEntry } from "../base";
+import { ICoreAsset } from "../asset";
+import { IAuditedItem, ICategory, IContact, IItemAttributeMap, IKeyedItem, ILinearProgressEntry } from "../base";
+import { ICompany } from "../company";
 import { DateMap, IScheduleDefinition } from "../date-extensions";
+import { ILocation } from "../location";
 import { IDeprecatedServiceRequest, IService, IServiceAssetRequirement, IServiceRequirement } from "../servicing";
 import { ISupplier, ISupplierInviteProfile } from "../supplier";
-import { BookingPriority, IQuoteResponseStatus, PriceLineCategory, QuotationResponse, QuoteArea, QuoteCreateStatusType, QuoteResponseProvided } from "./enums";
+import { BookingPriority, IQuoteResponseStatus, PriceLineCategory, ProductQuoteArea, QuotationResponse, QuoteArea, QuoteCreateStatusType, QuoteResponseProvided } from "./enums";
 
 export interface IDeprecatedQuoteCreateStatus {
     status: QuoteCreateStatusType,
@@ -252,3 +255,47 @@ export interface ISupplierQuotationAsset {
     companyLocationId: number,
     advisedServiceDate?: number,
 }
+
+/* product quotes interfaces */
+export interface IProductContainer extends IKeyedItem {
+    location?: ILocation,
+    productLines: Array<IProductLine>,
+    properties: any,
+  }
+  
+  export interface IProductLine extends IKeyedItem {
+    asset?: ICoreAsset,
+    category: ICategory,
+    quantity: number,
+    requiredDate: number,
+  }
+  
+  export interface IProductLineViewModel extends IProductLine {
+    key?: string
+  }
+  
+  export interface IProductCategory extends IKeyedItem
+  {
+  
+  }
+  
+  export interface IProductQuoteCompletionState {
+    haveProduct: boolean,
+    haveContract: boolean,
+    haveSupplierInvites: boolean,
+    haveConfirmation: boolean,
+  }
+  
+  export interface IProductQuoteRequest extends IKeyedItem {
+    reference: string,
+    productContainers: Array<IProductContainer>
+    company?: ICompany,
+    invitedSuppliers: Array<ISupplierInviteProfile>,
+    responseCutoffDate?: number,
+    submittedDate?: number,
+  }
+  
+  export interface IProductQuoteRequestStatus extends ILinearProgressEntry {
+    quoteArea: ProductQuoteArea;
+  }
+  

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.QuoteWonStatus = exports.PriceLineCategory = exports.BookingPriority = exports.QuotationResponse = exports.QuoteResponseProvided = exports.QuoteResponseArea = exports.QuoteArea = exports.QuoteCreateStatusType = void 0;
+exports.ProductQuoteArea = exports.QuoteWonStatus = exports.PriceLineCategory = exports.BookingPriority = exports.QuotationResponse = exports.QuoteResponseProvided = exports.QuoteResponseArea = exports.QuoteArea = exports.QuoteCreateStatusType = void 0;
 var QuoteCreateStatusType;
 (function (QuoteCreateStatusType) {
     QuoteCreateStatusType[QuoteCreateStatusType["reset"] = 0] = "reset";
@@ -62,4 +62,11 @@ var QuoteWonStatus;
     QuoteWonStatus[QuoteWonStatus["notWon"] = 2] = "notWon";
     QuoteWonStatus[QuoteWonStatus["cancelled"] = 3] = "cancelled";
 })(QuoteWonStatus = exports.QuoteWonStatus || (exports.QuoteWonStatus = {}));
+var ProductQuoteArea;
+(function (ProductQuoteArea) {
+    ProductQuoteArea[ProductQuoteArea["selectCustomer"] = 0] = "selectCustomer";
+    ProductQuoteArea[ProductQuoteArea["selectProduct"] = 1] = "selectProduct";
+    ProductQuoteArea[ProductQuoteArea["inviteSuppliers"] = 2] = "inviteSuppliers";
+    ProductQuoteArea[ProductQuoteArea["confirmation"] = 3] = "confirmation";
+})(ProductQuoteArea = exports.ProductQuoteArea || (exports.ProductQuoteArea = {}));
 //# sourceMappingURL=enums.js.map
