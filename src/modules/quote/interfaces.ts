@@ -292,6 +292,7 @@ export interface IProductContainer extends IKeyedItem {
     company?: ICompany,
     invitedSuppliers: Array<ISupplierInviteProfile>,
     responseCutoffDate?: number,
+    requiredDate?: number,
     submittedDate?: number,
   }
   

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductQuoteArea = exports.QuoteWonStatus = exports.PriceLineCategory = exports.BookingPriority = exports.QuotationResponse = exports.QuoteResponseProvided = exports.QuoteResponseArea = exports.QuoteArea = exports.QuoteCreateStatusType = void 0;
+exports.quotationType = exports.ProductQuoteArea = exports.QuoteWonStatus = exports.PriceLineCategory = exports.BookingPriority = exports.QuotationResponse = exports.QuoteResponseProvided = exports.QuoteResponseArea = exports.QuoteArea = exports.QuoteCreateStatusType = void 0;
 var QuoteCreateStatusType;
 (function (QuoteCreateStatusType) {
     QuoteCreateStatusType[QuoteCreateStatusType["reset"] = 0] = "reset";
@@ -69,4 +69,9 @@ var ProductQuoteArea;
     ProductQuoteArea[ProductQuoteArea["inviteSuppliers"] = 2] = "inviteSuppliers";
     ProductQuoteArea[ProductQuoteArea["confirmation"] = 3] = "confirmation";
 })(ProductQuoteArea = exports.ProductQuoteArea || (exports.ProductQuoteArea = {}));
+var quotationType;
+(function (quotationType) {
+    quotationType[quotationType["service"] = 1] = "service";
+    quotationType[quotationType["product"] = 2] = "product";
+})(quotationType = exports.quotationType || (exports.quotationType = {}));
 //# sourceMappingURL=enums.js.map
