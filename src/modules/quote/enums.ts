@@ -63,3 +63,8 @@ export enum ProductQuoteArea {
     inviteSuppliers,
     confirmation,
   }
+
+export enum quotationType {
+    service=1,
+    product=2
+  }
