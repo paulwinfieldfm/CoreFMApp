@@ -300,3 +300,26 @@ export interface IProductContainer extends IKeyedItem {
     quoteArea: ProductQuoteArea;
   }
   
+  
+export interface IProductQuoteResponse extends IKeyedItem {
+    productLine: IProductLine,
+    responses: Array<IProductLineResponse>
+    properties: any,
+  }
+  
+  export interface IProductLineResponse{
+    id?: number,
+    productLineId?: number,
+    quotationSupplierInviteId?: number,
+    name?: string,
+    description?: string,
+    quantity?: number,
+    deliveryDate: number,
+    itemPrice: number,
+    deliveryCost?: number,
+    currencyUnit?: string,
+    taxRate?: number,
+    productLineResponse?: number,
+    quoteWonStatusId?: number,
+  }
+  
