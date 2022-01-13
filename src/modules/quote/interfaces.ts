@@ -321,5 +321,8 @@ export interface IProductQuoteResponse extends IKeyedItem {
     taxRate?: number,
     productLineResponse?: number,
     quoteWonStatusId?: number,
+    supplier?: IKeyedItem,
+    pricing?: any,
+    marginRate? : number,
   }
   
