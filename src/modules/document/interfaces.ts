@@ -13,6 +13,7 @@ export interface IDocumentSaveRequest {
     supplierId?: number,
     supplierAccess?: boolean,
     contractAccess?: boolean,
+    singleInstance?: boolean,
 }
 export interface IDocument extends IDocumentSaveRequest {
     id: number,
