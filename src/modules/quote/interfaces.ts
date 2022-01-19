@@ -262,11 +262,16 @@ export interface IProductContainer extends IKeyedItem {
     productLines: Array<IProductLine>,
     properties: any,
   }
-  
+  export interface IProductQuoteSupplierResponse extends IKeyedItem {
+    productLine: IProductLine,
+    response: IProductLineResponse,
+    properties: any,
+  }
   export interface IProductLine extends IKeyedItem {
     asset?: ICoreAsset,
     category: ICategory,
     quantity: number,
+    quantityUnit: string,
     requiredDate: number,
   }
   
@@ -294,6 +299,7 @@ export interface IProductContainer extends IKeyedItem {
     responseCutoffDate?: number,
     requiredDate?: number,
     submittedDate?: number,
+    incotermId?: number,
   }
   
   export interface IProductQuoteRequestStatus extends ILinearProgressEntry {
@@ -314,6 +320,7 @@ export interface IProductQuoteResponse extends IKeyedItem {
     name?: string,
     description?: string,
     quantity?: number,
+    quantityUnit?: string,
     deliveryDate: number,
     itemPrice: number,
     deliveryCost?: number,
@@ -324,5 +331,6 @@ export interface IProductQuoteResponse extends IKeyedItem {
     supplier?: IKeyedItem,
     pricing?: any,
     marginRate? : number,
+    incotermId?: number,
   }
   
