@@ -1,5 +1,6 @@
 import { PriceLineCategory } from "../enums";
 import { IPrice, IPriceLine } from "../interfaces";
+import getSymbolFromCurrency from 'currency-symbol-map'
 
 export class Price implements IPrice {
     currencyUnit: string = 'gbp';
@@ -134,6 +135,14 @@ export class Price implements IPrice {
         return Price.rounded((subtotal/100) * taxRate);
     }
 
+    static addTax(price: number, taxRate: number): number {
+        return  price + Price.rounded((price/100) * taxRate);
+    }
+
+    static addMargin(price: number, marginRate: number): number {
+        return price / (1 - (marginRate / 100));
+    }
+
     static rounded(value?: number): number {
         if (value===undefined || value===0) {
             return 0;
@@ -146,12 +155,7 @@ export class Price implements IPrice {
     }
 
     static currencySymbol(currencyUnit: string): string {
-        switch ((currencyUnit||'gbp').toLowerCase()) {
-            case 'gbp': return '£';
-            case 'usd': return '$';
-            case 'eur': return '€';
-            default: return '£';
-        }
+        return getSymbolFromCurrency(currencyUnit) || '£';
     }
 
     display(withTax: boolean = false): string {

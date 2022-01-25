@@ -303,13 +303,13 @@ export interface IProductContainer extends IKeyedItem {
   }
   
   export interface IProductQuoteRequestStatus extends ILinearProgressEntry {
-    quoteArea: ProductQuoteArea;
+    quoteArea: ProductQuoteArea
   }
   
   
-export interface IProductQuoteResponse extends IKeyedItem {
+  export interface IProductQuoteResponse extends IKeyedItem {
     productLine: IProductLine,
-    responses: Array<IProductLineResponse>
+    responses: Array<IProductLineResponse>,
     properties: any,
   }
   
@@ -332,5 +332,19 @@ export interface IProductQuoteResponse extends IKeyedItem {
     pricing?: any,
     marginRate? : number,
     incotermId?: number,
+    lineTotal?: number,
+    incoterm?: IKeyedItem,
+    properties?: string,
+  }
+  
+  export interface IProductLineResponseQuestions {
+    incoterm: boolean,
+    notes: boolean,
+    questions: Array<string>
+  }
+
+  export interface IProductLineResponseQNA {
+    que: string,
+    ans: string,
   }
   

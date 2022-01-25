@@ -1,7 +1,11 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Price = void 0;
 const enums_1 = require("../enums");
+const currency_symbol_map_1 = __importDefault(require("currency-symbol-map"));
 class Price {
     constructor(priceProperties) {
         this.currencyUnit = 'gbp';
@@ -119,6 +123,12 @@ class Price {
     static taxValue(subtotal, taxRate) {
         return Price.rounded((subtotal / 100) * taxRate);
     }
+    static addTax(price, taxRate) {
+        return price + Price.rounded((price / 100) * taxRate);
+    }
+    static addMargin(price, marginRate) {
+        return price / (1 - (marginRate / 100));
+    }
     static rounded(value) {
         if (value === undefined || value === 0) {
             return 0;
@@ -129,12 +139,7 @@ class Price {
         return `${Price.currencySymbol(currencyUnit)}${value.toFixed(2)}`;
     }
     static currencySymbol(currencyUnit) {
-        switch ((currencyUnit || 'gbp').toLowerCase()) {
-            case 'gbp': return '£';
-            case 'usd': return '$';
-            case 'eur': return '€';
-            default: return '£';
-        }
+        return currency_symbol_map_1.default(currencyUnit) || '£';
     }
     display(withTax = false) {
         if (this.isFoc) {
