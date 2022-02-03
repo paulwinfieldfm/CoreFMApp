@@ -110,6 +110,7 @@ var EntityState;
     EntityState[EntityState["newCommentOnRequest"] = 21] = "newCommentOnRequest";
     EntityState[EntityState["requstStatusChangedToOpen"] = 22] = "requstStatusChangedToOpen";
     EntityState[EntityState["requstStatusChangedToResolve"] = 23] = "requstStatusChangedToResolve";
+    EntityState[EntityState["productQuoteChatMessage"] = 24] = "productQuoteChatMessage";
 })(EntityState = exports.EntityState || (exports.EntityState = {}));
 var RegistrationStatus;
 (function (RegistrationStatus) {
