@@ -99,6 +99,8 @@ export enum EntityState {
     requstStatusChangedToOpen, //Need a separate state for each status, as we dont allow duplicate entry in workflow table.
     requstStatusChangedToResolve,
     productQuoteChatMessage,
+    newProductRFQReceived,
+    productQuotationReceived,
 }
 
 export enum RegistrationStatus {

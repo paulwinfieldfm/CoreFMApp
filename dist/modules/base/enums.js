@@ -111,6 +111,8 @@ var EntityState;
     EntityState[EntityState["requstStatusChangedToOpen"] = 22] = "requstStatusChangedToOpen";
     EntityState[EntityState["requstStatusChangedToResolve"] = 23] = "requstStatusChangedToResolve";
     EntityState[EntityState["productQuoteChatMessage"] = 24] = "productQuoteChatMessage";
+    EntityState[EntityState["newProductRFQReceived"] = 25] = "newProductRFQReceived";
+    EntityState[EntityState["productQuotationReceived"] = 26] = "productQuotationReceived";
 })(EntityState = exports.EntityState || (exports.EntityState = {}));
 var RegistrationStatus;
 (function (RegistrationStatus) {
