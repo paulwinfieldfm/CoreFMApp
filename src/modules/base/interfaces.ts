@@ -158,6 +158,7 @@ export interface IDashboardFilter {
     statusList: Array<EntityStatus>,
     showMyItems: boolean,
     showUnassignedItems: boolean,
+    showArchived: boolean,
     showAllItems: boolean,
     showUserIdItems?: number,
     term?: string,
