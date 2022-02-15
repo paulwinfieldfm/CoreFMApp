@@ -136,7 +136,12 @@ class Price {
         return parseFloat(value.toFixed(2));
     }
     static format(value, currencyUnit) {
-        return `${Price.currencySymbol(currencyUnit)}${value.toFixed(2)}`;
+        return `${Price.currencySymbol(currencyUnit)}${this.formatNumbers(value.toFixed(2))}`;
+    }
+    static formatNumbers(value) {
+        var parts = value.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
     }
     static currencySymbol(currencyUnit) {
         return currency_symbol_map_1.default(currencyUnit) || '£';

@@ -151,7 +151,13 @@ export class Price implements IPrice {
     }
 
     static format(value: number, currencyUnit: string): string {
-        return `${Price.currencySymbol(currencyUnit)}${value.toFixed(2)}`;
+        return `${Price.currencySymbol(currencyUnit)}${this.formatNumbers(value.toFixed(2))}`;
+    }
+
+    static formatNumbers(value: string) {
+        var parts = value.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
     }
 
     static currencySymbol(currencyUnit: string): string {
