@@ -335,6 +335,7 @@ export interface IProductContainer extends IKeyedItem {
     lineTotal?: number,
     incoterm?: IKeyedItem,
     properties?: string,
+    notes?: string,
   }
   
   export interface IProductLineResponseQuestions {
