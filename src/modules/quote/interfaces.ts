@@ -336,6 +336,7 @@ export interface IProductContainer extends IKeyedItem {
     incoterm?: IKeyedItem,
     properties?: string,
     notes?: string,
+    documents?: Array<any>,
   }
   
   export interface IProductLineResponseQuestions {
