@@ -18,7 +18,11 @@ export interface ICoreSupplier extends IKeyedItem {
     quoteToCostRatio?: number,
     rating?: number,
     services?: Array<ISupplierService>,
+    serviceCategories?: Array<IServiceCategory>,
     productCategories?: Array<any>,
+}
+export interface IServiceCategory extends IKeyedItem {
+  services?: Array<ISupplierService>,
 }
 
 export interface ISupplier extends ICoreSupplier {
