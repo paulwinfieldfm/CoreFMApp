@@ -84,6 +84,8 @@ var UserRoleType;
     UserRoleType[UserRoleType["contractManager"] = 2] = "contractManager";
     UserRoleType[UserRoleType["supplierAdministrator"] = 3] = "supplierAdministrator";
     UserRoleType[UserRoleType["engineer"] = 4] = "engineer";
+    UserRoleType[UserRoleType["superuser"] = 5] = "superuser";
+    UserRoleType[UserRoleType["systemAdministrator"] = 6] = "systemAdministrator";
 })(UserRoleType = exports.UserRoleType || (exports.UserRoleType = {}));
 var EntityState;
 (function (EntityState) {

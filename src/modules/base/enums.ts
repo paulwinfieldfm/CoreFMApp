@@ -71,7 +71,9 @@ export enum UserRoleType {
     requisitioner,
     contractManager,
     supplierAdministrator,
-    engineer
+    engineer,
+    superuser,
+    systemAdministrator
 }
 
 export enum EntityState {
