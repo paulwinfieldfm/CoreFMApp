@@ -4,3 +4,8 @@ export enum SupplierWeighting {
     rating,
     greenScore,
 }
+export enum SupplierPermission {
+    unknown,
+    canReceiveQuoteInvite,
+    canProvideQuotation,
+  }
