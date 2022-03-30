@@ -1,6 +1,6 @@
 import { IContact, IKeyedItem, IScoredElement } from "../base";
 import { ILocation } from "../location";
-import { SupplierWeighting } from "./enums";
+import { SupplierPermission, SupplierWeighting } from "./enums";
 
 export interface ISupplierService extends IKeyedItem {
     preferred: boolean,
@@ -20,7 +20,12 @@ export interface ICoreSupplier extends IKeyedItem {
     services?: Array<ISupplierService>,
     serviceCategories?: Array<IServiceCategory>,
     productCategories?: Array<any>,
+    permissions?: Array<ISupplierPermission>,
 }
+
+export interface ISupplierPermission {
+    supplierPermissionId: SupplierPermission
+  }
 export interface IServiceCategory extends IKeyedItem {
   services?: Array<ISupplierService>,
 }
