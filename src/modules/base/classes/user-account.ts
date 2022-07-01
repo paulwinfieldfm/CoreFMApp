@@ -13,6 +13,7 @@ export class UserAccount implements IUserAccount {
     userRoleTypeId: UserRoleType = UserRoleType.unknown;
     userConfiguration?: IUserConfiguration = {}; 
     licenseData?: any;
+    telephone?: string;
   
     static assign(
       id: number,
@@ -25,7 +26,8 @@ export class UserAccount implements IUserAccount {
       userRoleTypeId: UserRoleType,
       properties: IItemAttributeMap = {},
       userConfiguration: IUserConfiguration,
-      licenseData?: any): UserAccount {
+      licenseData?: any,
+      telephone?: string): UserAccount {
       return <UserAccount>({
         id: id,
         name: name,
@@ -37,7 +39,8 @@ export class UserAccount implements IUserAccount {
         userRoleTypeId: userRoleTypeId,
         properties: properties,
         userConfiguration: userConfiguration,
-        licenseData: licenseData
+        licenseData: licenseData,
+        telephone: telephone
       });
     }
   
