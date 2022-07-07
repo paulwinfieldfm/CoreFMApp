@@ -99,6 +99,7 @@ export interface IQuotationRequest extends IServiceRequirement {
     responses?: Array<IQuotationSupplierResponse>,
     submittedDate?: number,
     responseCutoffDate?: number,
+    project?: string,
 }
 
 export interface IDeprecatedQuotationResponseLine {
