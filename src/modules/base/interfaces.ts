@@ -25,7 +25,7 @@ export interface IContact extends IPerson {
     parentLocationId?: number,
     contactTypeId: ContactType,
     userAccountType: UserAccountType,
-    emailNotifications: boolean,
+    emailNotifications?: boolean,
 }
 export interface ILinkedEntity {
     id: number,
