@@ -90,37 +90,31 @@ class Utils {
 exports.Utils = Utils;
 var SeabeckUtils;
 (function (SeabeckUtils) {
-    let Async = /** @class */ (() => {
-        class Async {
+    class Async {
+    }
+    Async.forEach = (array, callback) => __awaiter(this, void 0, void 0, function* () {
+        for (let i = 0; i < array.length; i++) {
+            yield callback(array[i], i, array);
         }
-        Async.forEach = (array, callback) => __awaiter(this, void 0, void 0, function* () {
-            for (let i = 0; i < array.length; i++) {
-                yield callback(array[i], i, array);
-            }
-        });
-        Async.wait = (ms) => __awaiter(this, void 0, void 0, function* () { return new Promise(r => setTimeout(r, ms)); });
-        return Async;
-    })();
+    });
+    Async.wait = (ms) => __awaiter(this, void 0, void 0, function* () { return new Promise(r => setTimeout(r, ms)); });
     SeabeckUtils.Async = Async;
-    let Objects = /** @class */ (() => {
-        class Objects {
+    class Objects {
+    }
+    Objects.clone = (obj) => obj ? JSON.parse(JSON.stringify(obj)) : {};
+    Objects.isObject = (value) => {
+        return value === null
+            ? false
+            : ((typeof value === 'function') || (typeof value === 'object'));
+    };
+    Objects.parseAsObject = (value, defaultIfUndefined) => {
+        if (!value) {
+            return defaultIfUndefined;
         }
-        Objects.clone = (obj) => obj ? JSON.parse(JSON.stringify(obj)) : {};
-        Objects.isObject = (value) => {
-            return value === null
-                ? false
-                : ((typeof value === 'function') || (typeof value === 'object'));
-        };
-        Objects.parseAsObject = (value, defaultIfUndefined) => {
-            if (!value) {
-                return defaultIfUndefined;
-            }
-            return Objects.isObject(value)
-                ? value
-                : ((typeof value === 'string') ? JSON.parse(value) : value);
-        };
-        return Objects;
-    })();
+        return Objects.isObject(value)
+            ? value
+            : ((typeof value === 'string') ? JSON.parse(value) : value);
+    };
     SeabeckUtils.Objects = Objects;
 })(SeabeckUtils = exports.SeabeckUtils || (exports.SeabeckUtils = {}));
 //# sourceMappingURL=utils.js.map
