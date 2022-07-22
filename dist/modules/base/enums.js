@@ -116,6 +116,8 @@ var EntityState;
     EntityState[EntityState["productQuoteChatMessage"] = 24] = "productQuoteChatMessage";
     EntityState[EntityState["newProductRFQReceived"] = 25] = "newProductRFQReceived";
     EntityState[EntityState["productQuotationReceived"] = 26] = "productQuotationReceived";
+    EntityState[EntityState["productOrderRaised"] = 27] = "productOrderRaised";
+    EntityState[EntityState["productOrderChatMessage"] = 28] = "productOrderChatMessage";
 })(EntityState = exports.EntityState || (exports.EntityState = {}));
 var RegistrationStatus;
 (function (RegistrationStatus) {

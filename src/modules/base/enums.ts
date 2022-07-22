@@ -104,6 +104,8 @@ export enum EntityState {
     productQuoteChatMessage,
     newProductRFQReceived,
     productQuotationReceived,
+    productOrderRaised,
+    productOrderChatMessage,
 }
 
 export enum RegistrationStatus {
