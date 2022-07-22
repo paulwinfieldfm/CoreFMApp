@@ -69,6 +69,7 @@ var DeprecatedLinkedEntityType;
     DeprecatedLinkedEntityType[DeprecatedLinkedEntityType["company"] = 6] = "company";
     DeprecatedLinkedEntityType[DeprecatedLinkedEntityType["supplierQuote"] = 7] = "supplierQuote";
     DeprecatedLinkedEntityType[DeprecatedLinkedEntityType["productQuote"] = 8] = "productQuote";
+    DeprecatedLinkedEntityType[DeprecatedLinkedEntityType["productOrder"] = 9] = "productOrder";
 })(DeprecatedLinkedEntityType = exports.DeprecatedLinkedEntityType || (exports.DeprecatedLinkedEntityType = {}));
 var UserAccountType;
 (function (UserAccountType) {
