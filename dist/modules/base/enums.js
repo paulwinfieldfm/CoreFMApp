@@ -145,6 +145,7 @@ var EntityStatus;
     EntityStatus[EntityStatus["quoteAccepted"] = 15] = "quoteAccepted";
     EntityStatus[EntityStatus["clientApprovalPending"] = 16] = "clientApprovalPending";
     EntityStatus[EntityStatus["newSupplierRequestAdded"] = 17] = "newSupplierRequestAdded";
+    EntityStatus[EntityStatus["productOrderRaised"] = 18] = "productOrderRaised";
 })(EntityStatus = exports.EntityStatus || (exports.EntityStatus = {}));
 var ReadReceiptStatus;
 (function (ReadReceiptStatus) {

@@ -133,6 +133,7 @@ export enum EntityStatus {
     quoteAccepted,
     clientApprovalPending,
     newSupplierRequestAdded,
+    productOrderRaised,
 }
 
 export enum ReadReceiptStatus {
